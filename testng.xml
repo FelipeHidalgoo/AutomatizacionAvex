@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="AREA RT - Creacion / Modificacion / Campos obligatorios">
+	
+	<listeners>
+        <listener class-name="valuesite.testcomponents.ListenersTestNG" />
+    </listeners>
+    
+    <test name="Area">
+        <classes>
+            <class name="valuesite.tests.MantenedorAreaRT"/>
+        </classes>
+    </test>
+</suite>
