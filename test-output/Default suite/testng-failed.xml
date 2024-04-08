@@ -5,9 +5,10 @@
     <classes>
       <class name="valuesite.tests.MantenedorAreaRT">
         <methods>
+          <include name="filtroNombreAreaTest"/>
           <include name="Finalizar"/>
           <include name="lanzarNavegador"/>
-          <include name="AreaRT"/>
+          <include name="ingresaMantenedor"/>
         </methods>
       </class> <!-- valuesite.tests.MantenedorAreaRT -->
     </classes>

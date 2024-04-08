@@ -2,44 +2,44 @@
 <testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-04-04T18:12:09 CLST" name="AREA RT - Creacion / Modificacion / Campos obligatorios" finished-at="2024-04-04T18:12:49 CLST" duration-ms="39583">
+  <suite started-at="2024-04-08T15:46:15 CLT" name="AREA RT - Creacion / Modificacion / Campos obligatorios" finished-at="2024-04-08T15:46:56 CLT" duration-ms="40585">
     <groups>
     </groups>
-    <test started-at="2024-04-04T18:12:09 CLST" name="Area" finished-at="2024-04-04T18:12:49 CLST" duration-ms="39583">
+    <test started-at="2024-04-08T15:46:15 CLT" name="Area" finished-at="2024-04-08T15:46:56 CLT" duration-ms="40585">
       <class name="valuesite.tests.MantenedorAreaRT">
-        <test-method is-config="true" signature="lanzarNavegador()[pri:0, instance:valuesite.tests.MantenedorAreaRT@38c6f217]" started-at="2024-04-04T18:12:09 CLST" name="lanzarNavegador" finished-at="2024-04-04T18:12:16 CLST" duration-ms="6430" status="PASS">
+        <test-method is-config="true" signature="lanzarNavegador()[pri:0, instance:valuesite.tests.MantenedorAreaRT@38c6f217]" started-at="2024-04-08T15:46:15 CLT" name="lanzarNavegador" finished-at="2024-04-08T15:46:21 CLT" duration-ms="5744" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- lanzarNavegador -->
-        <test-method is-config="true" signature="ingresaMantenedor()[pri:0, instance:valuesite.tests.MantenedorAreaRT@38c6f217]" started-at="2024-04-04T18:12:16 CLST" name="ingresaMantenedor" finished-at="2024-04-04T18:12:24 CLST" duration-ms="7813" status="PASS">
+        <test-method is-config="true" signature="ingresaMantenedor()[pri:0, instance:valuesite.tests.MantenedorAreaRT@38c6f217]" started-at="2024-04-08T15:46:21 CLT" name="ingresaMantenedor" finished-at="2024-04-08T15:46:29 CLT" duration-ms="7482" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ingresaMantenedor -->
-        <test-method signature="nombreObligatorioTest()[pri:1, instance:valuesite.tests.MantenedorAreaRT@38c6f217]" started-at="2024-04-04T18:12:24 CLST" name="nombreObligatorioTest" finished-at="2024-04-04T18:12:24 CLST" duration-ms="123" status="PASS">
+        <test-method signature="nombreObligatorioTest()[pri:1, instance:valuesite.tests.MantenedorAreaRT@38c6f217]" started-at="2024-04-08T15:46:29 CLT" name="nombreObligatorioTest" finished-at="2024-04-08T15:46:29 CLT" duration-ms="113" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- nombreObligatorioTest -->
-        <test-method signature="creaAreaActivaTest()[pri:2, instance:valuesite.tests.MantenedorAreaRT@38c6f217]" started-at="2024-04-04T18:12:24 CLST" name="creaAreaActivaTest" finished-at="2024-04-04T18:12:29 CLST" duration-ms="4656" status="PASS">
+        <test-method signature="creaAreaActivaTest()[pri:2, instance:valuesite.tests.MantenedorAreaRT@38c6f217]" started-at="2024-04-08T15:46:29 CLT" name="creaAreaActivaTest" finished-at="2024-04-08T15:46:34 CLT" duration-ms="4817" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- creaAreaActivaTest -->
-        <test-method signature="creaAreaInactivaTest()[pri:3, instance:valuesite.tests.MantenedorAreaRT@38c6f217]" started-at="2024-04-04T18:12:29 CLST" name="creaAreaInactivaTest" finished-at="2024-04-04T18:12:33 CLST" duration-ms="4538" status="PASS">
+        <test-method signature="creaAreaInactivaTest()[pri:3, instance:valuesite.tests.MantenedorAreaRT@38c6f217]" started-at="2024-04-08T15:46:34 CLT" name="creaAreaInactivaTest" finished-at="2024-04-08T15:46:38 CLT" duration-ms="4687" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- creaAreaInactivaTest -->
-        <test-method signature="modificaAreaTest()[pri:4, instance:valuesite.tests.MantenedorAreaRT@38c6f217]" started-at="2024-04-04T18:12:33 CLST" name="modificaAreaTest" finished-at="2024-04-04T18:12:40 CLST" duration-ms="6588" status="PASS">
+        <test-method signature="modificaAreaTest()[pri:4, instance:valuesite.tests.MantenedorAreaRT@38c6f217]" started-at="2024-04-08T15:46:38 CLT" name="modificaAreaTest" finished-at="2024-04-08T15:46:45 CLT" duration-ms="6593" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- modificaAreaTest -->
-        <test-method signature="filtroNombreAreaTest()[pri:5, instance:valuesite.tests.MantenedorAreaRT@38c6f217]" started-at="2024-04-04T18:12:40 CLST" name="filtroNombreAreaTest" finished-at="2024-04-04T18:12:42 CLST" duration-ms="1986" status="PASS">
+        <test-method signature="filtroNombreAreaTest()[pri:5, instance:valuesite.tests.MantenedorAreaRT@38c6f217]" started-at="2024-04-08T15:46:45 CLT" name="filtroNombreAreaTest" finished-at="2024-04-08T15:46:48 CLT" duration-ms="2576" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- filtroNombreAreaTest -->
-        <test-method signature="filtroEstadoAreaTest()[pri:6, instance:valuesite.tests.MantenedorAreaRT@38c6f217]" started-at="2024-04-04T18:12:42 CLST" name="filtroEstadoAreaTest" finished-at="2024-04-04T18:12:49 CLST" duration-ms="7193" status="PASS">
+        <test-method signature="filtroEstadoAreaTest()[pri:6, instance:valuesite.tests.MantenedorAreaRT@38c6f217]" started-at="2024-04-08T15:46:48 CLT" name="filtroEstadoAreaTest" finished-at="2024-04-08T15:46:56 CLT" duration-ms="8322" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- filtroEstadoAreaTest -->
-        <test-method is-config="true" signature="Finalizar()[pri:0, instance:valuesite.tests.MantenedorAreaRT@38c6f217]" started-at="2024-04-04T18:12:49 CLST" name="Finalizar" finished-at="2024-04-04T18:12:49 CLST" duration-ms="209" status="PASS">
+        <test-method is-config="true" signature="Finalizar()[pri:0, instance:valuesite.tests.MantenedorAreaRT@38c6f217]" started-at="2024-04-08T15:46:56 CLT" name="Finalizar" finished-at="2024-04-08T15:46:56 CLT" duration-ms="200" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Finalizar -->
