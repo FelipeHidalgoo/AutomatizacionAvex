@@ -33,6 +33,15 @@ public class AreaCliente extends AreaRT{
 		@FindBy(xpath = "(//input[@data-activates='select-options-slcEstadoFind'])[1]")
 		WebElement selectEstados;
 		
+	// Filtro estado (Opcion Todos)
+		@FindBy(css = "div[class='bg-filtros mx-0 '] li:nth-child(1)")
+		WebElement estadoTodos;
+		
+	// Filtro estado (Opcion Activo)
+		@FindBy(xpath = "//div[@class='col-12 col-xg-6 col-lg-6 pr-0']//li[2]")
+		WebElement estadoActivo;
+		
+		
 	
 	// PAGE FACTORY
 
