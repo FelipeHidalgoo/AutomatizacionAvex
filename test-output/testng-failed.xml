@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [AREA RT - Creacion / Modificacion / Campos obligatorios]" guice-stage="DEVELOPMENT">
-  <listeners>
-    <listener class-name="valuesite.testcomponents.ListenersTestNG"/>
-  </listeners>
-  <test thread-count="5" name="Area(failed)">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="valuesite.tests.MantenedorAreaRT">
+      <class name="valuesite.tests.ModificacionPinTestRT">
         <methods>
-          <include name="Finalizar"/>
-          <include name="lanzarNavegador"/>
           <include name="ingresaMantenedor"/>
-          <include name="filtroEstadoAreaTest"/>
+          <include name="Finalizar"/>
+          <include name="vaciaCampo"/>
+          <include name="lanzarNavegador"/>
+          <include name="setUp"/>
         </methods>
-      </class> <!-- valuesite.tests.MantenedorAreaRT -->
+      </class> <!-- valuesite.tests.ModificacionPinTestRT -->
     </classes>
-  </test> <!-- Area(failed) -->
-</suite> <!-- Failed suite [AREA RT - Creacion / Modificacion / Campos obligatorios] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

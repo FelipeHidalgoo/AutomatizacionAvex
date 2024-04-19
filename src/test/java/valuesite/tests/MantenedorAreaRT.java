@@ -20,6 +20,7 @@ import valuesite.testcomponents.BaseTest;
 
 public class MantenedorAreaRT extends BaseTest{
 	
+	
 		@BeforeClass
 		public void ingresaMantenedor() {
 			Login login = new Login(driver);

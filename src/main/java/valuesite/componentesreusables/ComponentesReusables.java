@@ -29,6 +29,7 @@ public class ComponentesReusables {
 		WebDriverWait wait = new WebDriverWait(driver, EXPLICIT_WAIT_TIMEOUT);
 		wait.until(ExpectedConditions.visibilityOf(findBy));
 	}
+	
 
 	public void waitForElementToDisappear(WebElement ele) throws InterruptedException {
 		Thread.sleep(1000);
