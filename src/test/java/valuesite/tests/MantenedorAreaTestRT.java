@@ -18,7 +18,7 @@ import valuesite.pageobjects.Login;
 import valuesite.pageobjects.AreaRT;
 import valuesite.testcomponents.BaseTest;
 
-public class MantenedorAreaRT extends BaseTest{
+public class MantenedorAreaTestRT extends BaseTest{
 	
 	
 		@BeforeClass

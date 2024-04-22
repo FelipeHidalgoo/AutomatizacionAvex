@@ -7,8 +7,8 @@
         <methods>
           <include name="ingresaMantenedor"/>
           <include name="Finalizar"/>
-          <include name="vaciaCampo"/>
           <include name="lanzarNavegador"/>
+          <include name="limpiaCampo"/>
           <include name="setUp"/>
         </methods>
       </class> <!-- valuesite.tests.ModificacionPinTestRT -->

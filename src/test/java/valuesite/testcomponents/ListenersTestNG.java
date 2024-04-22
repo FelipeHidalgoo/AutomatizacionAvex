@@ -29,7 +29,7 @@ public class ListenersTestNG implements ITestListener {
 	    Throwable throwable = result.getThrowable();
 	    if (throwable instanceof AssertionError) {
 	        // La falla está relacionada con una aserción en la prueba
-	        System.out.println("Prueba "+ result.getName() +": FALLIDA \n");
+	        System.out.println("\nPrueba "+ result.getName() +": FALLIDA \n");
 	    } else {
 	        // La falla está relacionada con un error de código
 	        System.out.println("La prueba del metodo " + result.getName() + " falló debido a un error de código, limite de tiempo o cierre de ventana temprano \n");
@@ -52,7 +52,7 @@ public class ListenersTestNG implements ITestListener {
 	public void onTestSuccess(ITestResult result) {
 		// TODO Auto-generated method stub
 		//System.out.println("********************");
-		System.out.println("Prueba "+ result.getName() +": EXITOSA \n");
+		System.out.println("\nPrueba "+ result.getName() +": EXITOSA \n");
 		//System.out.println("********************");
 	}
 }
