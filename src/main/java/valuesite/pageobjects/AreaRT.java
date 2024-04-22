@@ -50,7 +50,7 @@ public class AreaRT extends ComponentesReusables {
 	WebElement tabAdministracion;
 
 	// Pestaña de area cliente en navBar
-	@FindBy(xpath = "//a[normalize-space()='Área Cliente']")
+	@FindBy(xpath = "//a[normalize-space()='Área']")
 	WebElement tabAreaCliente;
 
 	// Campo buscar cliente (Para abrir buscador)
@@ -166,6 +166,7 @@ public class AreaRT extends ComponentesReusables {
 
 	// Comprueba que el sistema no permite crear area sin ingresar un nombre a esta
 	public void errorNombreObligatorio() {
+		componentesReusables.waitForWebElementToBeClickable(btnCrear);
 		btnCrear.click();
 		
 		// Espera a que aparezca el mensaje de error
@@ -407,6 +408,7 @@ public class AreaRT extends ComponentesReusables {
 
 		int numeroArea = obtenerNumeroArea();
 		String nombreArea = "AREA ACTIVA " + String.format("%03d", numeroArea);
+		componentesReusables.waitForWebElementToBeClickable(campoNombreArea);
 		campoNombreArea.sendKeys(nombreArea);
 		btnCrear.click();
 		Thread.sleep(500);
@@ -446,6 +448,7 @@ public class AreaRT extends ComponentesReusables {
 		int numeroArea2 = obtenerNumeroArea2();
 		//Thread.sleep(1500);
 		String nombreArea2 = "AREA INACTIVA " + String.format("%03d", numeroArea2);
+		componentesReusables.waitForWebElementToBeClickable(campoNombreArea);
 		campoNombreArea.sendKeys(nombreArea2);
 		//Thread.sleep(1000);
 		btnInactivo.click();

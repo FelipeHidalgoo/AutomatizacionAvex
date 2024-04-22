@@ -3,15 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="valuesite.tests.ModificacionPinTestRT">
+      <class name="valuesite.tests.MantenedorAreaTestCliente">
         <methods>
-          <include name="ingresaMantenedor"/>
+          <include name="setUp"/>
           <include name="Finalizar"/>
           <include name="lanzarNavegador"/>
-          <include name="limpiaCampo"/>
-          <include name="setUp"/>
+          <include name="testsillo"/>
+          <include name="ingresaMantenedor"/>
         </methods>
-      </class> <!-- valuesite.tests.ModificacionPinTestRT -->
+      </class> <!-- valuesite.tests.MantenedorAreaTestCliente -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
