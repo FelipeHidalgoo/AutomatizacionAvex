@@ -121,17 +121,36 @@ public class ModificacionPinTestRT extends BaseTest{
 		componentesReusables.waitForWebElementToBeClickable(modifpinrt.campoPin);
 		
 		modifpinrt.campoPin.clear();
-		componentesReusables.waitForElementToDisappear(driver, modifpinrt.msjErrorBy);
+		//componentesReusables.waitForElementToDisappear(driver, modifpinrt.msjErrorBy);
 		modifpinrt.actualizaPin(caracteresEspeciales);
 		
-		componentesReusables.waitForWebElementToAppear(modifpinrt.msjError);
-		if (modifpinrt.msjError.isDisplayed()) {
-			System.out.println("No permite actualizar con caracteres especiales");
-			Assert.assertTrue(true);
-		}else {
-			System.out.println("Permite actualizar con caracteres especiales");
-			Assert.assertTrue(false);
-		}
+		//componentesReusables.waitForWebElementToAppear(modifpinrt.msjError);
+//		if (modifpinrt.msjError.isDisplayed()) {
+//			System.out.println("No permite actualizar con caracteres especiales");
+//			Assert.assertTrue(true);
+//		}else {
+//			System.out.println("Permite actualizar con caracteres especiales");
+//			Assert.assertTrue(false);
+//		}
+		
+		Thread.sleep(500);
+		driver.navigate().refresh();
+		
+		String pin = modifpinrt.obtienePIN();
+		
+		// Verificar si el campo contiene algún carácter especial
+	    boolean contieneCaracteresEspeciales = modifpinrt.contieneCaracteresEspeciales(pin, caracteresEspeciales);
+	    
+	    // Imprimir el resultado y realizar la aserción
+	    if (contieneCaracteresEspeciales) {
+	        System.out.println("El campo se guardo con caracteres especiales");
+	        Assert.assertTrue(false);
+	    } else {
+	        System.out.println("No se guardaron caracteres especiales en el campo");
+	        Assert.assertTrue(true);
+	    }
+		
+		
 	}
 	
 	@Test(priority=6)

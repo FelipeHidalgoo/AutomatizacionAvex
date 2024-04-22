@@ -2,44 +2,44 @@
 <testng-results ignored="0" total="13" passed="12" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-04-22T11:35:47 CLT" name="Mantenedores Administrativos" finished-at="2024-04-22T11:36:44 CLT" duration-ms="56555">
+  <suite started-at="2024-04-22T14:39:43 CLT" name="Mantenedores Administrativos" finished-at="2024-04-22T14:40:29 CLT" duration-ms="46348">
     <groups>
     </groups>
-    <test started-at="2024-04-22T11:35:47 CLT" name="Modificacion pin RT" finished-at="2024-04-22T11:36:17 CLT" duration-ms="29358">
+    <test started-at="2024-04-22T14:39:43 CLT" name="Modificacion pin RT" finished-at="2024-04-22T14:40:16 CLT" duration-ms="32806">
       <class name="valuesite.tests.ModificacionPinTestRT">
-        <test-method is-config="true" signature="lanzarNavegador()[pri:0, instance:valuesite.tests.ModificacionPinTestRT@35cabb2a]" started-at="2024-04-22T11:35:47 CLT" name="lanzarNavegador" finished-at="2024-04-22T11:35:53 CLT" duration-ms="5613" status="PASS">
+        <test-method is-config="true" signature="lanzarNavegador()[pri:0, instance:valuesite.tests.ModificacionPinTestRT@57a3af25]" started-at="2024-04-22T14:39:43 CLT" name="lanzarNavegador" finished-at="2024-04-22T14:39:51 CLT" duration-ms="8184" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- lanzarNavegador -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:valuesite.tests.ModificacionPinTestRT@35cabb2a]" started-at="2024-04-22T11:35:53 CLT" name="setUp" finished-at="2024-04-22T11:35:53 CLT" depends-on-methods="valuesite.testcomponents.BaseTest.lanzarNavegador" duration-ms="5" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:valuesite.tests.ModificacionPinTestRT@57a3af25]" started-at="2024-04-22T14:39:51 CLT" name="setUp" finished-at="2024-04-22T14:39:51 CLT" depends-on-methods="valuesite.testcomponents.BaseTest.lanzarNavegador" duration-ms="7" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="ingresaMantenedor()[pri:0, instance:valuesite.tests.ModificacionPinTestRT@35cabb2a]" started-at="2024-04-22T11:35:53 CLT" name="ingresaMantenedor" finished-at="2024-04-22T11:36:03 CLT" duration-ms="9642" status="PASS">
+        <test-method is-config="true" signature="ingresaMantenedor()[pri:0, instance:valuesite.tests.ModificacionPinTestRT@57a3af25]" started-at="2024-04-22T14:39:51 CLT" name="ingresaMantenedor" finished-at="2024-04-22T14:40:12 CLT" duration-ms="21088" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ingresaMantenedor -->
-        <test-method signature="vaciaCampo()[pri:1, instance:valuesite.tests.ModificacionPinTestRT@35cabb2a]" started-at="2024-04-22T11:36:03 CLT" name="vaciaCampo" finished-at="2024-04-22T11:36:03 CLT" duration-ms="125" status="PASS">
+        <test-method signature="vaciaCampo()[pri:1, instance:valuesite.tests.ModificacionPinTestRT@57a3af25]" started-at="2024-04-22T14:40:12 CLT" name="vaciaCampo" finished-at="2024-04-22T14:40:13 CLT" duration-ms="357" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- vaciaCampo -->
-        <test-method signature="ingresarPin()[pri:2, instance:valuesite.tests.ModificacionPinTestRT@35cabb2a]" started-at="2024-04-22T11:36:03 CLT" name="ingresarPin" finished-at="2024-04-22T11:36:03 CLT" duration-ms="101" status="PASS">
+        <test-method signature="ingresarPin()[pri:2, instance:valuesite.tests.ModificacionPinTestRT@57a3af25]" started-at="2024-04-22T14:40:13 CLT" name="ingresarPin" finished-at="2024-04-22T14:40:13 CLT" duration-ms="202" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ingresarPin -->
-        <test-method signature="actualizaPin()[pri:3, instance:valuesite.tests.ModificacionPinTestRT@35cabb2a]" started-at="2024-04-22T11:36:03 CLT" name="actualizaPin" finished-at="2024-04-22T11:36:03 CLT" duration-ms="347" status="PASS">
+        <test-method signature="actualizaPin()[pri:3, instance:valuesite.tests.ModificacionPinTestRT@57a3af25]" started-at="2024-04-22T14:40:13 CLT" name="actualizaPin" finished-at="2024-04-22T14:40:13 CLT" duration-ms="514" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- actualizaPin -->
-        <test-method signature="actualizaSinDatos()[pri:4, instance:valuesite.tests.ModificacionPinTestRT@35cabb2a]" started-at="2024-04-22T11:36:03 CLT" name="actualizaSinDatos" finished-at="2024-04-22T11:36:03 CLT" duration-ms="106" status="PASS">
+        <test-method signature="actualizaSinDatos()[pri:4, instance:valuesite.tests.ModificacionPinTestRT@57a3af25]" started-at="2024-04-22T14:40:13 CLT" name="actualizaSinDatos" finished-at="2024-04-22T14:40:13 CLT" duration-ms="217" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- actualizaSinDatos -->
-        <test-method signature="actualizaConCaracteresEspeciales()[pri:5, instance:valuesite.tests.ModificacionPinTestRT@35cabb2a]" started-at="2024-04-22T11:36:03 CLT" name="actualizaConCaracteresEspeciales" finished-at="2024-04-22T11:36:17 CLT" duration-ms="13088" status="PASS">
+        <test-method signature="actualizaConCaracteresEspeciales()[pri:5, instance:valuesite.tests.ModificacionPinTestRT@57a3af25]" started-at="2024-04-22T14:40:13 CLT" name="actualizaConCaracteresEspeciales" finished-at="2024-04-22T14:40:15 CLT" duration-ms="1589" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- actualizaConCaracteresEspeciales -->
-        <test-method signature="limpiaCampo()[pri:6, instance:valuesite.tests.ModificacionPinTestRT@35cabb2a]" started-at="2024-04-22T11:36:17 CLT" name="limpiaCampo" finished-at="2024-04-22T11:36:17 CLT" duration-ms="125" status="FAIL">
+        <test-method signature="limpiaCampo()[pri:6, instance:valuesite.tests.ModificacionPinTestRT@57a3af25]" started-at="2024-04-22T14:40:15 CLT" name="limpiaCampo" finished-at="2024-04-22T14:40:15 CLT" duration-ms="259" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[expected [true] but found [false]]]>
@@ -50,9 +50,11 @@ at org.testng.Assert.fail(Assert.java:99)
 at org.testng.Assert.failNotEquals(Assert.java:1037)
 at org.testng.Assert.assertTrue(Assert.java:45)
 at org.testng.Assert.assertTrue(Assert.java:55)
-at valuesite.tests.ModificacionPinTestRT.limpiaCampo(ModificacionPinTestRT.java:150)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at valuesite.tests.ModificacionPinTestRT.limpiaCampo(ModificacionPinTestRT.java:169)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
 at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
 at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
@@ -61,7 +63,7 @@ at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java
 at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
 at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
 at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 at org.testng.TestRunner.privateRun(TestRunner.java:794)
 at org.testng.TestRunner.run(TestRunner.java:596)
 at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
@@ -83,55 +85,55 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- limpiaCampo -->
-        <test-method is-config="true" signature="Finalizar()[pri:0, instance:valuesite.tests.ModificacionPinTestRT@35cabb2a]" started-at="2024-04-22T11:36:17 CLT" name="Finalizar" finished-at="2024-04-22T11:36:17 CLT" duration-ms="169" status="PASS">
+        <test-method is-config="true" signature="Finalizar()[pri:0, instance:valuesite.tests.ModificacionPinTestRT@57a3af25]" started-at="2024-04-22T14:40:15 CLT" name="Finalizar" finished-at="2024-04-22T14:40:16 CLT" duration-ms="302" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Finalizar -->
       </class> <!-- valuesite.tests.ModificacionPinTestRT -->
     </test> <!-- Modificacion pin RT -->
-    <test started-at="2024-04-22T11:36:17 CLT" name="Modificacion pin Cliente" finished-at="2024-04-22T11:36:44 CLT" duration-ms="27179">
+    <test started-at="2024-04-22T14:40:16 CLT" name="Modificacion pin Cliente" finished-at="2024-04-22T14:40:29 CLT" duration-ms="13517">
       <class name="valuesite.tests.ModificacionPinTestCliente">
-        <test-method is-config="true" signature="lanzarNavegador()[pri:0, instance:valuesite.tests.ModificacionPinTestCliente@34a3d150]" started-at="2024-04-22T11:36:17 CLT" name="lanzarNavegador" finished-at="2024-04-22T11:36:23 CLT" duration-ms="6508" status="PASS">
+        <test-method is-config="true" signature="lanzarNavegador()[pri:0, instance:valuesite.tests.ModificacionPinTestCliente@14cd1699]" started-at="2024-04-22T14:40:16 CLT" name="lanzarNavegador" finished-at="2024-04-22T14:40:21 CLT" duration-ms="4878" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- lanzarNavegador -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:valuesite.tests.ModificacionPinTestCliente@34a3d150]" started-at="2024-04-22T11:36:23 CLT" name="setUp" finished-at="2024-04-22T11:36:23 CLT" depends-on-methods="valuesite.testcomponents.BaseTest.lanzarNavegador" duration-ms="3" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:valuesite.tests.ModificacionPinTestCliente@14cd1699]" started-at="2024-04-22T14:40:21 CLT" name="setUp" finished-at="2024-04-22T14:40:21 CLT" depends-on-methods="valuesite.testcomponents.BaseTest.lanzarNavegador" duration-ms="8" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="ingresaMantenedor()[pri:0, instance:valuesite.tests.ModificacionPinTestCliente@34a3d150]" started-at="2024-04-22T11:36:23 CLT" name="ingresaMantenedor" finished-at="2024-04-22T11:36:30 CLT" duration-ms="6533" status="PASS">
+        <test-method is-config="true" signature="ingresaMantenedor()[pri:0, instance:valuesite.tests.ModificacionPinTestCliente@14cd1699]" started-at="2024-04-22T14:40:21 CLT" name="ingresaMantenedor" finished-at="2024-04-22T14:40:25 CLT" duration-ms="4839" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ingresaMantenedor -->
-        <test-method signature="vaciaCampo()[pri:1, instance:valuesite.tests.ModificacionPinTestCliente@34a3d150]" started-at="2024-04-22T11:36:30 CLT" name="vaciaCampo" finished-at="2024-04-22T11:36:30 CLT" duration-ms="131" status="PASS">
+        <test-method signature="vaciaCampo()[pri:1, instance:valuesite.tests.ModificacionPinTestCliente@14cd1699]" started-at="2024-04-22T14:40:25 CLT" name="vaciaCampo" finished-at="2024-04-22T14:40:26 CLT" duration-ms="260" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- vaciaCampo -->
-        <test-method signature="ingresarPin()[pri:2, instance:valuesite.tests.ModificacionPinTestCliente@34a3d150]" started-at="2024-04-22T11:36:30 CLT" name="ingresarPin" finished-at="2024-04-22T11:36:30 CLT" duration-ms="114" status="PASS">
+        <test-method signature="ingresarPin()[pri:2, instance:valuesite.tests.ModificacionPinTestCliente@14cd1699]" started-at="2024-04-22T14:40:26 CLT" name="ingresarPin" finished-at="2024-04-22T14:40:26 CLT" duration-ms="168" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ingresarPin -->
-        <test-method signature="actualizaPin()[pri:3, instance:valuesite.tests.ModificacionPinTestCliente@34a3d150]" started-at="2024-04-22T11:36:30 CLT" name="actualizaPin" finished-at="2024-04-22T11:36:30 CLT" duration-ms="350" status="PASS">
+        <test-method signature="actualizaPin()[pri:3, instance:valuesite.tests.ModificacionPinTestCliente@14cd1699]" started-at="2024-04-22T14:40:26 CLT" name="actualizaPin" finished-at="2024-04-22T14:40:26 CLT" duration-ms="527" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- actualizaPin -->
-        <test-method signature="actualizaSinDatos()[pri:4, instance:valuesite.tests.ModificacionPinTestCliente@34a3d150]" started-at="2024-04-22T11:36:30 CLT" name="actualizaSinDatos" finished-at="2024-04-22T11:36:31 CLT" duration-ms="85" status="PASS">
+        <test-method signature="actualizaSinDatos()[pri:4, instance:valuesite.tests.ModificacionPinTestCliente@14cd1699]" started-at="2024-04-22T14:40:26 CLT" name="actualizaSinDatos" finished-at="2024-04-22T14:40:27 CLT" duration-ms="210" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- actualizaSinDatos -->
-        <test-method signature="actualizaConCaracteresEspeciales()[pri:5, instance:valuesite.tests.ModificacionPinTestCliente@34a3d150]" started-at="2024-04-22T11:36:31 CLT" name="actualizaConCaracteresEspeciales" finished-at="2024-04-22T11:36:44 CLT" duration-ms="13086" status="PASS">
+        <test-method signature="actualizaConCaracteresEspeciales()[pri:5, instance:valuesite.tests.ModificacionPinTestCliente@14cd1699]" started-at="2024-04-22T14:40:27 CLT" name="actualizaConCaracteresEspeciales" finished-at="2024-04-22T14:40:28 CLT" duration-ms="1873" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- actualizaConCaracteresEspeciales -->
-        <test-method signature="limpiaCampo()[pri:6, instance:valuesite.tests.ModificacionPinTestCliente@34a3d150]" started-at="2024-04-22T11:36:44 CLT" name="limpiaCampo" finished-at="2024-04-22T11:36:44 CLT" duration-ms="109" status="PASS">
+        <test-method signature="limpiaCampo()[pri:6, instance:valuesite.tests.ModificacionPinTestCliente@14cd1699]" started-at="2024-04-22T14:40:28 CLT" name="limpiaCampo" finished-at="2024-04-22T14:40:29 CLT" duration-ms="235" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- limpiaCampo -->
-        <test-method signature="ingresaCaracteresEspeciales()[pri:7, instance:valuesite.tests.ModificacionPinTestCliente@34a3d150]" started-at="2024-04-22T11:36:44 CLT" name="ingresaCaracteresEspeciales" finished-at="2024-04-22T11:36:44 CLT" duration-ms="104" status="PASS">
+        <test-method signature="ingresaCaracteresEspeciales()[pri:7, instance:valuesite.tests.ModificacionPinTestCliente@14cd1699]" started-at="2024-04-22T14:40:29 CLT" name="ingresaCaracteresEspeciales" finished-at="2024-04-22T14:40:29 CLT" duration-ms="236" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ingresaCaracteresEspeciales -->
-        <test-method is-config="true" signature="Finalizar()[pri:0, instance:valuesite.tests.ModificacionPinTestCliente@34a3d150]" started-at="2024-04-22T11:36:44 CLT" name="Finalizar" finished-at="2024-04-22T11:36:44 CLT" duration-ms="149" status="PASS">
+        <test-method is-config="true" signature="Finalizar()[pri:0, instance:valuesite.tests.ModificacionPinTestCliente@14cd1699]" started-at="2024-04-22T14:40:29 CLT" name="Finalizar" finished-at="2024-04-22T14:40:29 CLT" duration-ms="263" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Finalizar -->

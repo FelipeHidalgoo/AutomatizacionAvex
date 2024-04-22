@@ -47,12 +47,10 @@ public class ModificacionPinCliente extends ComponentesReusables {
 
 	@FindBy(css = ".alert.alert-success")
 	public WebElement msjExito;
-	
-	public 
-	By msjErrorBy = By.cssSelector(".alert.alert-danger");
-	
-	public 
-	By msjExitoBy = By.cssSelector(".alert.alert-success");
+
+	public By msjErrorBy = By.cssSelector(".alert.alert-danger");
+
+	public By msjExitoBy = By.cssSelector(".alert.alert-success");
 
 	// PAGE FACTORY
 
@@ -94,6 +92,18 @@ public class ModificacionPinCliente extends ComponentesReusables {
 				.replaceAll("&#x7D;", "}").replaceAll("&#x7E;", "~");
 
 		return input;
+	}
+
+	// Método para verificar si el pin contiene caracteres especiales
+	public boolean contieneCaracteresEspeciales(String pin, String caracteresEspeciales) {
+		boolean contieneCaracteresEspeciales = false;
+		for (char c : caracteresEspeciales.toCharArray()) {
+			if (pin.contains(String.valueOf(c))) {
+				contieneCaracteresEspeciales = true;
+				break;
+			}
+		}
+		return contieneCaracteresEspeciales;
 	}
 
 }
