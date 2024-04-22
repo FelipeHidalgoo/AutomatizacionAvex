@@ -1,5 +1,6 @@
 package valuesite.pageobjects;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -46,6 +47,12 @@ public class ModificacionPinCliente extends ComponentesReusables {
 
 	@FindBy(css = ".alert.alert-success")
 	public WebElement msjExito;
+	
+	public 
+	By msjErrorBy = By.cssSelector(".alert.alert-danger");
+	
+	public 
+	By msjExitoBy = By.cssSelector(".alert.alert-success");
 
 	// PAGE FACTORY
 

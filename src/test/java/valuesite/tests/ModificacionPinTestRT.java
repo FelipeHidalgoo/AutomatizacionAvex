@@ -87,6 +87,7 @@ public class ModificacionPinTestRT extends BaseTest{
 		modifpinrt.campoPin.clear();
 		modifpinrt.actualizaPin(pin);
 		
+		componentesReusables.waitForWebElementToAppear(modifpinrt.msjExito);
 		if (modifpinrt.msjExito.isDisplayed()) {
 			System.out.println("El pin fue actualizado correctamente");
 			Assert.assertTrue(true);
@@ -103,6 +104,7 @@ public class ModificacionPinTestRT extends BaseTest{
 		modifpinrt.campoPin.clear();
 		modifpinrt.btnActualizar.click();
 		
+		componentesReusables.waitForWebElementToAppear(modifpinrt.msjError);
 		if (modifpinrt.msjError.isDisplayed()) {
 			System.out.println("No permite actualizar sin ingresar datos");
 			Assert.assertTrue(true);
@@ -115,12 +117,11 @@ public class ModificacionPinTestRT extends BaseTest{
 	
 	@Test (priority=5)
 	public void actualizaConCaracteresEspeciales() throws InterruptedException {
-		componentesReusables.waitForElementToDisappear(modifpinrt.msjError);
-		
 		String caracteresEspeciales = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
 		componentesReusables.waitForWebElementToBeClickable(modifpinrt.campoPin);
 		
 		modifpinrt.campoPin.clear();
+		componentesReusables.waitForElementToDisappear(driver, modifpinrt.msjErrorBy);
 		modifpinrt.actualizaPin(caracteresEspeciales);
 		
 		componentesReusables.waitForWebElementToAppear(modifpinrt.msjError);

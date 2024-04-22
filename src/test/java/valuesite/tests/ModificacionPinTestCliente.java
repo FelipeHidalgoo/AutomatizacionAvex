@@ -11,17 +11,18 @@ import org.testng.annotations.Test;
 import valuesite.componentesreusables.ActionsHelper;
 import valuesite.componentesreusables.ComponentesReusables;
 import valuesite.pageobjects.Login;
+import valuesite.pageobjects.ModificacionPinCliente;
 import valuesite.pageobjects.ModificacionPinRT;
 import valuesite.testcomponents.BaseTest;
 
 public class ModificacionPinTestCliente extends BaseTest{
 	
-	ModificacionPinRT modifpinrt;
+	ModificacionPinCliente modifpincli;
 	ComponentesReusables componentesReusables;
 	
 	@BeforeTest
 	public void setUp() {
-		modifpinrt = new ModificacionPinRT(driver);
+		modifpincli = new ModificacionPinCliente(driver);
 		componentesReusables = new ComponentesReusables(driver);
     }
     
@@ -35,18 +36,18 @@ public class ModificacionPinTestCliente extends BaseTest{
 		//AreaRT areart = new AreaRT(driver);
 		
 		//ModificacionPinRT modifpinrt = new ModificacionPinRT(driver);
-		modifpinrt.ingresoMantenedorPin();
+		modifpincli.ingresoMantenedorPin();
 	}
 	
 	
 	@Test(priority=1)
 	public void vaciaCampo() {
-		componentesReusables.waitForWebElementToAppear(modifpinrt.campoPin);
+		componentesReusables.waitForWebElementToAppear(modifpincli.campoPin);
 		
-		modifpinrt.ingresaPin("7546");
-		modifpinrt.campoPin.clear();
+		modifpincli.ingresaPin("7546");
+		modifpincli.campoPin.clear();
 		
-		String pin = modifpinrt.obtienePIN();
+		String pin = modifpincli.obtienePIN();
 		//System.out.println(pin);
 		
 		if (pin.isEmpty()) {
@@ -61,13 +62,13 @@ public class ModificacionPinTestCliente extends BaseTest{
     @Test(priority=2)
 	public void ingresarPin() {
 		String pin = "7546";
-		componentesReusables.waitForWebElementToAppear(modifpinrt.campoPin);
+		componentesReusables.waitForWebElementToAppear(modifpincli.campoPin);
 		
 		// Vacia el campo, ingresa un dato y guarda el dato que hay actualmente en el campo en "nuevoPin" 
 		//despues de ingresarlo
-		modifpinrt.campoPin.clear();
-		modifpinrt.ingresaPin(pin);
-		String nuevoPin = modifpinrt.obtienePIN();
+		modifpincli.campoPin.clear();
+		modifpincli.ingresaPin(pin);
+		String nuevoPin = modifpincli.obtienePIN();
 		
 		// Compara "nuevoPin" con "pin" para comprobar que el dato efectivamente se ingreso en el campo
 		if (nuevoPin.equals(pin)) {
@@ -80,14 +81,15 @@ public class ModificacionPinTestCliente extends BaseTest{
 	}
 	
 	@Test(priority=3)
-	public void actualizaPin() {
+	public void actualizaPin() throws InterruptedException {
 		String pin = "9876";
-		componentesReusables.waitForWebElementToAppear(modifpinrt.campoPin);
+		componentesReusables.waitForWebElementToAppear(modifpincli.campoPin);
 		
-		modifpinrt.campoPin.clear();
-		modifpinrt.actualizaPin(pin);
+		modifpincli.campoPin.clear();
+		modifpincli.actualizaPin(pin);
 		
-		if (modifpinrt.msjExito.isDisplayed()) {
+		componentesReusables.waitForWebElementToAppear(modifpincli.msjExito);
+		if (modifpincli.msjExito.isDisplayed()) {
 			System.out.println("El pin fue actualizado correctamente");
 			Assert.assertTrue(true);
 		}else {
@@ -98,12 +100,12 @@ public class ModificacionPinTestCliente extends BaseTest{
 	
 	@Test(priority=4)
 	public void actualizaSinDatos() {
-		componentesReusables.waitForWebElementToAppear(modifpinrt.campoPin);
+		componentesReusables.waitForWebElementToAppear(modifpincli.campoPin);
 		
-		modifpinrt.campoPin.clear();
-		modifpinrt.btnActualizar.click();
+		modifpincli.campoPin.clear();
+		modifpincli.btnActualizar.click();
 		
-		if (modifpinrt.msjError.isDisplayed()) {
+		if (modifpincli.msjError.isDisplayed()) {
 			System.out.println("No permite actualizar sin ingresar datos");
 			Assert.assertTrue(true);
 		}else {
@@ -115,16 +117,15 @@ public class ModificacionPinTestCliente extends BaseTest{
 	
 	@Test (priority=5)
 	public void actualizaConCaracteresEspeciales() throws InterruptedException {
-		componentesReusables.waitForElementToDisappear(modifpinrt.msjError);
-		
 		String caracteresEspeciales = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
-		componentesReusables.waitForWebElementToBeClickable(modifpinrt.campoPin);
+		componentesReusables.waitForWebElementToBeClickable(modifpincli.campoPin);
 		
-		modifpinrt.campoPin.clear();
-		modifpinrt.actualizaPin(caracteresEspeciales);
+		modifpincli.campoPin.clear();
+		componentesReusables.waitForElementToDisappear(driver, modifpincli.msjErrorBy);
+		modifpincli.actualizaPin(caracteresEspeciales);
 		
-		componentesReusables.waitForWebElementToAppear(modifpinrt.msjError);
-		if (modifpinrt.msjError.isDisplayed()) {
+		componentesReusables.waitForWebElementToAppear(modifpincli.msjError);
+		if (modifpincli.msjError.isDisplayed()) {
 			System.out.println("No permite actualizar con caracteres especiales");
 			Assert.assertTrue(true);
 		}else {
@@ -135,12 +136,12 @@ public class ModificacionPinTestCliente extends BaseTest{
 	
 	@Test(priority=6)
 	public void limpiaCampo() {
-		modifpinrt.campoPin.clear();
-		modifpinrt.ingresaPin("5465");
+		modifpincli.campoPin.clear();
+		modifpincli.ingresaPin("5465");
 		
-		modifpinrt.btnCancelar.click();
+		modifpincli.btnCancelar.click();
 		
-		String pinActual = modifpinrt.obtienePIN();
+		String pinActual = modifpincli.obtienePIN();
 		if (pinActual.isEmpty()) {
 			System.out.println("Se limpio correctamente el campo PIN");
 			Assert.assertTrue(true);
@@ -154,15 +155,15 @@ public class ModificacionPinTestCliente extends BaseTest{
 	 // Valida que no se puedan ingresar carcateres especiales en el campo pin
 	  @Test(priority=7)
 		public void ingresaCaracteresEspeciales() {
-			componentesReusables.waitForWebElementToAppear(modifpinrt.campoPin);
+			componentesReusables.waitForWebElementToAppear(modifpincli.campoPin);
 			
 			String caracteresEspeciales = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
 			
-			modifpinrt.campoPin.clear();
-			modifpinrt.ingresaPin(caracteresEspeciales);
+			modifpincli.campoPin.clear();
+			modifpincli.ingresaPin(caracteresEspeciales);
 			
 			
-			String valorPin = modifpinrt.obtienePIN();
+			String valorPin = modifpincli.obtienePIN();
 			
 			
 			// Verificar si el campo contiene caracteres especiales
