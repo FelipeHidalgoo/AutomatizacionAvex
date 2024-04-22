@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite, 4 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -56,7 +56,7 @@
                 </li>
                 <li>
                   <a href="#" panel-name="testlist-Mantenedores_Administrativos" class="navigator-link ">
-                    <span class="test-stats">2 tests</span>
+                    <span class="test-stats">3 tests</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -93,7 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">13 methods, 1 failed,   12 passed</span>
+                    <span class="method-stats">19 methods, 4 failed,   15 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -104,7 +104,22 @@
                     <div class="method-list-content failed suite-Mantenedores_Administrativos">
                       <span>
                         <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Mantenedores_Administrativos" title="valuesite.tests.MantenedorAreaTestRT" class="method navigator-link" hash-for-method="creaAreaActivaTest">creaAreaActivaTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Mantenedores_Administrativos" title="valuesite.tests.MantenedorAreaTestRT" class="method navigator-link" hash-for-method="creaAreaInactivaTest">creaAreaInactivaTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
                         <a href="#" panel-name="suite-Mantenedores_Administrativos" title="valuesite.tests.ModificacionPinTestRT" class="method navigator-link" hash-for-method="limpiaCampo">limpiaCampo</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Mantenedores_Administrativos" title="valuesite.tests.MantenedorAreaTestRT" class="method navigator-link" hash-for-method="nombreObligatorioTest">nombreObligatorioTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Mantenedores_Administrativos -->
@@ -148,6 +163,16 @@
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Mantenedores_Administrativos" title="valuesite.tests.MantenedorAreaTestRT" class="method navigator-link" hash-for-method="filtroEstadoAreaTest">filtroEstadoAreaTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Mantenedores_Administrativos" title="valuesite.tests.MantenedorAreaTestRT" class="method navigator-link" hash-for-method="filtroNombreAreaTest">filtroNombreAreaTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Mantenedores_Administrativos" title="valuesite.tests.ModificacionPinTestCliente" class="method navigator-link" hash-for-method="ingresaCaracteresEspeciales">ingresaCaracteresEspeciales</a> <!-- method navigator-link -->
                       </span>
                       <br/>
@@ -164,6 +189,11 @@
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Mantenedores_Administrativos" title="valuesite.tests.ModificacionPinTestCliente" class="method navigator-link" hash-for-method="limpiaCampo">limpiaCampo</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Mantenedores_Administrativos" title="valuesite.tests.MantenedorAreaTestRT" class="method navigator-link" hash-for-method="modificaAreaTest">modificaAreaTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -191,6 +221,113 @@
           <div class="suite-Mantenedores_Administrativos-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
+              <span class="class-name">valuesite.tests.MantenedorAreaTestRT</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="creaAreaActivaTest">
+                  </a> <!-- creaAreaActivaTest -->
+                  <span class="method-name">creaAreaActivaTest</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#txtNombreGrupoPasajero&quot;}
+  (Session info: chrome=124.0.6367.60)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.19.1&apos;, revision: &apos;abe0ee07dc&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [c3bfdef7c4a56f8d39fa794e2caa349f, findElement {using=id, value=txtNombreGrupoPasajero}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 124.0.6367.60, chrome: {chromedriverVersion: 124.0.6367.60 (8771130bd84f..., userDataDir: C:\Users\Felip\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51168}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51168/devtoo..., se:cdpVersion: 124.0.6367.60, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: c3bfdef7c4a56f8d39fa794e2caa349f
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy14.sendKeys(Unknown Source)
+	at valuesite.pageobjects.AreaRT.creaAreaActiva(AreaRT.java:410)
+	at valuesite.tests.MantenedorAreaTestRT.creaAreaActivaTest(MantenedorAreaTestRT.java:48)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 28 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="creaAreaInactivaTest">
+                  </a> <!-- creaAreaInactivaTest -->
+                  <span class="method-name">creaAreaInactivaTest</span>
+                  <div class="stack-trace">org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=124.0.6367.60)
+Build info: version: &apos;4.19.1&apos;, revision: &apos;abe0ee07dc&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [c3bfdef7c4a56f8d39fa794e2caa349f, sendKeysToElement {value=[Ljava.lang.CharSequence;@6edaa77a, id=f.E2647D3E49DDF24F6BF3B661423F5B79.d.2F2B946EE4185F403B0C1C416D45C7A6.e.230}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 124.0.6367.60, chrome: {chromedriverVersion: 124.0.6367.60 (8771130bd84f..., userDataDir: C:\Users\Felip\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51168}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51168/devtoo..., se:cdpVersion: 124.0.6367.60, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (c3bfdef7c4a56f8d39fa794e2caa349f)] -&gt; id: txtNombreGrupoPasajero]
+Session ID: c3bfdef7c4a56f8d39fa794e2caa349f
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:110)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at jdk.proxy2/jdk.proxy2.$Proxy14.sendKeys(Unknown Source)
+	at valuesite.pageobjects.AreaRT.creaAreaInactiva(AreaRT.java:449)
+	at valuesite.tests.MantenedorAreaTestRT.creaAreaInactivaTest(MantenedorAreaTestRT.java:55)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 30 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="nombreObligatorioTest">
+                  </a> <!-- nombreObligatorioTest -->
+                  <span class="method-name">nombreObligatorioTest</span>
+                  <div class="stack-trace">org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=124.0.6367.60)
+Build info: version: &apos;4.19.1&apos;, revision: &apos;abe0ee07dc&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [c3bfdef7c4a56f8d39fa794e2caa349f, clickElement {id=f.E2647D3E49DDF24F6BF3B661423F5B79.d.2F2B946EE4185F403B0C1C416D45C7A6.e.222}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 124.0.6367.60, chrome: {chromedriverVersion: 124.0.6367.60 (8771130bd84f..., userDataDir: C:\Users\Felip\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51168}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51168/devtoo..., se:cdpVersion: 124.0.6367.60, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (c3bfdef7c4a56f8d39fa794e2caa349f)] -&gt; id: btnCrear]
+Session ID: c3bfdef7c4a56f8d39fa794e2caa349f
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at jdk.proxy2/jdk.proxy2.$Proxy14.click(Unknown Source)
+	at valuesite.pageobjects.AreaRT.errorNombreObligatorio(AreaRT.java:169)
+	at valuesite.tests.MantenedorAreaTestRT.nombreObligatorioTest(MantenedorAreaTestRT.java:41)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 30 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Mantenedores_Administrativos-class-failed -->
+          <div class="suite-Mantenedores_Administrativos-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
               <span class="class-name">valuesite.tests.ModificacionPinTestRT</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -208,6 +345,35 @@
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Mantenedores_Administrativos-class-failed -->
+          <div class="suite-Mantenedores_Administrativos-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">valuesite.tests.MantenedorAreaTestRT</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="filtroEstadoAreaTest">
+                  </a> <!-- filtroEstadoAreaTest -->
+                  <span class="method-name">filtroEstadoAreaTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="filtroNombreAreaTest">
+                  </a> <!-- filtroNombreAreaTest -->
+                  <span class="method-name">filtroNombreAreaTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="modificaAreaTest">
+                  </a> <!-- modificaAreaTest -->
+                  <span class="method-name">modificaAreaTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Mantenedores_Administrativos-class-passed -->
           <div class="suite-Mantenedores_Administrativos-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -321,6 +487,11 @@
   &lt;listeners&gt;
     &lt;listener class-name=&quot;valuesite.testcomponents.ListenersTestNG&quot;/&gt;
   &lt;/listeners&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;Area RT&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;valuesite.tests.MantenedorAreaTestRT&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Area RT --&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Modificacion pin RT&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;valuesite.tests.ModificacionPinTestRT&quot;/&gt;
@@ -341,6 +512,9 @@
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <ul>
+              <li>
+                <span class="test-name">Area RT (1 class)</span>
+              </li>
               <li>
                 <span class="test-name">Modificacion pin RT (1 class)</span>
               </li>
@@ -371,64 +545,88 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(13);
+data.addRows(19);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'actualizaConCaracteresEspeciales')
-data.setCell(0, 2, 'valuesite.tests.ModificacionPinTestRT')
-data.setCell(0, 3, 13088);
+data.setCell(0, 2, 'valuesite.tests.ModificacionPinTestCliente')
+data.setCell(0, 3, 13064);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'actualizaConCaracteresEspeciales')
-data.setCell(1, 2, 'valuesite.tests.ModificacionPinTestCliente')
-data.setCell(1, 3, 13086);
+data.setCell(1, 2, 'valuesite.tests.ModificacionPinTestRT')
+data.setCell(1, 3, 13050);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'actualizaPin')
-data.setCell(2, 2, 'valuesite.tests.ModificacionPinTestCliente')
-data.setCell(2, 3, 350);
+data.setCell(2, 1, 'modificaAreaTest')
+data.setCell(2, 2, 'valuesite.tests.MantenedorAreaTestRT')
+data.setCell(2, 3, 8670);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'actualizaPin')
-data.setCell(3, 2, 'valuesite.tests.ModificacionPinTestRT')
-data.setCell(3, 3, 347);
+data.setCell(3, 1, 'filtroEstadoAreaTest')
+data.setCell(3, 2, 'valuesite.tests.MantenedorAreaTestRT')
+data.setCell(3, 3, 7959);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'vaciaCampo')
-data.setCell(4, 2, 'valuesite.tests.ModificacionPinTestCliente')
-data.setCell(4, 3, 131);
+data.setCell(4, 1, 'nombreObligatorioTest')
+data.setCell(4, 2, 'valuesite.tests.MantenedorAreaTestRT')
+data.setCell(4, 3, 3064);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'vaciaCampo')
-data.setCell(5, 2, 'valuesite.tests.ModificacionPinTestRT')
-data.setCell(5, 3, 125);
+data.setCell(5, 1, 'creaAreaActivaTest')
+data.setCell(5, 2, 'valuesite.tests.MantenedorAreaTestRT')
+data.setCell(5, 3, 3044);
 data.setCell(6, 0, 6)
-data.setCell(6, 1, 'limpiaCampo')
-data.setCell(6, 2, 'valuesite.tests.ModificacionPinTestRT')
-data.setCell(6, 3, 125);
+data.setCell(6, 1, 'filtroNombreAreaTest')
+data.setCell(6, 2, 'valuesite.tests.MantenedorAreaTestRT')
+data.setCell(6, 3, 2480);
 data.setCell(7, 0, 7)
-data.setCell(7, 1, 'ingresarPin')
-data.setCell(7, 2, 'valuesite.tests.ModificacionPinTestCliente')
-data.setCell(7, 3, 114);
+data.setCell(7, 1, 'actualizaPin')
+data.setCell(7, 2, 'valuesite.tests.ModificacionPinTestRT')
+data.setCell(7, 3, 342);
 data.setCell(8, 0, 8)
-data.setCell(8, 1, 'limpiaCampo')
+data.setCell(8, 1, 'actualizaPin')
 data.setCell(8, 2, 'valuesite.tests.ModificacionPinTestCliente')
-data.setCell(8, 3, 109);
+data.setCell(8, 3, 329);
 data.setCell(9, 0, 9)
-data.setCell(9, 1, 'actualizaSinDatos')
-data.setCell(9, 2, 'valuesite.tests.ModificacionPinTestRT')
-data.setCell(9, 3, 106);
+data.setCell(9, 1, 'creaAreaInactivaTest')
+data.setCell(9, 2, 'valuesite.tests.MantenedorAreaTestRT')
+data.setCell(9, 3, 180);
 data.setCell(10, 0, 10)
-data.setCell(10, 1, 'ingresaCaracteresEspeciales')
-data.setCell(10, 2, 'valuesite.tests.ModificacionPinTestCliente')
-data.setCell(10, 3, 104);
+data.setCell(10, 1, 'limpiaCampo')
+data.setCell(10, 2, 'valuesite.tests.ModificacionPinTestRT')
+data.setCell(10, 3, 118);
 data.setCell(11, 0, 11)
-data.setCell(11, 1, 'ingresarPin')
-data.setCell(11, 2, 'valuesite.tests.ModificacionPinTestRT')
-data.setCell(11, 3, 101);
+data.setCell(11, 1, 'limpiaCampo')
+data.setCell(11, 2, 'valuesite.tests.ModificacionPinTestCliente')
+data.setCell(11, 3, 113);
 data.setCell(12, 0, 12)
-data.setCell(12, 1, 'actualizaSinDatos')
+data.setCell(12, 1, 'vaciaCampo')
 data.setCell(12, 2, 'valuesite.tests.ModificacionPinTestCliente')
-data.setCell(12, 3, 85);
+data.setCell(12, 3, 112);
+data.setCell(13, 0, 13)
+data.setCell(13, 1, 'ingresaCaracteresEspeciales')
+data.setCell(13, 2, 'valuesite.tests.ModificacionPinTestCliente')
+data.setCell(13, 3, 107);
+data.setCell(14, 0, 14)
+data.setCell(14, 1, 'vaciaCampo')
+data.setCell(14, 2, 'valuesite.tests.ModificacionPinTestRT')
+data.setCell(14, 3, 106);
+data.setCell(15, 0, 15)
+data.setCell(15, 1, 'actualizaSinDatos')
+data.setCell(15, 2, 'valuesite.tests.ModificacionPinTestRT')
+data.setCell(15, 3, 100);
+data.setCell(16, 0, 16)
+data.setCell(16, 1, 'ingresarPin')
+data.setCell(16, 2, 'valuesite.tests.ModificacionPinTestRT')
+data.setCell(16, 3, 99);
+data.setCell(17, 0, 17)
+data.setCell(17, 1, 'ingresarPin')
+data.setCell(17, 2, 'valuesite.tests.ModificacionPinTestCliente')
+data.setCell(17, 3, 88);
+data.setCell(18, 0, 18)
+data.setCell(18, 1, 'actualizaSinDatos')
+data.setCell(18, 2, 'valuesite.tests.ModificacionPinTestCliente')
+data.setCell(18, 3, 84);
 window.suiteTableData['Mantenedores_Administrativos']= { tableData: data, tableDiv: 'times-div-Mantenedores_Administrativos'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 27 seconds</span>
+              <span class="suite-total-time">Total running time: 53 seconds</span>
               <div id="times-div-Mantenedores_Administrativos">
               </div> <!-- times-div-Mantenedores_Administrativos -->
             </div> <!-- times-div -->
@@ -454,95 +652,140 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">valuesite.tests.ModificacionPinTestRT</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">valuesite.tests.MantenedorAreaTestRT</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
                 <span class="method-name">lanzarNavegador</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
+              <div class="configuration-class before">
+                <span class="method-name">ingresaMantenedor</span>
+                <span class="method-start">6378 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">nombreObligatorioTest</span>
+                <span class="method-start">16745 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">creaAreaActivaTest</span>
+                <span class="method-start">19816 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">creaAreaInactivaTest</span>
+                <span class="method-start">22862 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">modificaAreaTest</span>
+                <span class="method-start">23045 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">filtroNombreAreaTest</span>
+                <span class="method-start">31717 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">filtroEstadoAreaTest</span>
+                <span class="method-start">34198 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-test after">
+                <span class="method-name">Finalizar</span>
+                <span class="method-start">42159 ms</span>
+              </div> <!-- configuration-test after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">valuesite.tests.ModificacionPinTestRT</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">lanzarNavegador</span>
+                <span class="method-start">42333 ms</span>
+              </div> <!-- configuration-test before -->
               <div class="configuration-test before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">5613 ms</span>
+                <span class="method-start">47262 ms</span>
               </div> <!-- configuration-test before -->
               <div class="configuration-class before">
                 <span class="method-name">ingresaMantenedor</span>
-                <span class="method-start">5627 ms</span>
+                <span class="method-start">47264 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">vaciaCampo</span>
-                <span class="method-start">15278 ms</span>
+                <span class="method-start">55066 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">ingresarPin</span>
-                <span class="method-start">15407 ms</span>
+                <span class="method-start">55173 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">actualizaPin</span>
-                <span class="method-start">15510 ms</span>
+                <span class="method-start">55273 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">actualizaSinDatos</span>
-                <span class="method-start">15858 ms</span>
+                <span class="method-start">55615 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">actualizaConCaracteresEspeciales</span>
-                <span class="method-start">15965 ms</span>
+                <span class="method-start">55716 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">limpiaCampo</span>
-                <span class="method-start">29055 ms</span>
+                <span class="method-start">68767 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
                 <span class="method-name">Finalizar</span>
-                <span class="method-start">29183 ms</span>
+                <span class="method-start">68886 ms</span>
               </div> <!-- configuration-test after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">valuesite.tests.ModificacionPinTestCliente</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
                 <span class="method-name">lanzarNavegador</span>
-                <span class="method-start">29370 ms</span>
+                <span class="method-start">69051 ms</span>
               </div> <!-- configuration-test before -->
               <div class="configuration-test before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">35878 ms</span>
+                <span class="method-start">74204 ms</span>
               </div> <!-- configuration-test before -->
               <div class="configuration-class before">
                 <span class="method-name">ingresaMantenedor</span>
-                <span class="method-start">35881 ms</span>
+                <span class="method-start">74206 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">vaciaCampo</span>
-                <span class="method-start">42414 ms</span>
+                <span class="method-start">78996 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">ingresarPin</span>
-                <span class="method-start">42545 ms</span>
+                <span class="method-start">79109 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">actualizaPin</span>
-                <span class="method-start">42660 ms</span>
+                <span class="method-start">79198 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">actualizaSinDatos</span>
-                <span class="method-start">43011 ms</span>
+                <span class="method-start">79527 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">actualizaConCaracteresEspeciales</span>
-                <span class="method-start">43098 ms</span>
+                <span class="method-start">79612 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">limpiaCampo</span>
-                <span class="method-start">56185 ms</span>
+                <span class="method-start">92677 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">ingresaCaracteresEspeciales</span>
-                <span class="method-start">56295 ms</span>
+                <span class="method-start">92791 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
                 <span class="method-name">Finalizar</span>
-                <span class="method-start">56400 ms</span>
+                <span class="method-start">92899 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
