@@ -465,11 +465,10 @@ public class AreaCliente extends ComponentesReusables {
 		// Thread.sleep(1000);
 		marcarCheckEstado.click();
 		btnCrear.click();
+		waitForInvisibilityOfElement(waitingDialog);
 
 		// Incrementa el número del área para la siguiente iteración
 		incrementarNumeroArea2();
-		
-		//waitForInvisibilityOfElement(waitingDialog);
 		
 		selectEstados.click();
 		estadoTodos.click();

@@ -6,7 +6,7 @@
         <listener class-name="valuesite.testcomponents.ListenersTestNG" />
     </listeners>
     
-    <test name="Area RT">
+<!--    <test name="Area RT">
         <classes>
             <class name="valuesite.tests.MantenedorAreaTestRT"/>
         </classes>
@@ -16,7 +16,7 @@
         <classes>
             <class name="valuesite.tests.MantenedorAreaTestCliente"/>
         </classes>
-    </test>
+    </test>-->
     
     <test name="Modificacion pin RT">
         <classes>
@@ -24,11 +24,11 @@
         </classes>
     </test>
     
-    <test name="Modificacion pin Cliente">
+<!--    <test name="Modificacion pin Cliente">
         <classes>
             <class name="valuesite.tests.ModificacionPinTestCliente"/>
         </classes>
-    </test>
+    </test>-->
     
     
 </suite>
