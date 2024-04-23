@@ -22,6 +22,8 @@ public class ComponentesReusables {
 
 		this.driver = driver;
 	}
+	
+	WebDriverWait wait = new WebDriverWait(driver, EXPLICIT_WAIT_TIMEOUT);
 
 	public void waitForElementToAppear(By findBy) {
 		WebDriverWait wait = new WebDriverWait(driver, EXPLICIT_WAIT_TIMEOUT);
@@ -43,16 +45,16 @@ public class ComponentesReusables {
 		// Definir la espera con FluentWait
 		Wait<WebDriver> fwait = new FluentWait<>(driver).withTimeout(FLUENT_WAIT_TIMEOUT) // Definir el tiempo máximo
 																							// de espera
-				.pollingEvery(Duration.ofMillis(500)) // Controlar la frecuencia de comprobación
-				.ignoring(NoSuchElementException.class); // Ignorar excepciones si no se encuentra el elemento
-															// inmediatamente
+				.pollingEvery(Duration.ofMillis(500)); // Controlar la frecuencia de comprobación
+//				.ignoring(NoSuchElementException.class); // Ignorar excepciones si no se encuentra el elemento
+//															// inmediatamente
 
 		// Esperar a que el elemento desaparezca
 		fwait.until(ExpectedConditions.invisibilityOfElementLocated(locator));
 	}
 
 	public void waitForInvisibilityOfElement(WebElement findBy) {
-		WebDriverWait wait = new WebDriverWait(driver, EXPLICIT_WAIT_TIMEOUT);
+		//WebDriverWait wait = new WebDriverWait(driver, EXPLICIT_WAIT_TIMEOUT);
 		wait.until(ExpectedConditions.invisibilityOf(findBy));
 	}
 

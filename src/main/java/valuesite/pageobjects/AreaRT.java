@@ -50,7 +50,7 @@ public class AreaRT extends ComponentesReusables {
 	WebElement tabAdministracion;
 
 	// Pestaña de area cliente en navBar
-	@FindBy(xpath = "//a[normalize-space()='Área']")
+	@FindBy(xpath = "//a[normalize-space()='Área Cliente']")
 	WebElement tabAreaCliente;
 
 	// Campo buscar cliente (Para abrir buscador)

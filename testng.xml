@@ -12,6 +12,12 @@
         </classes>
     </test>
     
+    <test name="Area Ciente">
+        <classes>
+            <class name="valuesite.tests.MantenedorAreaTestCliente"/>
+        </classes>
+    </test>
+    
     <test name="Modificacion pin RT">
         <classes>
             <class name="valuesite.tests.ModificacionPinTestRT"/>

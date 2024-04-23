@@ -8,8 +8,8 @@
           <include name="setUp"/>
           <include name="Finalizar"/>
           <include name="lanzarNavegador"/>
-          <include name="creaAreaInactivaTest"/>
           <include name="ingresaMantenedor"/>
+          <include name="filtroEstadoAreaTest"/>
         </methods>
       </class> <!-- valuesite.tests.MantenedorAreaTestCliente -->
     </classes>

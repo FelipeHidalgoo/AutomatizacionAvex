@@ -8,77 +8,45 @@
 <body>
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
-<tr><th colspan="8">Default suite</th></tr>
-<tr><td><a href="#t0">Default test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">40.907</td><td></td><td></td></tr>
+<tr><th colspan="8">Mantenedores Administrativos</th></tr>
+<tr><td><a href="#t0">Area RT</a></td><td class="num">6</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">41.945</td><td></td><td></td></tr>
+<tr class="stripe"><td><a href="#t1">Area Ciente</a></td><td class="num">6</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">61.705</td><td></td><td></td></tr>
+<tr><td><a href="#t2">Modificacion pin RT</a></td><td class="num">5</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">14.245</td><td></td><td></td></tr>
+<tr class="stripe"><td><a href="#t3">Modificacion pin Cliente</a></td><td class="num">7</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">12.865</td><td></td><td></td></tr>
+<tr><th>Total</th><th class="num">24</th><th class="num">0</th><th class="num">0</th><th class="num attn">1</th><th class="num">130.760</th><th colspan="2"></th></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">valuesite.tests.MantenedorAreaTestCliente</td><td><a href="#m0">creaAreaInactivaTest</a></td><td rowspan="1">1713881597895</td><td rowspan="1">24288</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Mantenedores Administrativos</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Area RT &#8212; passed</th></tr><tr class="passedeven"><td rowspan="6">valuesite.tests.MantenedorAreaTestRT</td><td><a href="#m0">creaAreaActivaTest</a></td><td rowspan="1">1713909197237</td><td rowspan="1">4189</td></tr><tr class="passedeven"><td><a href="#m1">creaAreaInactivaTest</a></td><td rowspan="1">1713909201428</td><td rowspan="1">4459</td></tr><tr class="passedeven"><td><a href="#m2">filtroEstadoAreaTest</a></td><td rowspan="1">1713909214796</td><td rowspan="1">7942</td></tr><tr class="passedeven"><td><a href="#m3">filtroNombreAreaTest</a></td><td rowspan="1">1713909212332</td><td rowspan="1">2463</td></tr><tr class="passedeven"><td><a href="#m4">modificaAreaTest</a></td><td rowspan="1">1713909205889</td><td rowspan="1">6442</td></tr><tr class="passedeven"><td><a href="#m5">nombreObligatorioTest</a></td><td rowspan="1">1713909197101</td><td rowspan="1">130</td></tr></tbody>
+<tbody id="t1"><tr><th colspan="4">Area Ciente &#8212; passed</th></tr><tr class="passedeven"><td rowspan="6">valuesite.tests.MantenedorAreaTestCliente</td><td><a href="#m6">creaAreaActivaTest</a></td><td rowspan="1">1713909238124</td><td rowspan="1">7460</td></tr><tr class="passedeven"><td><a href="#m7">creaAreaInactivaTest</a></td><td rowspan="1">1713909245586</td><td rowspan="1">7685</td></tr><tr class="passedeven"><td><a href="#m8">filtroEstadoAreaTest</a></td><td rowspan="1">1713909276705</td><td rowspan="1">7760</td></tr><tr class="passedeven"><td><a href="#m9">filtroNombreAreaTest</a></td><td rowspan="1">1713909272096</td><td rowspan="1">4608</td></tr><tr class="passedeven"><td><a href="#m10">modificaAreaTest</a></td><td rowspan="1">1713909253271</td><td rowspan="1">18824</td></tr><tr class="passedeven"><td><a href="#m11">nombreObligatorioTest</a></td><td rowspan="1">1713909238031</td><td rowspan="1">92</td></tr></tbody>
+<tbody id="t2"><tr><th colspan="4">Modificacion pin RT &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">valuesite.tests.ModificacionPinTestRT</td><td><a href="#m12">limpiaCampo</a></td><td rowspan="1">1713909298601</td><td rowspan="1">130</td></tr><tr><th colspan="4">Modificacion pin RT &#8212; passed</th></tr><tr class="passedeven"><td rowspan="5">valuesite.tests.ModificacionPinTestRT</td><td><a href="#m13">actualizaConCaracteresEspeciales</a></td><td rowspan="1">1713909296982</td><td rowspan="1">1618</td></tr><tr class="passedeven"><td><a href="#m14">actualizaPin</a></td><td rowspan="1">1713909296553</td><td rowspan="1">335</td></tr><tr class="passedeven"><td><a href="#m15">actualizaSinDatos</a></td><td rowspan="1">1713909296889</td><td rowspan="1">92</td></tr><tr class="passedeven"><td><a href="#m16">ingresarPin</a></td><td rowspan="1">1713909296464</td><td rowspan="1">88</td></tr><tr class="passedeven"><td><a href="#m17">vaciaCampo</a></td><td rowspan="1">1713909296363</td><td rowspan="1">100</td></tr></tbody>
+<tbody id="t3"><tr><th colspan="4">Modificacion pin Cliente &#8212; passed</th></tr><tr class="passedeven"><td rowspan="7">valuesite.tests.ModificacionPinTestCliente</td><td><a href="#m18">actualizaConCaracteresEspeciales</a></td><td rowspan="1">1713909309812</td><td rowspan="1">1574</td></tr><tr class="passedeven"><td><a href="#m19">actualizaPin</a></td><td rowspan="1">1713909309397</td><td rowspan="1">333</td></tr><tr class="passedeven"><td><a href="#m20">actualizaSinDatos</a></td><td rowspan="1">1713909309730</td><td rowspan="1">81</td></tr><tr class="passedeven"><td><a href="#m21">ingresaCaracteresEspeciales</a></td><td rowspan="1">1713909311499</td><td rowspan="1">101</td></tr><tr class="passedeven"><td><a href="#m22">ingresarPin</a></td><td rowspan="1">1713909309304</td><td rowspan="1">92</td></tr><tr class="passedeven"><td><a href="#m23">limpiaCampo</a></td><td rowspan="1">1713909311387</td><td rowspan="1">111</td></tr><tr class="passedeven"><td><a href="#m24">vaciaCampo</a></td><td rowspan="1">1713909309193</td><td rowspan="1">110</td></tr></tbody>
 </table>
-<h2>Default test</h2><h3 id="m0">valuesite.tests.MantenedorAreaTestCliente#creaAreaInactivaTest</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.WebDriverException: disconnected: received Inspector.detached event
-  (failed to check if window was closed: disconnected: unable to send message to renderer)
-  (Session info: chrome=124.0.6367.61)
-Build info: version: &apos;4.19.1&apos;, revision: &apos;abe0ee07dc&apos;
-System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.11&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [a9caabb9e7b0ca91f16653b9273db42e, findElement {value=//a[normalize-space()=&apos;Siguiente&apos;], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 124.0.6367.61, chrome: {chromedriverVersion: 124.0.6367.60 (8771130bd84f..., userDataDir: C:\Users\FELIPE~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62660}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62660/devtoo..., se:cdpVersion: 124.0.6367.61, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: a9caabb9e7b0ca91f16653b9273db42e
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy14.isDisplayed(Unknown Source)
-	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
-	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:656)
-	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:652)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
-	at valuesite.componentesreusables.ComponentesReusables.waitForWebElementToBeClickable(ComponentesReusables.java:61)
-	at valuesite.pageobjects.AreaCliente.buscarAreaEnTodasLasPaginas2(AreaCliente.java:400)
-	at valuesite.pageobjects.AreaCliente.creaAreaInactiva(AreaCliente.java:471)
-	at valuesite.tests.MantenedorAreaTestCliente.creaAreaInactivaTest(MantenedorAreaTestCliente.java:70)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:794)
-	at org.testng.TestRunner.run(TestRunner.java:596)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-	at org.testng.TestNG.runSuites(TestNG.java:1063)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Area RT</h2><h3 id="m0">valuesite.tests.MantenedorAreaTestRT#creaAreaActivaTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">valuesite.tests.MantenedorAreaTestRT#creaAreaInactivaTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">valuesite.tests.MantenedorAreaTestRT#filtroEstadoAreaTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">valuesite.tests.MantenedorAreaTestRT#filtroNombreAreaTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">valuesite.tests.MantenedorAreaTestRT#modificaAreaTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">valuesite.tests.MantenedorAreaTestRT#nombreObligatorioTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Area Ciente</h2><h3 id="m6">valuesite.tests.MantenedorAreaTestCliente#creaAreaActivaTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m7">valuesite.tests.MantenedorAreaTestCliente#creaAreaInactivaTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m8">valuesite.tests.MantenedorAreaTestCliente#filtroEstadoAreaTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m9">valuesite.tests.MantenedorAreaTestCliente#filtroNombreAreaTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m10">valuesite.tests.MantenedorAreaTestCliente#modificaAreaTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m11">valuesite.tests.MantenedorAreaTestCliente#nombreObligatorioTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Modificacion pin RT</h2><h3 id="m12">valuesite.tests.ModificacionPinTestRT#limpiaCampo</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [true] but found [false]
+	at valuesite.tests.ModificacionPinTestRT.limpiaCampo(ModificacionPinTestRT.java:169)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 29 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m13">valuesite.tests.ModificacionPinTestRT#actualizaConCaracteresEspeciales</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m14">valuesite.tests.ModificacionPinTestRT#actualizaPin</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m15">valuesite.tests.ModificacionPinTestRT#actualizaSinDatos</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m16">valuesite.tests.ModificacionPinTestRT#ingresarPin</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m17">valuesite.tests.ModificacionPinTestRT#vaciaCampo</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Modificacion pin Cliente</h2><h3 id="m18">valuesite.tests.ModificacionPinTestCliente#actualizaConCaracteresEspeciales</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m19">valuesite.tests.ModificacionPinTestCliente#actualizaPin</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m20">valuesite.tests.ModificacionPinTestCliente#actualizaSinDatos</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m21">valuesite.tests.ModificacionPinTestCliente#ingresaCaracteresEspeciales</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m22">valuesite.tests.ModificacionPinTestCliente#ingresarPin</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m23">valuesite.tests.ModificacionPinTestCliente#limpiaCampo</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m24">valuesite.tests.ModificacionPinTestCliente#vaciaCampo</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

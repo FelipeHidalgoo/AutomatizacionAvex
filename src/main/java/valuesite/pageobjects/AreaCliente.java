@@ -74,7 +74,8 @@ public class AreaCliente extends ComponentesReusables {
 	WebElement estadoInactivo;
 
 	// Modal Por favor Espere
-	@FindBy(xpath = "//div[@class='modal fade right show']")
+	//@FindBy(xpath = "//div[@class='modal fade right show']")
+	@FindBy(css = "sideModalTR3")
 	WebElement waitingDialog;
 
 	// Boton buscar
@@ -107,7 +108,7 @@ public class AreaCliente extends ComponentesReusables {
 	WebElement selectCliente;
 
 	// Error nombre obligatorio
-	@FindBy(css = "div[class='alert alert-danger']")
+	@FindBy(css = ".alert-danger")
 	WebElement errorNombreObligatorio;
 
 	// Boton primera pagina (Paginacion)
@@ -127,7 +128,8 @@ public class AreaCliente extends ComponentesReusables {
 	WebElement ultimaPagina;
 
 	// Primer area de la lista
-	@FindBy(xpath = "//tbody[@class='tb-bss-pointer']/tr[1]/td[1]")
+	//@FindBy(xpath = "//tbody[@class='tb-bss-pointer']/tr[1]/td[1]") (Mas seguro)
+	@FindBy(css = "tbody.tb-bss-pointer > tr:first-of-type > td:first-of-type") // (Mas rapido)
 	static WebElement primerArea;
 
 	// Columna nombre (grilla)
@@ -370,7 +372,7 @@ public class AreaCliente extends ComponentesReusables {
 			// Buscar el área en la página actual
 			try {
 				WebElement areaCreada = driver.findElement(By.xpath("//td[normalize-space()='" + nombreArea2 + "']"));
-				waitForInvisibilityOfElement(waitingDialog);
+				waitForWebElementToAppear(areaCreada);
 				if (areaCreada.isDisplayed()) {
 					return true; // Área encontrada en la página actual
 				}
@@ -380,8 +382,7 @@ public class AreaCliente extends ComponentesReusables {
 
 			// Intentar ir a la siguiente página
 			try {
-				// WebElement botonSiguiente =
-				// driver.findElement(By.xpath("//a[normalize-space()='Siguiente']"));
+				
 				WebElement botonUltima = null;
 
 				// Intentar encontrar el botón "Última" (si existe)
@@ -458,15 +459,23 @@ public class AreaCliente extends ComponentesReusables {
 		// Crear area INACTIVA
 		int numeroArea2 = obtenerNumeroArea2();
 		String nombreArea2 = "AREA INACTIVA " + String.format("%03d", numeroArea2);
-		waitForWebElementToBeClickable(campoNombreArea);
+		//waitForWebElementToBeClickable(campoNombreArea);
+		waitForInvisibilityOfElement(waitingDialog);
 		campoNombreArea.sendKeys(nombreArea2);
 		// Thread.sleep(1000);
 		marcarCheckEstado.click();
 		btnCrear.click();
-		waitForInvisibilityOfElement(waitingDialog);
 
 		// Incrementa el número del área para la siguiente iteración
 		incrementarNumeroArea2();
+		
+		//waitForInvisibilityOfElement(waitingDialog);
+		
+		selectEstados.click();
+		estadoTodos.click();
+		btnBuscar.click();
+		
+		//waitForInvisibilityOfElement(waitingDialog);
 
 		boolean areaEncontrada2 = buscarAreaEnTodasLasPaginas2(driver, nombreArea2);
 
@@ -501,7 +510,8 @@ public class AreaCliente extends ComponentesReusables {
 	// cambio fue exitoso
 	public void modificaArea() throws InterruptedException {
 
-		Thread.sleep(1000);
+		Thread.sleep(700);
+		//waitForWebElementToBeClickable(primerArea);
 		// Declara el nombre con el que se va a modificar al area
 		String nuevoNombre = "MODIFICACION AUTOMATICA " + obtenerNumeroModificacion();
 
@@ -512,15 +522,17 @@ public class AreaCliente extends ComponentesReusables {
 		} catch (StaleElementReferenceException e) {
 			// Elemento obsoleto, intentar ubicarlo nuevamente
 			primerArea = driver.findElement(By.xpath("//tbody[@class='tb-bss-pointer']/tr[1]/td[1]"));
+			waitForWebElementToBeClickable(primerArea);
 			primerArea.click(); // Intentar hacer clic nuevamente
 		}
-		Thread.sleep(500);
+		Thread.sleep(250);
 
 		// Luego de seleccionar, limpia el nombre e ingresa el "nuevoNombre"
 		campoNombreArea.clear();
 		campoNombreArea.sendKeys(nuevoNombre);
 		btnCrear.click();
-		Thread.sleep(1000);
+		//Thread.sleep(1000);
+		waitForInvisibilityOfElement(waitingDialog);
 
 		// Obtiene el nombre que modificamos al primer area de la lista
 		String nombreareaNuevo = "";
@@ -528,11 +540,13 @@ public class AreaCliente extends ComponentesReusables {
 		// Obtiene el texto del primer area despues de modificar y lo guarda en
 		// "nombreareaNuevo"
 		try {
-			waitForWebElementToBeClickable(primerArea);
+			//waitForWebElementToBeClickable(primerArea);
+			waitForWebElementToAppear(primerArea);
 			nombreareaNuevo = primerArea.getText();
 		} catch (StaleElementReferenceException e) {
 			// Elemento obsoleto, intentar ubicarlo nuevamente
 			primerArea = driver.findElement(By.xpath("//tbody[@class='tb-bss-pointer']/tr[1]/td[1]"));
+			waitForWebElementToAppear(primerArea);
 			nombreareaNuevo = primerArea.getText();
 		}
 
@@ -562,25 +576,37 @@ public class AreaCliente extends ComponentesReusables {
 			} catch (StaleElementReferenceException e) {
 				// Elemento obsoleto, intentar ubicarlo nuevamente
 				primerArea = driver.findElement(By.xpath("//tbody[@class='tb-bss-pointer']/tr[1]/td[1]"));
+				waitForWebElementToAppear(primerArea);
 				primerArea.click(); // Intentar hacer clic nuevamente
 			}
 
-			Thread.sleep(500);
+			Thread.sleep(250);
 
 			// Obtener el estado actual del área (activo o inactivo)
-			WebElement inputActivo = driver.findElement(By.id("rdoActivo1"));
-			boolean estadoActualActivo = inputActivo.isSelected();
+			//WebElement inputActivo = driver.findElement(By.id("rdoActivo1"));
+			boolean estadoActualActivo = checkEstado.isSelected();
 
 			if (estadoActualActivo) {
 				// Si el estado actual es activo, entonces cambiar a inactivo
-				btnInactivo.click();
+				marcarCheckEstado.click();
 			} else {
 				// Si el estado actual es inactivo, entonces cambiar a activo
-				btnActivo.click();
+				marcarCheckEstado.click();
 			}
 
 			btnCrear.click();
-			Thread.sleep(500);
+			//Thread.sleep(500);
+			waitForInvisibilityOfElement(waitingDialog);
+			
+			int nroModif = obtenerNumeroModificacion() -1;
+			filtroNombre.clear();
+			//waitForWebElementToBeClickable(filtroNombre);
+			filtroNombre.sendKeys("MODIFICACION AUTOMATICA " + nroModif);
+			selectEstados.click();
+			waitForWebElementToBeClickable(estadoTodos);
+			estadoTodos.click();
+			btnBuscar.click();
+			waitForInvisibilityOfElement(waitingDialog);
 
 			// Obtiene el nuevo estado del área después de cambiarlo
 			try {
@@ -589,11 +615,12 @@ public class AreaCliente extends ComponentesReusables {
 			} catch (StaleElementReferenceException e) {
 				// Elemento obsoleto, intentar ubicarlo nuevamente
 				primerArea = driver.findElement(By.xpath("//tbody[@class='tb-bss-pointer']/tr[1]/td[1]"));
+				waitForWebElementToBeClickable(primerArea);
 				primerArea.click(); // Intentar hacer clic nuevamente
 			}
-			Thread.sleep(500);
+			Thread.sleep(250);
 
-			boolean nuevoEstadoActivo = inputActivo.isSelected();
+			boolean nuevoEstadoActivo = checkEstado.isSelected();
 
 			// Mensaje de depuración
 			// System.out.println("------------ Cambio de estado de Área ------------ \n");
@@ -624,9 +651,9 @@ public class AreaCliente extends ComponentesReusables {
 	}
 
 	public void filtroNombreArea() throws InterruptedException {
-		Thread.sleep(700);
+		//Thread.sleep(700);
 		Actions a = new Actions(driver);
-		a.scrollToElement(filtroNombre).build().perform();
+//		a.scrollToElement(filtroNombre).build().perform();
 
 		// Proporciona un nombre de area para la prueba
 		String nombreAreaFiltro = "BUSCA AREA " + obtenerNumeroModificacion();
@@ -634,17 +661,20 @@ public class AreaCliente extends ComponentesReusables {
 		// Crea el area con el nombre definido
 		campoNombreArea.sendKeys(nombreAreaFiltro);
 		btnCrear.click();
+		waitForInvisibilityOfElement(waitingDialog);
 
 		incrementarNumeroModificacion();
 
 		// Manda variable nombreArea al filtro de nombre
-		waitForWebElementToBeClickable(filtroNombre);
+		//waitForWebElementToBeClickable(filtroNombre);
+		filtroNombre.clear();
 		filtroNombre.sendKeys(nombreAreaFiltro);
 
 		// Realiza la busqueda mediante tecla enter
 		a.moveToElement(filtroNombre).click().keyDown(Keys.ENTER).build().perform();
 
-		Thread.sleep(500);
+		//Thread.sleep(850);
+		//waitForInvisibilityOfElement(waitingDialog);
 		WebElement area = obtenerListaAreas().stream()
 				.filter(elemento -> elemento.findElement(By.cssSelector("td")).getText().contains(nombreAreaFiltro))
 				.findFirst().orElse(null);
@@ -653,11 +683,12 @@ public class AreaCliente extends ComponentesReusables {
 		if (area != null) {
 			Assert.assertTrue(true);
 		} else {
+			System.out.println("Tecla enter no esta buscando");
 			Assert.assertTrue(false);
 		}
 
 		btnBuscar.click();
-		Thread.sleep(500);
+		//waitForInvisibilityOfElement(waitingDialog);
 		WebElement area2 = obtenerListaAreas().stream()
 				.filter(elemento -> elemento.findElement(By.cssSelector("td")).getText().contains(nombreAreaFiltro))
 				.findFirst().orElse(null);
@@ -666,34 +697,35 @@ public class AreaCliente extends ComponentesReusables {
 		if (area2 != null) {
 			Assert.assertTrue(true);
 		} else {
+			System.out.println("Boton buscar no esta buscando");
 			Assert.assertTrue(false);
 		}
 	}
 
 	public void filtroEstadoArea() throws InterruptedException {
 
-		boolean validaEstado = false;
+		//boolean validaEstado = false;
 
-		JavascriptExecutor js = (JavascriptExecutor) driver;
+		//JavascriptExecutor js = (JavascriptExecutor) driver;
 
 		// Desplaza el scroll hasta el inicio de la pagina
-		js.executeScript("window.scrollBy(0, 0)");
+		//js.executeScript("window.scrollBy(0, 0)");
 
-		waitForWebElementToAppear(btnLimpiar);
-//			//waitForWebElementToBeClickable(btnLimpiar);
+		//waitForWebElementToAppear(btnLimpiar);
+		//waitForWebElementToBeClickable(btnLimpiar);
+		Thread.sleep(1000);
 		btnLimpiar.click();
-		btnBuscar.click();
-
-		WebElement inputActivo = driver.findElement(By.id("rdoActivo1"));
-		WebElement inputInactivo = driver.findElement(By.id("rdoActivo2"));
-
-		waitForInvisibilityOfElement(waitingDialog);
-
 		selectEstados.click();
 		estadoActivo.click();
 		btnBuscar.click();
+		//waitForInvisibilityOfElement(waitingDialog);
+		Thread.sleep(1000);
 
-		for (int i = 1; i < Math.min(obtenerListaAreas().size(), 6); i++) {
+		int encontroArea=0;
+		List<WebElement> listaAreas; 
+		listaAreas= obtenerListaAreas();
+		
+		for (int i = 1; i < Math.min(listaAreas.size(), 6); i++) {
 
 			WebElement areaLista = driver.findElement(By.xpath("//tbody[@class='tb-bss-pointer']/tr[" + i + "]/td[1]"));
 
@@ -704,6 +736,7 @@ public class AreaCliente extends ComponentesReusables {
 			} catch (StaleElementReferenceException e) {
 				// Elemento obsoleto, intentar ubicarlo nuevamente
 				areaLista = driver.findElement(By.xpath("//tbody[@class='tb-bss-pointer']/tr[" + i + "]/td[1]"));
+				waitForWebElementToBeClickable(areaLista);
 				areaLista.click(); // Intentar hacer clic nuevamente
 			}
 
@@ -711,15 +744,16 @@ public class AreaCliente extends ComponentesReusables {
 //				waitForInvisibilityOfElement(waitingDialog);
 //				waitForWebElementToBeClickable(inputActivo);
 
-			if (inputActivo.isSelected()) {
-				validaEstado = true;
-			} else {
+			if (checkEstado.isSelected()) {
+				continue;
+			}else {
+				encontroArea++;
 				System.out.println("Se encontro un area inactiva al buscar areas activas");
-				Assert.assertTrue(false);
 			}
+
 		}
 
-		if (validaEstado) {
+		if (encontroArea==0) {
 			Assert.assertTrue(true);
 		} else {
 			Assert.assertTrue(false);
@@ -729,8 +763,12 @@ public class AreaCliente extends ComponentesReusables {
 		selectEstados.click();
 		estadoInactivo.click();
 		btnBuscar.click();
+		//waitForInvisibilityOfElement(waitingDialog);
+		Thread.sleep(1000);
 
-		for (int i = 1; i < Math.min(obtenerListaAreas().size(), 6); i++) {
+		encontroArea = 0;
+		listaAreas= obtenerListaAreas();
+		for (int i = 1; i < Math.min(listaAreas.size(), 6); i++) {
 
 			WebElement areaLista = driver.findElement(By.xpath("//tbody[@class='tb-bss-pointer']/tr[" + i + "]/td[1]"));
 
@@ -741,6 +779,7 @@ public class AreaCliente extends ComponentesReusables {
 			} catch (StaleElementReferenceException e) {
 				// Elemento obsoleto, intentar ubicarlo nuevamente
 				areaLista = driver.findElement(By.xpath("//tbody[@class='tb-bss-pointer']/tr[" + i + "]/td[1]"));
+				waitForWebElementToBeClickable(areaLista);
 				areaLista.click(); // Intentar hacer clic nuevamente
 			}
 
@@ -748,20 +787,25 @@ public class AreaCliente extends ComponentesReusables {
 //				waitForInvisibilityOfElement(waitingDialog);
 //				waitForWebElementToBeClickable(inputActivo);
 
-			if (inputInactivo.isSelected()) {
-				validaEstado = true;
-			} else {
+			if (checkEstado.isSelected()) {
+				//validaEstado = false;
+				encontroArea++;
 				System.out.println("Se encontro un area activa al buscar areas inactivas");
-				Assert.assertTrue(false);
 			}
 
 		}
 
-		if (validaEstado) {
+		if (encontroArea==0) {
 			Assert.assertTrue(true);
 		} else {
 			Assert.assertTrue(false);
 		}
+		
+//		if (validaEstado) {
+//			Assert.assertTrue(true);
+//		} else {
+//			Assert.assertTrue(false);
+//		}
 	}
 
 }

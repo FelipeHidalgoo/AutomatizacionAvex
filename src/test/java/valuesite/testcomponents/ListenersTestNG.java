@@ -14,7 +14,8 @@ public class ListenersTestNG implements ITestListener {
 
 	@Override
 	public void onStart(ITestContext result) {
-		// TODO Auto-generated method stub
+		System.out.println("\n----------------------------------------------------");
+		System.out.println("COMENZANDO EL TEST: \n" + result.getName().toUpperCase() + "\n");
 
 	}
 
