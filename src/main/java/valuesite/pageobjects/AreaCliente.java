@@ -40,7 +40,7 @@ public class AreaCliente extends ComponentesReusables {
 	}
 
 	// PAGE FACTORY
-	
+
 	// Pestaña de adminstracion en navBar
 	@FindBy(xpath = "//a[normalize-space()='Administración']")
 	WebElement tabAdministracion;
@@ -52,11 +52,10 @@ public class AreaCliente extends ComponentesReusables {
 	// Filtro nombre de area
 	@FindBy(id = "txtNombreFind")
 	WebElement filtroNombre;
-	
+
 	// Campo nombre area
 	@FindBy(id = "txtNombreGrupoPasajero")
-	public
-	WebElement campoNombreArea;
+	public WebElement campoNombreArea;
 
 	// Filtro estado (Select)
 	@FindBy(xpath = "(//input[@data-activates='select-options-slcEstadoFind'])[1]")
@@ -75,7 +74,7 @@ public class AreaCliente extends ComponentesReusables {
 	WebElement estadoInactivo;
 
 	// Modal Por favor Espere
-	@FindBy(css = ".modal-dialog.modal-m")
+	@FindBy(xpath = "//div[@class='modal fade right show']")
 	WebElement waitingDialog;
 
 	// Boton buscar
@@ -89,24 +88,28 @@ public class AreaCliente extends ComponentesReusables {
 	// Boton crear
 	@FindBy(id = "btnCrear")
 	WebElement btnCrear;
-	
+
 	// Boton cancelar
 	@FindBy(id = "btnCancelar")
 	WebElement btnCancelar;
 
-	// Check estado area
-	@FindBy(xpath = "//input[@id='rdoActivo1']")
-	public
-	WebElement checkEstado;
+	// Check estado area (Sirve para verificar el estado actual del check, marcado o
+	// desmarcado)
+	@FindBy(id = "rdoActivo1")
+	public WebElement checkEstado;
+
+	// Span estado area (Tambien hace alusion al check, pero sirve para clickearlo)
+	@FindBy(css = ".checkmark-ds.ml-3")
+	public WebElement marcarCheckEstado;
 
 	// Select cliente (formulario)
 	@FindBy(id = "//input[@data-activates='select-options-slcCliente']")
 	WebElement selectCliente;
-	
+
 	// Error nombre obligatorio
 	@FindBy(css = "div[class='alert alert-danger']")
 	WebElement errorNombreObligatorio;
-	
+
 	// Boton primera pagina (Paginacion)
 	@FindBy(xpath = "//a[normalize-space()='Primera']")
 	WebElement primeraPagina;
@@ -114,7 +117,7 @@ public class AreaCliente extends ComponentesReusables {
 	// Boton anterior pagina (Paginacion)
 	@FindBy(xpath = "//a[normalize-space()='Anterior']")
 	WebElement anteriorPagina;
-		
+
 	// Boton anterior pagina (Paginacion)
 	@FindBy(xpath = "//a[normalize-space()='Siguiente']")
 	static WebElement siguientePagina;
@@ -122,11 +125,11 @@ public class AreaCliente extends ComponentesReusables {
 	// Boton anterior pagina (Paginacion)
 	@FindBy(xpath = "//a[normalize-space()='Ultima']")
 	WebElement ultimaPagina;
-	
+
 	// Primer area de la lista
 	@FindBy(xpath = "//tbody[@class='tb-bss-pointer']/tr[1]/td[1]")
 	static WebElement primerArea;
-		
+
 	// Columna nombre (grilla)
 	@FindBy(id = "//tbody[@class='tb-bss-pointer']/tr/td[1]")
 	List<WebElement> columnaNombre;
@@ -138,17 +141,17 @@ public class AreaCliente extends ComponentesReusables {
 	// Columna estado (grilla)
 	@FindBy(id = "//tbody[@class='tb-bss-pointer']/tr/td[3]")
 	List<WebElement> columnaEstado;
-	
+
 	// Lista de areas (Pagina actual)
-	@FindBy (xpath = "//tbody/tr")
+	@FindBy(xpath = "//tbody/tr")
 	List<WebElement> listaAreas;
 
 	// Lista de areas (Pagina actual)
 	By productosBy = By.xpath("//tbody/tr");
-	
+
 	// PAGE FACTORY
 
-	//ComponentesReusables componentesReusables = new ComponentesReusables(driver);
+	// ComponentesReusables componentesReusables = new ComponentesReusables(driver);
 
 	// Metodo para entrar al mantenedor de area y buscar un cliente
 	public void ingresoMantenedorArea() {
@@ -367,6 +370,7 @@ public class AreaCliente extends ComponentesReusables {
 			// Buscar el área en la página actual
 			try {
 				WebElement areaCreada = driver.findElement(By.xpath("//td[normalize-space()='" + nombreArea2 + "']"));
+				waitForInvisibilityOfElement(waitingDialog);
 				if (areaCreada.isDisplayed()) {
 					return true; // Área encontrada en la página actual
 				}
@@ -413,8 +417,8 @@ public class AreaCliente extends ComponentesReusables {
 		waitForWebElementToBeClickable(campoNombreArea);
 		campoNombreArea.sendKeys(nombreArea);
 		btnCrear.click();
-		Thread.sleep(500);
-
+		//Thread.sleep(500);
+		waitForInvisibilityOfElement(waitingDialog);
 		// Incrementa el número del área para la siguiente iteración
 		incrementarNumeroArea();
 
@@ -429,8 +433,12 @@ public class AreaCliente extends ComponentesReusables {
 			// Volver a primera pagina o anterior si no hay "Primera"
 			try {
 				if (primeraPagina.isDisplayed()) {
+					Thread.sleep(700);
+					// waitForWebElementToBeClickable(primeraPagina);
 					primeraPagina.click();
 				} else if (anteriorPagina.isDisplayed()) {
+					Thread.sleep(700);
+					// waitForWebElementToBeClickable(anteriorPagina);
 					anteriorPagina.click();
 				} else {
 					// Continua con el proceso
@@ -449,14 +457,13 @@ public class AreaCliente extends ComponentesReusables {
 
 		// Crear area INACTIVA
 		int numeroArea2 = obtenerNumeroArea2();
-		// Thread.sleep(1500);
 		String nombreArea2 = "AREA INACTIVA " + String.format("%03d", numeroArea2);
 		waitForWebElementToBeClickable(campoNombreArea);
 		campoNombreArea.sendKeys(nombreArea2);
 		// Thread.sleep(1000);
-		btnInactivo.click();
+		marcarCheckEstado.click();
 		btnCrear.click();
-		Thread.sleep(500);
+		waitForInvisibilityOfElement(waitingDialog);
 
 		// Incrementa el número del área para la siguiente iteración
 		incrementarNumeroArea2();
@@ -472,8 +479,10 @@ public class AreaCliente extends ComponentesReusables {
 			// Volver a primera pagina o anterior si no hay "Primera"
 			try {
 				if (primeraPagina.isDisplayed()) {
+					Thread.sleep(700);
 					primeraPagina.click();
 				} else if (anteriorPagina.isDisplayed()) {
+					Thread.sleep(700);
 					anteriorPagina.click();
 				} else {
 					// Continua con el proceso
