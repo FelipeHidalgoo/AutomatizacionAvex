@@ -9,7 +9,7 @@
           <include name="Finalizar"/>
           <include name="lanzarNavegador"/>
           <include name="ingresaMantenedor"/>
-          <include name="filtroEstadoAreaTest"/>
+          <include name="clienteObligatorioTest"/>
         </methods>
       </class> <!-- valuesite.tests.MantenedorAreaTestCliente -->
     </classes>

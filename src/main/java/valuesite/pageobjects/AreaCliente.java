@@ -74,7 +74,7 @@ public class AreaCliente extends ComponentesReusables {
 	WebElement estadoInactivo;
 
 	// Modal Por favor Espere
-	//@FindBy(xpath = "//div[@class='modal fade right show']")
+	// @FindBy(xpath = "//div[@class='modal fade right show']")
 	@FindBy(css = "sideModalTR3")
 	WebElement waitingDialog;
 
@@ -104,12 +104,24 @@ public class AreaCliente extends ComponentesReusables {
 	public WebElement marcarCheckEstado;
 
 	// Select cliente (formulario)
-	@FindBy(id = "//input[@data-activates='select-options-slcCliente']")
+	@FindBy(xpath = "//input[@data-activates='select-options-slcCliente']")
 	WebElement selectCliente;
+
+	// Select cliente / Opcion seleccione (formulario)
+	@FindBy(xpath = "//ul[@id='select-options-slcCliente']/li[1]")
+	WebElement selectClienteSeleccione;
+
+	// Select cliente / Primer cliente de lista (formulario)
+	@FindBy(xpath = "//ul[@id='select-options-slcCliente']/li[2]")
+	WebElement selectClientePrimero;
+
+	// Select cliente / Segundo cliente de lista (formulario)
+	@FindBy(xpath = "//ul[@id='select-options-slcCliente']/li[3]")
+	WebElement selectClienteSegundo;
 
 	// Error nombre obligatorio
 	@FindBy(css = ".alert-danger")
-	WebElement errorNombreObligatorio;
+	WebElement errorCampoObligatorio;
 
 	// Boton primera pagina (Paginacion)
 	@FindBy(xpath = "//a[normalize-space()='Primera']")
@@ -128,7 +140,7 @@ public class AreaCliente extends ComponentesReusables {
 	WebElement ultimaPagina;
 
 	// Primer area de la lista
-	//@FindBy(xpath = "//tbody[@class='tb-bss-pointer']/tr[1]/td[1]") (Mas seguro)
+	// @FindBy(xpath = "//tbody[@class='tb-bss-pointer']/tr[1]/td[1]") (Mas seguro)
 	@FindBy(css = "tbody.tb-bss-pointer > tr:first-of-type > td:first-of-type") // (Mas rapido)
 	static WebElement primerArea;
 
@@ -151,6 +163,12 @@ public class AreaCliente extends ComponentesReusables {
 	// Lista de areas (Pagina actual)
 	By productosBy = By.xpath("//tbody/tr");
 
+	// Error campo obligatorio
+	By errorCampoObligatorioBy = By.cssSelector(".alert-danger");
+
+	// Mensaje porfavor espere
+	By waitingDialogBy = By.cssSelector("sideModalTR3");
+
 	// PAGE FACTORY
 
 	// ComponentesReusables componentesReusables = new ComponentesReusables(driver);
@@ -159,35 +177,91 @@ public class AreaCliente extends ComponentesReusables {
 	public void ingresoMantenedorArea() {
 		tabAdministracion.click();
 		tabAreaCliente.click();
+		// Espera a que desaparezca el mensaje Por favor espere
 		waitForInvisibilityOfElement(waitingDialog);
 	}
 
 	// Comprueba que el sistema no permite crear area sin ingresar un nombre a esta
 	public void errorNombreObligatorio() {
-		waitForWebElementToBeClickable(btnCrear);
+		// waitForWebElementToBeClickable(btnCrear);
+		
+		// Comprueba si el select cliente esta presente, si lo esta, selecciona un cliente
+		if(elementoPresente(selectCliente)){
+			selectCliente.click();
+			waitForWebElementToBeClickable(selectClientePrimero);
+			selectClientePrimero.click();
+		}
+		
 		btnCrear.click();
 
+		// Declara el mensaje de error en la variable errorCampoObligatorio
+		errorCampoObligatorio = driver
+				.findElement(By.xpath("//div[@class='alert alert-danger animated fadeInDown'][1]"));
+		
 		// Espera a que aparezca el mensaje de error
 		try {
-			waitForWebElementToAppear(errorNombreObligatorio);
+			waitForWebElementToAppear(errorCampoObligatorio);
+		} catch (TimeoutException e) {
+			// Si no aparece en el tiempo de espera explicito establecido,
+			// entonces manda mensaje para indicar el problema
+			System.out.println("El mensaje de error de campo obligatorio no aparecio en el tiempo limite");
+		}
+		
+
+		// Obtiene el texto del mensaje de error y valida si es el mensaje correspondiente
+		String msjError = errorCampoObligatorio.getText();
+		if (msjError.equals("Error\n· Campo Nombre Área Obligatorio.")) {
+			System.out.println("El campo es obligatorio :)");
+			Assert.assertTrue(true);
+		} else {
+			System.out.println("No toma en cuenta la obligatoriedad del campo");
+			Assert.assertTrue(false);
+		}
+
+		// Limpia formulario antes de salir del metodo
+		btnCancelar.click();
+	}
+
+	// Comprueba que el sistema no permite crear area sin seleccionar un cliente
+	// Controlado para que solo se ejecute en caso de que se muestre el select (grupo de clientes)
+	public void errorClienteObligatorio() {
+		
+		// Comprueba si el select cliente esta presente, si no lo esta, sale del metodo
+		if(!elementoPresente(selectCliente)){
+			return;
+		}
+		
+		// Manda un nombre al campo nombre y presiona boton crear
+		waitForWebElementToBeClickable(campoNombreArea);
+		campoNombreArea.sendKeys("Sin Informacion");
+		// waitForWebElementToBeClickable(btnCrear);
+		btnCrear.click();
+		
+		// // Declara el mensaje de error en la variable errorCampoObligatorio
+		errorCampoObligatorio = driver
+				.findElement(By.xpath("//div[@class='alert alert-danger animated fadeInDown'][2]"));
+		
+		// Espera a que aparezca el mensaje de error
+		try {
+			waitForWebElementToAppear(errorCampoObligatorio);
 		} catch (TimeoutException e) {
 			// Si no aparece en el tiempo de espera explicito establecido,
 			// entonces manda mensaje para indicar el problema
 			System.out.println("El mensaje de error de campo obligatorio no aparecio en el tiempo limite");
 		}
 
-		// Obtiene el texto del mensaje de error
-		// String msjError = errorNombreObligatorio.getText();
-		// System.out.println("------------ Comprobacion de campo Nombre obligatorio
-		// ------------ \n");
-
-		if (errorNombreObligatorio.isDisplayed()) {
+		// Obtiene el texto del mensaje de error y valida si es el mensaje correspondiente
+		String msjError = errorCampoObligatorio.getText();
+		if (msjError.equals("Error\n· Campo Cliente Área Obligatorio.")) {
 
 			Assert.assertTrue(true);
 		} else {
 
 			Assert.assertTrue(false);
 		}
+
+		// Limpia formulario antes de salir del metodo
+		btnCancelar.click();
 	}
 
 	// Obtiene un numero de el archivo "config.properties" para luego ingresarlo en
@@ -322,6 +396,7 @@ public class AreaCliente extends ComponentesReusables {
 		boolean hayMasPaginas = true;
 
 		while (hayMasPaginas) {
+			
 			// Buscar el área en la página actual
 			try {
 				WebElement areaCreada = driver.findElement(By.xpath("//td[normalize-space()='" + nombreArea + "']"));
@@ -334,8 +409,6 @@ public class AreaCliente extends ComponentesReusables {
 
 			// Intentar ir a la siguiente página
 			try {
-				// WebElement botonSiguiente =
-				// driver.findElement(By.xpath("//a[normalize-space()='Siguiente']"));
 				WebElement botonUltima = null;
 
 				// Intentar encontrar el botón "Última" (si existe)
@@ -355,6 +428,8 @@ public class AreaCliente extends ComponentesReusables {
 					siguientePagina.click();
 				}
 			} catch (NoSuchElementException e) {
+				
+				// Si no hay mas paginas, devuelve false
 				System.out.println("No hay más páginas en las que buscar");
 				hayMasPaginas = false;
 			}
@@ -369,6 +444,7 @@ public class AreaCliente extends ComponentesReusables {
 		boolean hayMasPaginas = true;
 
 		while (hayMasPaginas) {
+			
 			// Buscar el área en la página actual
 			try {
 				WebElement areaCreada = driver.findElement(By.xpath("//td[normalize-space()='" + nombreArea2 + "']"));
@@ -382,7 +458,7 @@ public class AreaCliente extends ComponentesReusables {
 
 			// Intentar ir a la siguiente página
 			try {
-				
+
 				WebElement botonUltima = null;
 
 				// Intentar encontrar el botón "Última" (si existe)
@@ -413,20 +489,36 @@ public class AreaCliente extends ComponentesReusables {
 	// Crea un area activa en el mantenedor y la busca para comprobar si fue creada
 	public void creaAreaActiva() throws InterruptedException {
 
+		// Guarda el "nombreArea" a ocupar y se lo manda al campo Nombre del formulario
 		int numeroArea = obtenerNumeroArea();
 		String nombreArea = "AREA ACTIVA " + String.format("%03d", numeroArea);
 		waitForWebElementToBeClickable(campoNombreArea);
 		campoNombreArea.sendKeys(nombreArea);
-		btnCrear.click();
-		//Thread.sleep(500);
+
+		// Verifica si el select cliente esta presente, antes de crear el area
+		if (elementoPresente(selectCliente)) {
+			selectCliente.click();
+			waitForWebElementToBeClickable(selectClientePrimero);
+			selectClientePrimero.click();
+			btnCrear.click();
+		} else {
+			btnCrear.click();
+		}
+
+		// Thread.sleep(500);
+		
+		// Espera a que desaparezca el mensaje por favor espere
 		waitForInvisibilityOfElement(waitingDialog);
 		// Incrementa el número del área para la siguiente iteración
+		
+		// Incrementa el numero de area adjunto al nombre para no repetirlo en la siguiente iteracion
 		incrementarNumeroArea();
 
+		// Guarda el resultado del metodo "buscarAreaEnTodasLasPaginas"
 		boolean areaEncontrada = buscarAreaEnTodasLasPaginas(driver, nombreArea);
 
-		// System.out.println("------------ Creacion de Área activa ------------ \n");
-
+		// Si la encuentra en la pagina actual, devuelve un Assert(true) y se devuelve a la primera pagina en caso de no estar en ella
+		// Si no encuentra el area, devuelve un Assert(false)
 		if (areaEncontrada) {
 			// System.out.println("Éxito!! El área activa se creó correctamente \n");
 			Assert.assertTrue(true);
@@ -454,27 +546,35 @@ public class AreaCliente extends ComponentesReusables {
 		}
 	}
 
+	// Crea un area inactiva en el mantenedor y la busca para comprobar si fue creada
 	public void creaAreaInactiva() throws InterruptedException {
 
 		// Crear area INACTIVA
 		int numeroArea2 = obtenerNumeroArea2();
 		String nombreArea2 = "AREA INACTIVA " + String.format("%03d", numeroArea2);
-		//waitForWebElementToBeClickable(campoNombreArea);
 		waitForInvisibilityOfElement(waitingDialog);
 		campoNombreArea.sendKeys(nombreArea2);
-		// Thread.sleep(1000);
 		marcarCheckEstado.click();
-		btnCrear.click();
+		
+		if (elementoPresente(selectCliente)) {
+			selectCliente.click();
+			waitForWebElementToBeClickable(selectClientePrimero);
+			selectClientePrimero.click();
+			btnCrear.click();
+		} else {
+			btnCrear.click();
+		}
+		
 		waitForInvisibilityOfElement(waitingDialog);
 
 		// Incrementa el número del área para la siguiente iteración
 		incrementarNumeroArea2();
-		
+
 		selectEstados.click();
 		estadoTodos.click();
 		btnBuscar.click();
-		
-		//waitForInvisibilityOfElement(waitingDialog);
+
+		// waitForInvisibilityOfElement(waitingDialog);
 
 		boolean areaEncontrada2 = buscarAreaEnTodasLasPaginas2(driver, nombreArea2);
 
@@ -506,31 +606,33 @@ public class AreaCliente extends ComponentesReusables {
 	}
 
 	// Modifica el nombre y el estado de un area, y hace la verificacion de que el
-	// cambio fue exitoso
+	// cambio de ambas cosas fue exitoso
 	public void modificaArea() throws InterruptedException {
 
 		Thread.sleep(700);
-		//waitForWebElementToBeClickable(primerArea);
+		// waitForWebElementToBeClickable(primerArea);
+		
 		// Declara el nombre con el que se va a modificar al area
 		String nuevoNombre = "MODIFICACION AUTOMATICA " + obtenerNumeroModificacion();
 
 		try {
+			
 			// Espera a que la primer area de la lista sea clickeable y la clickea
 			waitForWebElementToBeClickable(primerArea);
 			primerArea.click();
 		} catch (StaleElementReferenceException e) {
+			
 			// Elemento obsoleto, intentar ubicarlo nuevamente
 			primerArea = driver.findElement(By.xpath("//tbody[@class='tb-bss-pointer']/tr[1]/td[1]"));
 			waitForWebElementToBeClickable(primerArea);
 			primerArea.click(); // Intentar hacer clic nuevamente
 		}
-		Thread.sleep(250);
+		Thread.sleep(350);
 
 		// Luego de seleccionar, limpia el nombre e ingresa el "nuevoNombre"
 		campoNombreArea.clear();
 		campoNombreArea.sendKeys(nuevoNombre);
 		btnCrear.click();
-		//Thread.sleep(1000);
 		waitForInvisibilityOfElement(waitingDialog);
 
 		// Obtiene el nombre que modificamos al primer area de la lista
@@ -539,7 +641,7 @@ public class AreaCliente extends ComponentesReusables {
 		// Obtiene el texto del primer area despues de modificar y lo guarda en
 		// "nombreareaNuevo"
 		try {
-			//waitForWebElementToBeClickable(primerArea);
+			// waitForWebElementToBeClickable(primerArea);
 			waitForWebElementToAppear(primerArea);
 			nombreareaNuevo = primerArea.getText();
 		} catch (StaleElementReferenceException e) {
@@ -579,10 +681,10 @@ public class AreaCliente extends ComponentesReusables {
 				primerArea.click(); // Intentar hacer clic nuevamente
 			}
 
-			Thread.sleep(250);
+			Thread.sleep(350);
 
 			// Obtener el estado actual del área (activo o inactivo)
-			//WebElement inputActivo = driver.findElement(By.id("rdoActivo1"));
+			// WebElement inputActivo = driver.findElement(By.id("rdoActivo1"));
 			boolean estadoActualActivo = checkEstado.isSelected();
 
 			if (estadoActualActivo) {
@@ -594,12 +696,12 @@ public class AreaCliente extends ComponentesReusables {
 			}
 
 			btnCrear.click();
-			//Thread.sleep(500);
+			// Thread.sleep(500);
 			waitForInvisibilityOfElement(waitingDialog);
-			
-			int nroModif = obtenerNumeroModificacion() -1;
+
+			int nroModif = obtenerNumeroModificacion() - 1;
 			filtroNombre.clear();
-			//waitForWebElementToBeClickable(filtroNombre);
+			// waitForWebElementToBeClickable(filtroNombre);
 			filtroNombre.sendKeys("MODIFICACION AUTOMATICA " + nroModif);
 			selectEstados.click();
 			waitForWebElementToBeClickable(estadoTodos);
@@ -617,7 +719,7 @@ public class AreaCliente extends ComponentesReusables {
 				waitForWebElementToBeClickable(primerArea);
 				primerArea.click(); // Intentar hacer clic nuevamente
 			}
-			Thread.sleep(250);
+			Thread.sleep(350);
 
 			boolean nuevoEstadoActivo = checkEstado.isSelected();
 
@@ -642,6 +744,7 @@ public class AreaCliente extends ComponentesReusables {
 
 	}
 
+	// Obtiene lista de areas presentes en la grilla actual
 	public List<WebElement> obtenerListaAreas() {
 
 		// Retorna la lista de areas presentes en la vista
@@ -649,31 +752,41 @@ public class AreaCliente extends ComponentesReusables {
 		return listaAreas;
 	}
 
+	// Prueba del filtro nombre area
 	public void filtroNombreArea() throws InterruptedException {
-		//Thread.sleep(700);
+
 		Actions a = new Actions(driver);
-//		a.scrollToElement(filtroNombre).build().perform();
 
 		// Proporciona un nombre de area para la prueba
 		String nombreAreaFiltro = "BUSCA AREA " + obtenerNumeroModificacion();
 
 		// Crea el area con el nombre definido
+		campoNombreArea.clear();
 		campoNombreArea.sendKeys(nombreAreaFiltro);
-		btnCrear.click();
+		
+		// Verifica si el select cliente esta presente, para considerarlo o no en la creacion del area
+		if (elementoPresente(selectCliente)) {
+			selectCliente.click();
+			waitForWebElementToBeClickable(selectClientePrimero);
+			selectClientePrimero.click();
+			btnCrear.click();
+		} else {
+			btnCrear.click();
+		}
+		
 		waitForInvisibilityOfElement(waitingDialog);
 
 		incrementarNumeroModificacion();
 
 		// Manda variable nombreArea al filtro de nombre
-		//waitForWebElementToBeClickable(filtroNombre);
 		filtroNombre.clear();
 		filtroNombre.sendKeys(nombreAreaFiltro);
 
 		// Realiza la busqueda mediante tecla enter
 		a.moveToElement(filtroNombre).click().keyDown(Keys.ENTER).build().perform();
 
-		//Thread.sleep(850);
-		//waitForInvisibilityOfElement(waitingDialog);
+		// Thread.sleep(850);
+		// waitForInvisibilityOfElement(waitingDialog);
 		WebElement area = obtenerListaAreas().stream()
 				.filter(elemento -> elemento.findElement(By.cssSelector("td")).getText().contains(nombreAreaFiltro))
 				.findFirst().orElse(null);
@@ -687,7 +800,7 @@ public class AreaCliente extends ComponentesReusables {
 		}
 
 		btnBuscar.click();
-		//waitForInvisibilityOfElement(waitingDialog);
+		// waitForInvisibilityOfElement(waitingDialog);
 		WebElement area2 = obtenerListaAreas().stream()
 				.filter(elemento -> elemento.findElement(By.cssSelector("td")).getText().contains(nombreAreaFiltro))
 				.findFirst().orElse(null);
@@ -701,29 +814,30 @@ public class AreaCliente extends ComponentesReusables {
 		}
 	}
 
+	// Prueba del filtro estado area
 	public void filtroEstadoArea() throws InterruptedException {
 
-		//boolean validaEstado = false;
-
-		//JavascriptExecutor js = (JavascriptExecutor) driver;
-
-		// Desplaza el scroll hasta el inicio de la pagina
-		//js.executeScript("window.scrollBy(0, 0)");
-
-		//waitForWebElementToAppear(btnLimpiar);
-		//waitForWebElementToBeClickable(btnLimpiar);
+		// waitForWebElementToAppear(btnLimpiar);
+		// waitForWebElementToBeClickable(btnLimpiar);
+		
 		Thread.sleep(1000);
+		
+		// Limpia los filtros y filtra por el estado activo
 		btnLimpiar.click();
 		selectEstados.click();
 		estadoActivo.click();
 		btnBuscar.click();
-		//waitForInvisibilityOfElement(waitingDialog);
+		
+		// waitForInvisibilityOfElement(waitingDialog);
 		Thread.sleep(1000);
 
-		int encontroArea=0;
-		List<WebElement> listaAreas; 
-		listaAreas= obtenerListaAreas();
+		int encontroArea = 0;
+		List<WebElement> listaAreas;
 		
+		// Guarda la lista de areas en la variable 
+		listaAreas = obtenerListaAreas();
+
+		// Por cada iteracion, clickea un area y verifica si su estado es activo, lo hace con las 5 primeras
 		for (int i = 1; i < Math.min(listaAreas.size(), 6); i++) {
 
 			WebElement areaLista = driver.findElement(By.xpath("//tbody[@class='tb-bss-pointer']/tr[" + i + "]/td[1]"));
@@ -745,14 +859,14 @@ public class AreaCliente extends ComponentesReusables {
 
 			if (checkEstado.isSelected()) {
 				continue;
-			}else {
+			} else {
 				encontroArea++;
 				System.out.println("Se encontro un area inactiva al buscar areas activas");
 			}
 
 		}
 
-		if (encontroArea==0) {
+		if (encontroArea == 0) {
 			Assert.assertTrue(true);
 		} else {
 			Assert.assertTrue(false);
@@ -762,16 +876,19 @@ public class AreaCliente extends ComponentesReusables {
 		selectEstados.click();
 		estadoInactivo.click();
 		btnBuscar.click();
-		//waitForInvisibilityOfElement(waitingDialog);
+		
+		// waitForInvisibilityOfElement(waitingDialog);
 		Thread.sleep(1000);
 
 		encontroArea = 0;
-		listaAreas= obtenerListaAreas();
+		listaAreas = obtenerListaAreas();
+		
+		// Por cada iteracion, clickea un area y verifica si su estado es inactivo, lo hace con las 5 primeras
 		for (int i = 1; i < Math.min(listaAreas.size(), 6); i++) {
 
 			WebElement areaLista = driver.findElement(By.xpath("//tbody[@class='tb-bss-pointer']/tr[" + i + "]/td[1]"));
 
-			// Comprobacion de areas activas
+			// Comprobacion de areas inactivas
 			try {
 				waitForWebElementToBeClickable(areaLista);
 				areaLista.click();
@@ -787,24 +904,84 @@ public class AreaCliente extends ComponentesReusables {
 //				waitForWebElementToBeClickable(inputActivo);
 
 			if (checkEstado.isSelected()) {
-				//validaEstado = false;
+				// validaEstado = false;
 				encontroArea++;
 				System.out.println("Se encontro un area activa al buscar areas inactivas");
 			}
 
 		}
 
-		if (encontroArea==0) {
+		if (encontroArea == 0) {
 			Assert.assertTrue(true);
 		} else {
 			Assert.assertTrue(false);
 		}
+
+	}
+
+	// Prueba del select cliente (Solo se ejecuta en caso de que este el select)
+	public void selectCliente() throws InterruptedException {
 		
-//		if (validaEstado) {
-//			Assert.assertTrue(true);
-//		} else {
-//			Assert.assertTrue(false);
-//		}
+		// Comprueba si el select cliente esta presente, si no lo esta, no ejecuta la prueba
+		if (!elementoPresente(selectCliente)) {
+	        return;
+	    }
+		
+		// Refresca la pagina
+		driver.navigate().refresh();
+
+		waitForWebElementToBeClickable(campoNombreArea);
+		
+	// Ingresa un nombre al area, selecciona un cliente, y la crea
+		int numeroArea = obtenerNumeroArea();
+		String nombreArea = "SELECT CLIENTE " + String.format("%03d", numeroArea);
+		waitForInvisibilityOfElement(waitingDialog);
+		campoNombreArea.sendKeys(nombreArea);
+		selectCliente.click();
+		waitForWebElementToBeClickable(selectClientePrimero);
+		
+		// Extrae el texto del primer area que arroja el select cliente
+		String areaSeleccionada = selectClientePrimero.getText();
+		selectClientePrimero.click();
+		btnCrear.click();
+
+		waitForInvisibilityOfElement(waitingDialog);
+		
+	// Incrementa el número del área para la siguiente iteración
+		incrementarNumeroArea();
+
+		// Limpia el filtro nombre, le pasa el nombre del area creada anteriormente, y busca
+		filtroNombre.clear();
+		filtroNombre.sendKeys(nombreArea);
+		btnBuscar.click();
+		
+		// Encuentra el primer resultado de la grilla
+		WebElement clienteArea = driver.findElement(By.xpath("//tbody[@class='tb-bss-pointer']/tr[1]/td[2]"));
+		
+		// Comprueba que la columna cliente sea el mismo cliente que se selecciono en la creacion del area
+		if (areaSeleccionada.equals(clienteArea.getText())) {
+			System.out.println("Cliente se asigno correctamente");
+			Assert.assertTrue(true);
+		}else {
+			System.out.println("Cliente no fue correctamente asignado");
+			Assert.assertTrue(false);
+		}
+	}
+	
+	
+	// Comprueba si un elemento esta presente en el DOM
+	private boolean elementoPresente(WebElement element) {
+		
+	    // Comprueba si el elemento esta presente, si no lo esta devuelve false
+		try {
+	        if (element.isDisplayed()) {
+		    	return true;
+	        }else {
+	        	return false;
+	        	}
+	    } catch (NoSuchElementException e) {
+	        return false;
+	    }
 	}
 
 }
