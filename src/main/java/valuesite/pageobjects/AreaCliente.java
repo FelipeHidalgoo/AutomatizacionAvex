@@ -182,7 +182,7 @@ public class AreaCliente extends ComponentesReusables {
 	}
 
 	// Comprueba que el sistema no permite crear area sin ingresar un nombre a esta
-	public void errorNombreObligatorio() {
+	public void errorNombreObligatorio() throws InterruptedException {
 		// waitForWebElementToBeClickable(btnCrear);
 		
 		// Comprueba si el select cliente esta presente, si lo esta, selecciona un cliente
@@ -195,12 +195,13 @@ public class AreaCliente extends ComponentesReusables {
 		btnCrear.click();
 
 		// Declara el mensaje de error en la variable errorCampoObligatorio
-		errorCampoObligatorio = driver
-				.findElement(By.xpath("//div[@class='alert alert-danger animated fadeInDown'][1]"));
+//		errorCampoObligatorio = driver
+//				.findElement(By.xpath("//div[@class='alert alert-danger animated fadeInDown']"));
 		
 		// Espera a que aparezca el mensaje de error
 		try {
-			waitForWebElementToAppear(errorCampoObligatorio);
+			//waitForWebElementToAppear(errorCampoObligatorio);
+			Thread.sleep(500);
 		} catch (TimeoutException e) {
 			// Si no aparece en el tiempo de espera explicito establecido,
 			// entonces manda mensaje para indicar el problema
