@@ -18,13 +18,13 @@
         </classes>
     </test>
     
-    <test name="Modificacion pin RT">
+    <test name="Modificacion PIN RT">
         <classes>
             <class name="valuesite.tests.ModificacionPinTestRT"/>
         </classes>
     </test>
     
-    <test name="Modificacion pin Cliente">
+    <test name="Modificacion PIN Cliente">
         <classes>
             <class name="valuesite.tests.ModificacionPinTestCliente"/>
         </classes>

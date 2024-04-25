@@ -8,6 +8,10 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+
 import valuesite.componentesreusables.ActionsHelper;
 import valuesite.componentesreusables.ComponentesReusables;
 import valuesite.pageobjects.Login;
@@ -19,11 +23,22 @@ public class ModificacionPinTestCliente extends BaseTest{
 	
 	ModificacionPinCliente modifpincli;
 	ComponentesReusables componentesReusables;
+	ExtentReports extent;
 	
 	@BeforeTest
 	public void setUp() {
 		modifpincli = new ModificacionPinCliente(driver);
 		componentesReusables = new ComponentesReusables(driver);
+		
+//		String path = System.getProperty("user.dir")+"\\reportes\\reporte.html";
+//		ExtentSparkReporter reporte = new ExtentSparkReporter(path);
+//		
+//		reporte.config().setReportName("Resultados de pruebas automatizadas");
+//		reporte.config().setDocumentTitle("Resultados de pruebas");
+//		
+//		extent = new ExtentReports();
+//		extent.attachReporter(reporte);
+//		extent.setSystemInfo("Tester", "ASUS (Valuesite19) OFICINA");
     }
     
     @BeforeClass
@@ -40,24 +55,31 @@ public class ModificacionPinTestCliente extends BaseTest{
 	}
 	
 	
-	@Test(priority=1)
-	public void vaciaCampo() {
-		componentesReusables.waitForWebElementToAppear(modifpincli.campoPin);
-		
-		modifpincli.ingresaPin("7546");
-		modifpincli.campoPin.clear();
-		
-		String pin = modifpincli.obtienePIN();
-		//System.out.println(pin);
-		
-		if (pin.isEmpty()) {
-			System.out.println("El campo se vacio correctamente\n");
-			Assert.assertTrue(true);
-		}else {
-			System.out.println("El campo NO se vacio correctamente\n");
-			Assert.assertTrue(false);
-		}
-	}
+    @Test(priority=1)
+    public void vaciaCampo() {
+//        ExtentTest test = extent.createTest("Borra los datos ingresados en el campo");
+        
+        componentesReusables.waitForWebElementToAppear(modifpincli.campoPin);
+        
+        modifpincli.ingresaPin("7546");
+        //modifpincli.campoPin.clear();
+        
+        String pin = modifpincli.obtienePIN();
+        //System.out.println(pin);
+        
+        if (pin.isEmpty()) {
+            System.out.println("El campo se vacio correctamente\n");
+            Assert.assertTrue(true);
+        } else {
+            System.out.println("El campo NO se vacio correctamente\n");
+            Assert.assertTrue(false);
+        }
+        
+//        test.fail("El resultado no es correcto");
+//        
+//        extent.flush();
+    }
+
 	
     @Test(priority=2)
 	public void ingresarPin() {
