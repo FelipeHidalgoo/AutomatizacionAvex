@@ -62,7 +62,7 @@ public class ModificacionPinTestCliente extends BaseTest{
         componentesReusables.waitForWebElementToAppear(modifpincli.campoPin);
         
         modifpincli.ingresaPin("7546");
-        //modifpincli.campoPin.clear();
+        modifpincli.campoPin.clear();
         
         String pin = modifpincli.obtienePIN();
         //System.out.println(pin);

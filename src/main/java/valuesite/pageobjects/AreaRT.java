@@ -159,6 +159,7 @@ public class AreaRT extends ComponentesReusables {
 		tabAreaCliente.click();
 		campoBuscarCliente.click();
 		inputBuscarCliente.sendKeys(nombreCliente);
+		waitForWebElementToBeClickable(seleccionAreaSelect);
 		seleccionAreaSelect.click();
 		botonAdministrar.click();
 		waitForInvisibilityOfElement(waitingDialog);

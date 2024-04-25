@@ -4,24 +4,20 @@
   <listeners>
     <listener class-name="valuesite.testcomponents.ListenersTestNG"/>
   </listeners>
-  <test thread-count="5" name="Area RT(failed)">
+  <test thread-count="5" name="Area Ciente(failed)">
     <classes>
-      <class name="valuesite.tests.MantenedorAreaTestRT">
+      <class name="valuesite.tests.MantenedorAreaTestCliente">
         <methods>
-          <include name="creaAreaActivaTest"/>
           <include name="setUp"/>
           <include name="Finalizar"/>
           <include name="lanzarNavegador"/>
-          <include name="filtroNombreAreaTest"/>
-          <include name="modificaAreaTest"/>
-          <include name="nombreObligatorioTest"/>
+          <include name="creaAreaActivaTest"/>
           <include name="ingresaMantenedor"/>
-          <include name="creaAreaInactivaTest"/>
-          <include name="filtroEstadoAreaTest"/>
+          <include name="clienteObligatorioTest"/>
         </methods>
-      </class> <!-- valuesite.tests.MantenedorAreaTestRT -->
+      </class> <!-- valuesite.tests.MantenedorAreaTestCliente -->
     </classes>
-  </test> <!-- Area RT(failed) -->
+  </test> <!-- Area Ciente(failed) -->
   <test thread-count="5" name="Modificacion PIN RT(failed)">
     <classes>
       <class name="valuesite.tests.ModificacionPinTestRT">
@@ -35,17 +31,4 @@
       </class> <!-- valuesite.tests.ModificacionPinTestRT -->
     </classes>
   </test> <!-- Modificacion PIN RT(failed) -->
-  <test thread-count="5" name="Modificacion PIN Cliente(failed)">
-    <classes>
-      <class name="valuesite.tests.ModificacionPinTestCliente">
-        <methods>
-          <include name="ingresaMantenedor"/>
-          <include name="Finalizar"/>
-          <include name="vaciaCampo"/>
-          <include name="lanzarNavegador"/>
-          <include name="setUp"/>
-        </methods>
-      </class> <!-- valuesite.tests.ModificacionPinTestCliente -->
-    </classes>
-  </test> <!-- Modificacion PIN Cliente(failed) -->
 </suite> <!-- Failed suite [Mantenedores Administrativos] -->

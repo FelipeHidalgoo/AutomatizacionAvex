@@ -1,645 +1,290 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="27" passed="19" failed="2" skipped="6">
+<testng-results ignored="0" total="27" passed="24" failed="3" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-04-25T16:32:39 CLT" name="Mantenedores Administrativos" finished-at="2024-04-25T16:35:28 CLT" duration-ms="168778">
+  <suite started-at="2024-04-25T16:52:56 CLT" name="Mantenedores Administrativos" finished-at="2024-04-25T16:55:52 CLT" duration-ms="176179">
     <groups>
     </groups>
-    <test started-at="2024-04-25T16:32:39 CLT" name="Area RT" finished-at="2024-04-25T16:33:30 CLT" duration-ms="51212">
+    <test started-at="2024-04-25T16:52:56 CLT" name="Area RT" finished-at="2024-04-25T16:53:40 CLT" duration-ms="43419">
       <class name="valuesite.tests.MantenedorAreaTestRT">
-        <test-method is-config="true" signature="lanzarNavegador()[pri:0, instance:valuesite.tests.MantenedorAreaTestRT@4b8d604b]" started-at="2024-04-25T16:32:39 CLT" name="lanzarNavegador" finished-at="2024-04-25T16:33:05 CLT" duration-ms="25779" status="PASS">
+        <test-method is-config="true" signature="lanzarNavegador()[pri:0, instance:valuesite.tests.MantenedorAreaTestRT@5e7cd6cc]" started-at="2024-04-25T16:52:56 CLT" name="lanzarNavegador" finished-at="2024-04-25T16:53:03 CLT" duration-ms="6369" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- lanzarNavegador -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:valuesite.tests.MantenedorAreaTestRT@4b8d604b]" started-at="2024-04-25T16:33:05 CLT" name="setUp" finished-at="2024-04-25T16:33:05 CLT" depends-on-methods="valuesite.testcomponents.BaseTest.lanzarNavegador" duration-ms="30" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:valuesite.tests.MantenedorAreaTestRT@5e7cd6cc]" started-at="2024-04-25T16:53:03 CLT" name="setUp" finished-at="2024-04-25T16:53:03 CLT" depends-on-methods="valuesite.testcomponents.BaseTest.lanzarNavegador" duration-ms="27" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="ingresaMantenedor()[pri:0, instance:valuesite.tests.MantenedorAreaTestRT@4b8d604b]" started-at="2024-04-25T16:33:05 CLT" name="ingresaMantenedor" finished-at="2024-04-25T16:33:30 CLT" duration-ms="25257" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='bs-container btn-group bootstrap-select show-tick open']//li[2]//a[1]//span[1]"}
-  (Session info: chrome=124.0.6367.61)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.19.1', revision: 'abe0ee07dc'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.11'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [a06d34ac1c70630ad6110089b42abaac, findElement {using=xpath, value=//div[@class='bs-container btn-group bootstrap-select show-tick open']//li[2]//a[1]//span[1]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 124.0.6367.61, chrome: {chromedriverVersion: 124.0.6367.78 (a087f2dd364d..., userDataDir: C:\Users\FELIPE~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55371}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55371/devtoo..., se:cdpVersion: 124.0.6367.61, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: a06d34ac1c70630ad6110089b42abaac]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='bs-container btn-group bootstrap-select show-tick open']//li[2]//a[1]//span[1]"}
-  (Session info: chrome=124.0.6367.61)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.19.1', revision: 'abe0ee07dc'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.11'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [a06d34ac1c70630ad6110089b42abaac, findElement {using=xpath, value=//div[@class='bs-container btn-group bootstrap-select show-tick open']//li[2]//a[1]//span[1]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 124.0.6367.61, chrome: {chromedriverVersion: 124.0.6367.78 (a087f2dd364d..., userDataDir: C:\Users\FELIPE~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55371}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55371/devtoo..., se:cdpVersion: 124.0.6367.61, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: a06d34ac1c70630ad6110089b42abaac
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at jdk.proxy2/jdk.proxy2.$Proxy15.click(Unknown Source)
-at valuesite.pageobjects.AreaRT.ingresoMantenedorArea(AreaRT.java:162)
-at valuesite.tests.MantenedorAreaTestRT.ingresaMantenedor(MantenedorAreaTestRT.java:42)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
-at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
-at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
-at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:176)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:122)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+        <test-method is-config="true" signature="ingresaMantenedor()[pri:0, instance:valuesite.tests.MantenedorAreaTestRT@5e7cd6cc]" started-at="2024-04-25T16:53:03 CLT" name="ingresaMantenedor" finished-at="2024-04-25T16:53:11 CLT" duration-ms="7959" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ingresaMantenedor -->
-        <test-method signature="nombreObligatorioTest()[pri:1, instance:valuesite.tests.MantenedorAreaTestRT@4b8d604b]" started-at="2024-04-25T16:33:30 CLT" name="nombreObligatorioTest" finished-at="2024-04-25T16:33:30 CLT" duration-ms="0" status="SKIP">
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='bs-container btn-group bootstrap-select show-tick open']//li[2]//a[1]//span[1]"}
-  (Session info: chrome=124.0.6367.61)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.19.1', revision: 'abe0ee07dc'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.11'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [a06d34ac1c70630ad6110089b42abaac, findElement {using=xpath, value=//div[@class='bs-container btn-group bootstrap-select show-tick open']//li[2]//a[1]//span[1]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 124.0.6367.61, chrome: {chromedriverVersion: 124.0.6367.78 (a087f2dd364d..., userDataDir: C:\Users\FELIPE~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55371}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55371/devtoo..., se:cdpVersion: 124.0.6367.61, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: a06d34ac1c70630ad6110089b42abaac]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='bs-container btn-group bootstrap-select show-tick open']//li[2]//a[1]//span[1]"}
-  (Session info: chrome=124.0.6367.61)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.19.1', revision: 'abe0ee07dc'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.11'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [a06d34ac1c70630ad6110089b42abaac, findElement {using=xpath, value=//div[@class='bs-container btn-group bootstrap-select show-tick open']//li[2]//a[1]//span[1]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 124.0.6367.61, chrome: {chromedriverVersion: 124.0.6367.78 (a087f2dd364d..., userDataDir: C:\Users\FELIPE~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55371}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55371/devtoo..., se:cdpVersion: 124.0.6367.61, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: a06d34ac1c70630ad6110089b42abaac
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at jdk.proxy2/jdk.proxy2.$Proxy15.click(Unknown Source)
-at valuesite.pageobjects.AreaRT.ingresoMantenedorArea(AreaRT.java:162)
-at valuesite.tests.MantenedorAreaTestRT.ingresaMantenedor(MantenedorAreaTestRT.java:42)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
-at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
-at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
-at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:176)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:122)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+        <test-method signature="nombreObligatorioTest()[pri:1, instance:valuesite.tests.MantenedorAreaTestRT@5e7cd6cc]" started-at="2024-04-25T16:53:11 CLT" name="nombreObligatorioTest" finished-at="2024-04-25T16:53:11 CLT" duration-ms="254" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- nombreObligatorioTest -->
-        <test-method signature="creaAreaActivaTest()[pri:2, instance:valuesite.tests.MantenedorAreaTestRT@4b8d604b]" started-at="2024-04-25T16:33:30 CLT" name="creaAreaActivaTest" finished-at="2024-04-25T16:33:30 CLT" duration-ms="0" status="SKIP">
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='bs-container btn-group bootstrap-select show-tick open']//li[2]//a[1]//span[1]"}
-  (Session info: chrome=124.0.6367.61)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.19.1', revision: 'abe0ee07dc'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.11'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [a06d34ac1c70630ad6110089b42abaac, findElement {using=xpath, value=//div[@class='bs-container btn-group bootstrap-select show-tick open']//li[2]//a[1]//span[1]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 124.0.6367.61, chrome: {chromedriverVersion: 124.0.6367.78 (a087f2dd364d..., userDataDir: C:\Users\FELIPE~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55371}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55371/devtoo..., se:cdpVersion: 124.0.6367.61, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: a06d34ac1c70630ad6110089b42abaac]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='bs-container btn-group bootstrap-select show-tick open']//li[2]//a[1]//span[1]"}
-  (Session info: chrome=124.0.6367.61)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.19.1', revision: 'abe0ee07dc'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.11'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [a06d34ac1c70630ad6110089b42abaac, findElement {using=xpath, value=//div[@class='bs-container btn-group bootstrap-select show-tick open']//li[2]//a[1]//span[1]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 124.0.6367.61, chrome: {chromedriverVersion: 124.0.6367.78 (a087f2dd364d..., userDataDir: C:\Users\FELIPE~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55371}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55371/devtoo..., se:cdpVersion: 124.0.6367.61, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: a06d34ac1c70630ad6110089b42abaac
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at jdk.proxy2/jdk.proxy2.$Proxy15.click(Unknown Source)
-at valuesite.pageobjects.AreaRT.ingresoMantenedorArea(AreaRT.java:162)
-at valuesite.tests.MantenedorAreaTestRT.ingresaMantenedor(MantenedorAreaTestRT.java:42)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
-at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
-at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
-at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:176)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:122)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+        <test-method signature="creaAreaActivaTest()[pri:2, instance:valuesite.tests.MantenedorAreaTestRT@5e7cd6cc]" started-at="2024-04-25T16:53:11 CLT" name="creaAreaActivaTest" finished-at="2024-04-25T16:53:16 CLT" duration-ms="4631" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- creaAreaActivaTest -->
-        <test-method signature="creaAreaInactivaTest()[pri:3, instance:valuesite.tests.MantenedorAreaTestRT@4b8d604b]" started-at="2024-04-25T16:33:30 CLT" name="creaAreaInactivaTest" finished-at="2024-04-25T16:33:30 CLT" duration-ms="0" status="SKIP">
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='bs-container btn-group bootstrap-select show-tick open']//li[2]//a[1]//span[1]"}
-  (Session info: chrome=124.0.6367.61)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.19.1', revision: 'abe0ee07dc'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.11'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [a06d34ac1c70630ad6110089b42abaac, findElement {using=xpath, value=//div[@class='bs-container btn-group bootstrap-select show-tick open']//li[2]//a[1]//span[1]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 124.0.6367.61, chrome: {chromedriverVersion: 124.0.6367.78 (a087f2dd364d..., userDataDir: C:\Users\FELIPE~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55371}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55371/devtoo..., se:cdpVersion: 124.0.6367.61, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: a06d34ac1c70630ad6110089b42abaac]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='bs-container btn-group bootstrap-select show-tick open']//li[2]//a[1]//span[1]"}
-  (Session info: chrome=124.0.6367.61)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.19.1', revision: 'abe0ee07dc'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.11'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [a06d34ac1c70630ad6110089b42abaac, findElement {using=xpath, value=//div[@class='bs-container btn-group bootstrap-select show-tick open']//li[2]//a[1]//span[1]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 124.0.6367.61, chrome: {chromedriverVersion: 124.0.6367.78 (a087f2dd364d..., userDataDir: C:\Users\FELIPE~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55371}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55371/devtoo..., se:cdpVersion: 124.0.6367.61, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: a06d34ac1c70630ad6110089b42abaac
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at jdk.proxy2/jdk.proxy2.$Proxy15.click(Unknown Source)
-at valuesite.pageobjects.AreaRT.ingresoMantenedorArea(AreaRT.java:162)
-at valuesite.tests.MantenedorAreaTestRT.ingresaMantenedor(MantenedorAreaTestRT.java:42)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
-at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
-at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
-at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:176)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:122)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+        <test-method signature="creaAreaInactivaTest()[pri:3, instance:valuesite.tests.MantenedorAreaTestRT@5e7cd6cc]" started-at="2024-04-25T16:53:16 CLT" name="creaAreaInactivaTest" finished-at="2024-04-25T16:53:20 CLT" duration-ms="4712" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- creaAreaInactivaTest -->
-        <test-method signature="modificaAreaTest()[pri:4, instance:valuesite.tests.MantenedorAreaTestRT@4b8d604b]" started-at="2024-04-25T16:33:30 CLT" name="modificaAreaTest" finished-at="2024-04-25T16:33:30 CLT" duration-ms="0" status="SKIP">
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='bs-container btn-group bootstrap-select show-tick open']//li[2]//a[1]//span[1]"}
-  (Session info: chrome=124.0.6367.61)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.19.1', revision: 'abe0ee07dc'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.11'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [a06d34ac1c70630ad6110089b42abaac, findElement {using=xpath, value=//div[@class='bs-container btn-group bootstrap-select show-tick open']//li[2]//a[1]//span[1]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 124.0.6367.61, chrome: {chromedriverVersion: 124.0.6367.78 (a087f2dd364d..., userDataDir: C:\Users\FELIPE~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55371}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55371/devtoo..., se:cdpVersion: 124.0.6367.61, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: a06d34ac1c70630ad6110089b42abaac]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='bs-container btn-group bootstrap-select show-tick open']//li[2]//a[1]//span[1]"}
-  (Session info: chrome=124.0.6367.61)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.19.1', revision: 'abe0ee07dc'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.11'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [a06d34ac1c70630ad6110089b42abaac, findElement {using=xpath, value=//div[@class='bs-container btn-group bootstrap-select show-tick open']//li[2]//a[1]//span[1]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 124.0.6367.61, chrome: {chromedriverVersion: 124.0.6367.78 (a087f2dd364d..., userDataDir: C:\Users\FELIPE~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55371}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55371/devtoo..., se:cdpVersion: 124.0.6367.61, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: a06d34ac1c70630ad6110089b42abaac
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at jdk.proxy2/jdk.proxy2.$Proxy15.click(Unknown Source)
-at valuesite.pageobjects.AreaRT.ingresoMantenedorArea(AreaRT.java:162)
-at valuesite.tests.MantenedorAreaTestRT.ingresaMantenedor(MantenedorAreaTestRT.java:42)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
-at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
-at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
-at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:176)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:122)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+        <test-method signature="modificaAreaTest()[pri:4, instance:valuesite.tests.MantenedorAreaTestRT@5e7cd6cc]" started-at="2024-04-25T16:53:20 CLT" name="modificaAreaTest" finished-at="2024-04-25T16:53:27 CLT" duration-ms="7026" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- modificaAreaTest -->
-        <test-method signature="filtroNombreAreaTest()[pri:5, instance:valuesite.tests.MantenedorAreaTestRT@4b8d604b]" started-at="2024-04-25T16:33:30 CLT" name="filtroNombreAreaTest" finished-at="2024-04-25T16:33:30 CLT" duration-ms="0" status="SKIP">
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='bs-container btn-group bootstrap-select show-tick open']//li[2]//a[1]//span[1]"}
-  (Session info: chrome=124.0.6367.61)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.19.1', revision: 'abe0ee07dc'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.11'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [a06d34ac1c70630ad6110089b42abaac, findElement {using=xpath, value=//div[@class='bs-container btn-group bootstrap-select show-tick open']//li[2]//a[1]//span[1]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 124.0.6367.61, chrome: {chromedriverVersion: 124.0.6367.78 (a087f2dd364d..., userDataDir: C:\Users\FELIPE~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55371}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55371/devtoo..., se:cdpVersion: 124.0.6367.61, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: a06d34ac1c70630ad6110089b42abaac]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='bs-container btn-group bootstrap-select show-tick open']//li[2]//a[1]//span[1]"}
-  (Session info: chrome=124.0.6367.61)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.19.1', revision: 'abe0ee07dc'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.11'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [a06d34ac1c70630ad6110089b42abaac, findElement {using=xpath, value=//div[@class='bs-container btn-group bootstrap-select show-tick open']//li[2]//a[1]//span[1]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 124.0.6367.61, chrome: {chromedriverVersion: 124.0.6367.78 (a087f2dd364d..., userDataDir: C:\Users\FELIPE~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55371}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55371/devtoo..., se:cdpVersion: 124.0.6367.61, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: a06d34ac1c70630ad6110089b42abaac
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at jdk.proxy2/jdk.proxy2.$Proxy15.click(Unknown Source)
-at valuesite.pageobjects.AreaRT.ingresoMantenedorArea(AreaRT.java:162)
-at valuesite.tests.MantenedorAreaTestRT.ingresaMantenedor(MantenedorAreaTestRT.java:42)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
-at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
-at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
-at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:176)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:122)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+        <test-method signature="filtroNombreAreaTest()[pri:5, instance:valuesite.tests.MantenedorAreaTestRT@5e7cd6cc]" started-at="2024-04-25T16:53:27 CLT" name="filtroNombreAreaTest" finished-at="2024-04-25T16:53:30 CLT" duration-ms="2918" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- filtroNombreAreaTest -->
-        <test-method signature="filtroEstadoAreaTest()[pri:6, instance:valuesite.tests.MantenedorAreaTestRT@4b8d604b]" started-at="2024-04-25T16:33:30 CLT" name="filtroEstadoAreaTest" finished-at="2024-04-25T16:33:30 CLT" duration-ms="0" status="SKIP">
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='bs-container btn-group bootstrap-select show-tick open']//li[2]//a[1]//span[1]"}
-  (Session info: chrome=124.0.6367.61)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.19.1', revision: 'abe0ee07dc'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.11'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [a06d34ac1c70630ad6110089b42abaac, findElement {using=xpath, value=//div[@class='bs-container btn-group bootstrap-select show-tick open']//li[2]//a[1]//span[1]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 124.0.6367.61, chrome: {chromedriverVersion: 124.0.6367.78 (a087f2dd364d..., userDataDir: C:\Users\FELIPE~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55371}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55371/devtoo..., se:cdpVersion: 124.0.6367.61, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: a06d34ac1c70630ad6110089b42abaac]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='bs-container btn-group bootstrap-select show-tick open']//li[2]//a[1]//span[1]"}
-  (Session info: chrome=124.0.6367.61)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.19.1', revision: 'abe0ee07dc'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.11'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [a06d34ac1c70630ad6110089b42abaac, findElement {using=xpath, value=//div[@class='bs-container btn-group bootstrap-select show-tick open']//li[2]//a[1]//span[1]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 124.0.6367.61, chrome: {chromedriverVersion: 124.0.6367.78 (a087f2dd364d..., userDataDir: C:\Users\FELIPE~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55371}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55371/devtoo..., se:cdpVersion: 124.0.6367.61, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: a06d34ac1c70630ad6110089b42abaac
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at jdk.proxy2/jdk.proxy2.$Proxy15.click(Unknown Source)
-at valuesite.pageobjects.AreaRT.ingresoMantenedorArea(AreaRT.java:162)
-at valuesite.tests.MantenedorAreaTestRT.ingresaMantenedor(MantenedorAreaTestRT.java:42)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
-at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
-at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
-at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:176)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:122)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+        <test-method signature="filtroEstadoAreaTest()[pri:6, instance:valuesite.tests.MantenedorAreaTestRT@5e7cd6cc]" started-at="2024-04-25T16:53:30 CLT" name="filtroEstadoAreaTest" finished-at="2024-04-25T16:53:39 CLT" duration-ms="9066" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- filtroEstadoAreaTest -->
-        <test-method is-config="true" signature="Finalizar()[pri:0, instance:valuesite.tests.MantenedorAreaTestRT@4b8d604b]" started-at="2024-04-25T16:33:30 CLT" name="Finalizar" finished-at="1969-12-31T21:00:00 CLST" duration-ms="-1714077210456" status="SKIP">
+        <test-method is-config="true" signature="Finalizar()[pri:0, instance:valuesite.tests.MantenedorAreaTestRT@5e7cd6cc]" started-at="2024-04-25T16:53:39 CLT" name="Finalizar" finished-at="2024-04-25T16:53:40 CLT" duration-ms="360" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Finalizar -->
       </class> <!-- valuesite.tests.MantenedorAreaTestRT -->
     </test> <!-- Area RT -->
-    <test started-at="2024-04-25T16:33:31 CLT" name="Area Ciente" finished-at="2024-04-25T16:35:00 CLT" duration-ms="89335">
+    <test started-at="2024-04-25T16:53:40 CLT" name="Area Ciente" finished-at="2024-04-25T16:55:25 CLT" duration-ms="105038">
       <class name="valuesite.tests.MantenedorAreaTestCliente">
-        <test-method is-config="true" signature="lanzarNavegador()[pri:0, instance:valuesite.tests.MantenedorAreaTestCliente@169bb4dd]" started-at="2024-04-25T16:33:31 CLT" name="lanzarNavegador" finished-at="2024-04-25T16:33:35 CLT" duration-ms="4461" status="PASS">
+        <test-method is-config="true" signature="lanzarNavegador()[pri:0, instance:valuesite.tests.MantenedorAreaTestCliente@1f9e9475]" started-at="2024-04-25T16:53:40 CLT" name="lanzarNavegador" finished-at="2024-04-25T16:53:45 CLT" duration-ms="4845" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- lanzarNavegador -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:valuesite.tests.MantenedorAreaTestCliente@169bb4dd]" started-at="2024-04-25T16:33:35 CLT" name="setUp" finished-at="2024-04-25T16:33:35 CLT" depends-on-methods="valuesite.testcomponents.BaseTest.lanzarNavegador" duration-ms="11" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:valuesite.tests.MantenedorAreaTestCliente@1f9e9475]" started-at="2024-04-25T16:53:45 CLT" name="setUp" finished-at="2024-04-25T16:53:45 CLT" depends-on-methods="valuesite.testcomponents.BaseTest.lanzarNavegador" duration-ms="10" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="ingresaMantenedor()[pri:0, instance:valuesite.tests.MantenedorAreaTestCliente@169bb4dd]" started-at="2024-04-25T16:33:35 CLT" name="ingresaMantenedor" finished-at="2024-04-25T16:33:45 CLT" duration-ms="9529" status="PASS">
+        <test-method is-config="true" signature="ingresaMantenedor()[pri:0, instance:valuesite.tests.MantenedorAreaTestCliente@1f9e9475]" started-at="2024-04-25T16:53:45 CLT" name="ingresaMantenedor" finished-at="2024-04-25T16:53:55 CLT" duration-ms="9559" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ingresaMantenedor -->
-        <test-method signature="nombreObligatorioTest()[pri:1, instance:valuesite.tests.MantenedorAreaTestCliente@169bb4dd]" started-at="2024-04-25T16:33:45 CLT" name="nombreObligatorioTest" finished-at="2024-04-25T16:33:48 CLT" duration-ms="3829" status="PASS">
+        <test-method signature="nombreObligatorioTest()[pri:1, instance:valuesite.tests.MantenedorAreaTestCliente@1f9e9475]" started-at="2024-04-25T16:53:55 CLT" name="nombreObligatorioTest" finished-at="2024-04-25T16:53:57 CLT" duration-ms="1982" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- nombreObligatorioTest -->
-        <test-method signature="clienteObligatorioTest()[pri:2, instance:valuesite.tests.MantenedorAreaTestCliente@169bb4dd]" started-at="2024-04-25T16:33:48 CLT" name="clienteObligatorioTest" finished-at="2024-04-25T16:33:51 CLT" duration-ms="3033" status="PASS">
+        <test-method signature="clienteObligatorioTest()[pri:2, instance:valuesite.tests.MantenedorAreaTestCliente@1f9e9475]" started-at="2024-04-25T16:53:57 CLT" name="clienteObligatorioTest" finished-at="2024-04-25T16:54:00 CLT" duration-ms="3525" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='alert alert-danger animated fadeInDown'][2]"}
+  (Session info: chrome=124.0.6367.61)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.19.1', revision: 'abe0ee07dc'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.11'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [1435116473e819ce36036ad85f9ea1d1, findElement {value=//div[@class='alert alert-danger animated fadeInDown'][2], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 124.0.6367.61, chrome: {chromedriverVersion: 124.0.6367.78 (a087f2dd364d..., userDataDir: C:\Users\FELIPE~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55853}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55853/devtoo..., se:cdpVersion: 124.0.6367.61, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 1435116473e819ce36036ad85f9ea1d1]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='alert alert-danger animated fadeInDown'][2]"}
+  (Session info: chrome=124.0.6367.61)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.19.1', revision: 'abe0ee07dc'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.11'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [1435116473e819ce36036ad85f9ea1d1, findElement {value=//div[@class='alert alert-danger animated fadeInDown'][2], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 124.0.6367.61, chrome: {chromedriverVersion: 124.0.6367.78 (a087f2dd364d..., userDataDir: C:\Users\FELIPE~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55853}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55853/devtoo..., se:cdpVersion: 124.0.6367.61, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 1435116473e819ce36036ad85f9ea1d1
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
+at valuesite.pageobjects.AreaCliente.errorClienteObligatorio(AreaCliente.java:243)
+at valuesite.tests.MantenedorAreaTestCliente.clienteObligatorioTest(MantenedorAreaTestCliente.java:50)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- clienteObligatorioTest -->
-        <test-method signature="creaAreaActivaTest()[pri:3, instance:valuesite.tests.MantenedorAreaTestCliente@169bb4dd]" started-at="2024-04-25T16:33:51 CLT" name="creaAreaActivaTest" finished-at="2024-04-25T16:34:03 CLT" duration-ms="11169" status="PASS">
+        <test-method signature="creaAreaActivaTest()[pri:3, instance:valuesite.tests.MantenedorAreaTestCliente@1f9e9475]" started-at="2024-04-25T16:54:00 CLT" name="creaAreaActivaTest" finished-at="2024-04-25T16:54:27 CLT" duration-ms="26811" status="FAIL">
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //a[normalize-space()='Siguiente']' (tried for 10 second(s) with 500 milliseconds interval)]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //a[normalize-space()='Siguiente']' (tried for 10 second(s) with 500 milliseconds interval)
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+at valuesite.componentesreusables.ComponentesReusables.waitForWebElementToBeClickable(ComponentesReusables.java:63)
+at valuesite.pageobjects.AreaCliente.buscarAreaEnTodasLasPaginas(AreaCliente.java:428)
+at valuesite.pageobjects.AreaCliente.creaAreaActiva(AreaCliente.java:519)
+at valuesite.tests.MantenedorAreaTestCliente.creaAreaActivaTest(MantenedorAreaTestCliente.java:56)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//a[normalize-space()='Siguiente']"}
+  (Session info: chrome=124.0.6367.61)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.19.1', revision: 'abe0ee07dc'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.11'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [1435116473e819ce36036ad85f9ea1d1, findElement {value=//a[normalize-space()='Siguiente'], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 124.0.6367.61, chrome: {chromedriverVersion: 124.0.6367.78 (a087f2dd364d..., userDataDir: C:\Users\FELIPE~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55853}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55853/devtoo..., se:cdpVersion: 124.0.6367.61, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 1435116473e819ce36036ad85f9ea1d1
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at jdk.proxy2/jdk.proxy2.$Proxy15.isDisplayed(Unknown Source)
+at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
+at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
+at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
+at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:656)
+at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:652)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+... 32 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- creaAreaActivaTest -->
-        <test-method signature="creaAreaInactivaTest()[pri:4, instance:valuesite.tests.MantenedorAreaTestCliente@169bb4dd]" started-at="2024-04-25T16:34:03 CLT" name="creaAreaInactivaTest" finished-at="2024-04-25T16:34:17 CLT" duration-ms="14598" status="PASS">
+        <test-method signature="creaAreaInactivaTest()[pri:4, instance:valuesite.tests.MantenedorAreaTestCliente@1f9e9475]" started-at="2024-04-25T16:54:27 CLT" name="creaAreaInactivaTest" finished-at="2024-04-25T16:54:40 CLT" duration-ms="12691" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- creaAreaInactivaTest -->
-        <test-method signature="modificaAreaTest()[pri:5, instance:valuesite.tests.MantenedorAreaTestCliente@169bb4dd]" started-at="2024-04-25T16:34:17 CLT" name="modificaAreaTest" finished-at="2024-04-25T16:34:38 CLT" duration-ms="21023" status="PASS">
+        <test-method signature="modificaAreaTest()[pri:5, instance:valuesite.tests.MantenedorAreaTestCliente@1f9e9475]" started-at="2024-04-25T16:54:40 CLT" name="modificaAreaTest" finished-at="2024-04-25T16:55:01 CLT" duration-ms="20773" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- modificaAreaTest -->
-        <test-method signature="filtroNombreAreaTest()[pri:6, instance:valuesite.tests.MantenedorAreaTestCliente@169bb4dd]" started-at="2024-04-25T16:34:38 CLT" name="filtroNombreAreaTest" finished-at="2024-04-25T16:34:47 CLT" duration-ms="8429" status="PASS">
+        <test-method signature="filtroNombreAreaTest()[pri:6, instance:valuesite.tests.MantenedorAreaTestCliente@1f9e9475]" started-at="2024-04-25T16:55:01 CLT" name="filtroNombreAreaTest" finished-at="2024-04-25T16:55:07 CLT" duration-ms="5933" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- filtroNombreAreaTest -->
-        <test-method signature="filtroEstadoAreaTest()[pri:7, instance:valuesite.tests.MantenedorAreaTestCliente@169bb4dd]" started-at="2024-04-25T16:34:47 CLT" name="filtroEstadoAreaTest" finished-at="2024-04-25T16:34:56 CLT" duration-ms="9793" status="PASS">
+        <test-method signature="filtroEstadoAreaTest()[pri:7, instance:valuesite.tests.MantenedorAreaTestCliente@1f9e9475]" started-at="2024-04-25T16:55:07 CLT" name="filtroEstadoAreaTest" finished-at="2024-04-25T16:55:16 CLT" duration-ms="9548" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- filtroEstadoAreaTest -->
-        <test-method signature="selectClienteTest()[pri:8, instance:valuesite.tests.MantenedorAreaTestCliente@169bb4dd]" started-at="2024-04-25T16:34:56 CLT" name="selectClienteTest" finished-at="2024-04-25T16:34:59 CLT" duration-ms="3019" status="PASS">
+        <test-method signature="selectClienteTest()[pri:8, instance:valuesite.tests.MantenedorAreaTestCliente@1f9e9475]" started-at="2024-04-25T16:55:16 CLT" name="selectClienteTest" finished-at="2024-04-25T16:55:25 CLT" duration-ms="8750" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- selectClienteTest -->
-        <test-method is-config="true" signature="Finalizar()[pri:0, instance:valuesite.tests.MantenedorAreaTestCliente@169bb4dd]" started-at="2024-04-25T16:34:59 CLT" name="Finalizar" finished-at="2024-04-25T16:35:00 CLT" duration-ms="403" status="PASS">
+        <test-method is-config="true" signature="Finalizar()[pri:0, instance:valuesite.tests.MantenedorAreaTestCliente@1f9e9475]" started-at="2024-04-25T16:55:25 CLT" name="Finalizar" finished-at="2024-04-25T16:55:25 CLT" duration-ms="318" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Finalizar -->
       </class> <!-- valuesite.tests.MantenedorAreaTestCliente -->
     </test> <!-- Area Ciente -->
-    <test started-at="2024-04-25T16:35:00 CLT" name="Modificacion PIN RT" finished-at="2024-04-25T16:35:14 CLT" duration-ms="13581">
+    <test started-at="2024-04-25T16:55:25 CLT" name="Modificacion PIN RT" finished-at="2024-04-25T16:55:39 CLT" duration-ms="13507">
       <class name="valuesite.tests.ModificacionPinTestRT">
-        <test-method is-config="true" signature="lanzarNavegador()[pri:0, instance:valuesite.tests.ModificacionPinTestRT@d2de489]" started-at="2024-04-25T16:35:00 CLT" name="lanzarNavegador" finished-at="2024-04-25T16:35:05 CLT" duration-ms="4677" status="PASS">
+        <test-method is-config="true" signature="lanzarNavegador()[pri:0, instance:valuesite.tests.ModificacionPinTestRT@14bdbc74]" started-at="2024-04-25T16:55:25 CLT" name="lanzarNavegador" finished-at="2024-04-25T16:55:31 CLT" duration-ms="5200" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- lanzarNavegador -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:valuesite.tests.ModificacionPinTestRT@d2de489]" started-at="2024-04-25T16:35:05 CLT" name="setUp" finished-at="2024-04-25T16:35:05 CLT" depends-on-methods="valuesite.testcomponents.BaseTest.lanzarNavegador" duration-ms="4" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:valuesite.tests.ModificacionPinTestRT@14bdbc74]" started-at="2024-04-25T16:55:31 CLT" name="setUp" finished-at="2024-04-25T16:55:31 CLT" depends-on-methods="valuesite.testcomponents.BaseTest.lanzarNavegador" duration-ms="7" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="ingresaMantenedor()[pri:0, instance:valuesite.tests.ModificacionPinTestRT@d2de489]" started-at="2024-04-25T16:35:05 CLT" name="ingresaMantenedor" finished-at="2024-04-25T16:35:10 CLT" duration-ms="5069" status="PASS">
+        <test-method is-config="true" signature="ingresaMantenedor()[pri:0, instance:valuesite.tests.ModificacionPinTestRT@14bdbc74]" started-at="2024-04-25T16:55:31 CLT" name="ingresaMantenedor" finished-at="2024-04-25T16:55:35 CLT" duration-ms="4735" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ingresaMantenedor -->
-        <test-method signature="vaciaCampo()[pri:1, instance:valuesite.tests.ModificacionPinTestRT@d2de489]" started-at="2024-04-25T16:35:10 CLT" name="vaciaCampo" finished-at="2024-04-25T16:35:10 CLT" duration-ms="226" status="PASS">
+        <test-method signature="vaciaCampo()[pri:1, instance:valuesite.tests.ModificacionPinTestRT@14bdbc74]" started-at="2024-04-25T16:55:35 CLT" name="vaciaCampo" finished-at="2024-04-25T16:55:35 CLT" duration-ms="208" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- vaciaCampo -->
-        <test-method signature="ingresarPin()[pri:2, instance:valuesite.tests.ModificacionPinTestRT@d2de489]" started-at="2024-04-25T16:35:10 CLT" name="ingresarPin" finished-at="2024-04-25T16:35:10 CLT" duration-ms="216" status="PASS">
+        <test-method signature="ingresarPin()[pri:2, instance:valuesite.tests.ModificacionPinTestRT@14bdbc74]" started-at="2024-04-25T16:55:35 CLT" name="ingresarPin" finished-at="2024-04-25T16:55:36 CLT" duration-ms="165" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ingresarPin -->
-        <test-method signature="actualizaPin()[pri:3, instance:valuesite.tests.ModificacionPinTestRT@d2de489]" started-at="2024-04-25T16:35:10 CLT" name="actualizaPin" finished-at="2024-04-25T16:35:11 CLT" duration-ms="548" status="PASS">
+        <test-method signature="actualizaPin()[pri:3, instance:valuesite.tests.ModificacionPinTestRT@14bdbc74]" started-at="2024-04-25T16:55:36 CLT" name="actualizaPin" finished-at="2024-04-25T16:55:36 CLT" duration-ms="487" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- actualizaPin -->
-        <test-method signature="actualizaSinDatos()[pri:4, instance:valuesite.tests.ModificacionPinTestRT@d2de489]" started-at="2024-04-25T16:35:11 CLT" name="actualizaSinDatos" finished-at="2024-04-25T16:35:11 CLT" duration-ms="217" status="PASS">
+        <test-method signature="actualizaSinDatos()[pri:4, instance:valuesite.tests.ModificacionPinTestRT@14bdbc74]" started-at="2024-04-25T16:55:36 CLT" name="actualizaSinDatos" finished-at="2024-04-25T16:55:36 CLT" duration-ms="199" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- actualizaSinDatos -->
-        <test-method signature="actualizaConCaracteresEspeciales()[pri:5, instance:valuesite.tests.ModificacionPinTestRT@d2de489]" started-at="2024-04-25T16:35:11 CLT" name="actualizaConCaracteresEspeciales" finished-at="2024-04-25T16:35:13 CLT" duration-ms="1809" status="PASS">
+        <test-method signature="actualizaConCaracteresEspeciales()[pri:5, instance:valuesite.tests.ModificacionPinTestRT@14bdbc74]" started-at="2024-04-25T16:55:36 CLT" name="actualizaConCaracteresEspeciales" finished-at="2024-04-25T16:55:38 CLT" duration-ms="1830" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- actualizaConCaracteresEspeciales -->
-        <test-method signature="limpiaCampo()[pri:6, instance:valuesite.tests.ModificacionPinTestRT@d2de489]" started-at="2024-04-25T16:35:13 CLT" name="limpiaCampo" finished-at="2024-04-25T16:35:13 CLT" duration-ms="251" status="FAIL">
+        <test-method signature="limpiaCampo()[pri:6, instance:valuesite.tests.ModificacionPinTestRT@14bdbc74]" started-at="2024-04-25T16:55:38 CLT" name="limpiaCampo" finished-at="2024-04-25T16:55:38 CLT" duration-ms="223" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[expected [true] but found [false]]]>
@@ -685,97 +330,55 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- limpiaCampo -->
-        <test-method is-config="true" signature="Finalizar()[pri:0, instance:valuesite.tests.ModificacionPinTestRT@d2de489]" started-at="2024-04-25T16:35:13 CLT" name="Finalizar" finished-at="2024-04-25T16:35:14 CLT" duration-ms="357" status="PASS">
+        <test-method is-config="true" signature="Finalizar()[pri:0, instance:valuesite.tests.ModificacionPinTestRT@14bdbc74]" started-at="2024-04-25T16:55:39 CLT" name="Finalizar" finished-at="2024-04-25T16:55:39 CLT" duration-ms="282" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Finalizar -->
       </class> <!-- valuesite.tests.ModificacionPinTestRT -->
     </test> <!-- Modificacion PIN RT -->
-    <test started-at="2024-04-25T16:35:14 CLT" name="Modificacion PIN Cliente" finished-at="2024-04-25T16:35:28 CLT" duration-ms="13915">
+    <test started-at="2024-04-25T16:55:39 CLT" name="Modificacion PIN Cliente" finished-at="2024-04-25T16:55:52 CLT" duration-ms="13468">
       <class name="valuesite.tests.ModificacionPinTestCliente">
-        <test-method is-config="true" signature="lanzarNavegador()[pri:0, instance:valuesite.tests.ModificacionPinTestCliente@7dc19a70]" started-at="2024-04-25T16:35:14 CLT" name="lanzarNavegador" finished-at="2024-04-25T16:35:18 CLT" duration-ms="4398" status="PASS">
+        <test-method is-config="true" signature="lanzarNavegador()[pri:0, instance:valuesite.tests.ModificacionPinTestCliente@508dec2b]" started-at="2024-04-25T16:55:39 CLT" name="lanzarNavegador" finished-at="2024-04-25T16:55:44 CLT" duration-ms="5072" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- lanzarNavegador -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:valuesite.tests.ModificacionPinTestCliente@7dc19a70]" started-at="2024-04-25T16:35:18 CLT" name="setUp" finished-at="2024-04-25T16:35:18 CLT" depends-on-methods="valuesite.testcomponents.BaseTest.lanzarNavegador" duration-ms="19" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:valuesite.tests.ModificacionPinTestCliente@508dec2b]" started-at="2024-04-25T16:55:44 CLT" name="setUp" finished-at="2024-04-25T16:55:44 CLT" depends-on-methods="valuesite.testcomponents.BaseTest.lanzarNavegador" duration-ms="2" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="ingresaMantenedor()[pri:0, instance:valuesite.tests.ModificacionPinTestCliente@7dc19a70]" started-at="2024-04-25T16:35:18 CLT" name="ingresaMantenedor" finished-at="2024-04-25T16:35:24 CLT" duration-ms="5629" status="PASS">
+        <test-method is-config="true" signature="ingresaMantenedor()[pri:0, instance:valuesite.tests.ModificacionPinTestCliente@508dec2b]" started-at="2024-04-25T16:55:44 CLT" name="ingresaMantenedor" finished-at="2024-04-25T16:55:49 CLT" duration-ms="4834" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ingresaMantenedor -->
-        <test-method signature="vaciaCampo()[pri:1, instance:valuesite.tests.ModificacionPinTestCliente@7dc19a70]" started-at="2024-04-25T16:35:24 CLT" name="vaciaCampo" finished-at="2024-04-25T16:35:24 CLT" duration-ms="151" status="FAIL">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[expected [true] but found [false]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
-at org.testng.Assert.fail(Assert.java:99)
-at org.testng.Assert.failNotEquals(Assert.java:1037)
-at org.testng.Assert.assertTrue(Assert.java:45)
-at org.testng.Assert.assertTrue(Assert.java:55)
-at valuesite.tests.ModificacionPinTestCliente.vaciaCampo(ModificacionPinTestCliente.java:75)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+        <test-method signature="vaciaCampo()[pri:1, instance:valuesite.tests.ModificacionPinTestCliente@508dec2b]" started-at="2024-04-25T16:55:49 CLT" name="vaciaCampo" finished-at="2024-04-25T16:55:49 CLT" duration-ms="234" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- vaciaCampo -->
-        <test-method signature="ingresarPin()[pri:2, instance:valuesite.tests.ModificacionPinTestCliente@7dc19a70]" started-at="2024-04-25T16:35:24 CLT" name="ingresarPin" finished-at="2024-04-25T16:35:24 CLT" duration-ms="206" status="PASS">
+        <test-method signature="ingresarPin()[pri:2, instance:valuesite.tests.ModificacionPinTestCliente@508dec2b]" started-at="2024-04-25T16:55:49 CLT" name="ingresarPin" finished-at="2024-04-25T16:55:49 CLT" duration-ms="161" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ingresarPin -->
-        <test-method signature="actualizaPin()[pri:3, instance:valuesite.tests.ModificacionPinTestCliente@7dc19a70]" started-at="2024-04-25T16:35:24 CLT" name="actualizaPin" finished-at="2024-04-25T16:35:25 CLT" duration-ms="479" status="PASS">
+        <test-method signature="actualizaPin()[pri:3, instance:valuesite.tests.ModificacionPinTestCliente@508dec2b]" started-at="2024-04-25T16:55:49 CLT" name="actualizaPin" finished-at="2024-04-25T16:55:50 CLT" duration-ms="488" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- actualizaPin -->
-        <test-method signature="actualizaSinDatos()[pri:4, instance:valuesite.tests.ModificacionPinTestCliente@7dc19a70]" started-at="2024-04-25T16:35:25 CLT" name="actualizaSinDatos" finished-at="2024-04-25T16:35:25 CLT" duration-ms="180" status="PASS">
+        <test-method signature="actualizaSinDatos()[pri:4, instance:valuesite.tests.ModificacionPinTestCliente@508dec2b]" started-at="2024-04-25T16:55:50 CLT" name="actualizaSinDatos" finished-at="2024-04-25T16:55:50 CLT" duration-ms="174" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- actualizaSinDatos -->
-        <test-method signature="actualizaConCaracteresEspeciales()[pri:5, instance:valuesite.tests.ModificacionPinTestCliente@7dc19a70]" started-at="2024-04-25T16:35:25 CLT" name="actualizaConCaracteresEspeciales" finished-at="2024-04-25T16:35:27 CLT" duration-ms="1807" status="PASS">
+        <test-method signature="actualizaConCaracteresEspeciales()[pri:5, instance:valuesite.tests.ModificacionPinTestCliente@508dec2b]" started-at="2024-04-25T16:55:50 CLT" name="actualizaConCaracteresEspeciales" finished-at="2024-04-25T16:55:52 CLT" duration-ms="1748" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- actualizaConCaracteresEspeciales -->
-        <test-method signature="limpiaCampo()[pri:6, instance:valuesite.tests.ModificacionPinTestCliente@7dc19a70]" started-at="2024-04-25T16:35:27 CLT" name="limpiaCampo" finished-at="2024-04-25T16:35:27 CLT" duration-ms="230" status="PASS">
+        <test-method signature="limpiaCampo()[pri:6, instance:valuesite.tests.ModificacionPinTestCliente@508dec2b]" started-at="2024-04-25T16:55:52 CLT" name="limpiaCampo" finished-at="2024-04-25T16:55:52 CLT" duration-ms="233" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- limpiaCampo -->
-        <test-method signature="ingresaCaracteresEspeciales()[pri:7, instance:valuesite.tests.ModificacionPinTestCliente@7dc19a70]" started-at="2024-04-25T16:35:27 CLT" name="ingresaCaracteresEspeciales" finished-at="2024-04-25T16:35:27 CLT" duration-ms="221" status="PASS">
+        <test-method signature="ingresaCaracteresEspeciales()[pri:7, instance:valuesite.tests.ModificacionPinTestCliente@508dec2b]" started-at="2024-04-25T16:55:52 CLT" name="ingresaCaracteresEspeciales" finished-at="2024-04-25T16:55:52 CLT" duration-ms="210" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ingresaCaracteresEspeciales -->
-        <test-method is-config="true" signature="Finalizar()[pri:0, instance:valuesite.tests.ModificacionPinTestCliente@7dc19a70]" started-at="2024-04-25T16:35:27 CLT" name="Finalizar" finished-at="2024-04-25T16:35:28 CLT" duration-ms="334" status="PASS">
+        <test-method is-config="true" signature="Finalizar()[pri:0, instance:valuesite.tests.ModificacionPinTestCliente@508dec2b]" started-at="2024-04-25T16:55:52 CLT" name="Finalizar" finished-at="2024-04-25T16:55:52 CLT" duration-ms="288" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Finalizar -->
