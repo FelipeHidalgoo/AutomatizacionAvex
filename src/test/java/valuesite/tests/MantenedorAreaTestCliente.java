@@ -30,8 +30,8 @@ public class MantenedorAreaTestCliente extends BaseTest{
 		Login login = new Login(driver);
 		
 		// Pasa como parametro correo y contraseña para ingresar a la web
-		//login.iniciarSesion("userautocliente@aquivoy.cl", "123456"); //(Grupo cliente)
-		login.iniciarSesion("userautocliente@aquivoy.cl", "123456"); //(Sin grupo cliente)
+		login.iniciarSesion("userautocliente@aquivoy.cl", "123456"); //(Grupo cliente)
+		//login.iniciarSesion("pasajero@aquivoy.cl", "123456"); //(Sin grupo cliente)
 
 		
 		// Pasa como parametro el nombre o codigo del cliente a buscar en el select cliente

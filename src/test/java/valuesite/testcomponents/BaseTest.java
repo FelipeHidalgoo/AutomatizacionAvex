@@ -7,24 +7,21 @@ import java.time.Duration;
 import java.util.Properties;
 
 import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.interactions.Actions;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import valuesite.pageobjects.Login;
 
-public class BaseTest {
+import valuesite.resources.ConfigReportes;
+
+public class BaseTest extends ConfigReportes{
 
 	private static final Duration IMPLICIT_WAIT_TIMEOUT = Duration.ofSeconds(3);
 
@@ -72,6 +69,8 @@ public class BaseTest {
 		FileUtils.copyFile(source,  file);
 		return System.getProperty("user.dir") + "\\reportes\\screenshots\\" + nombreDePrueba + ".png";
 	}
+	
+
 
 	@BeforeTest
 	public void lanzarNavegador() throws IOException {
@@ -85,8 +84,11 @@ public class BaseTest {
 		// Constructor de elementos y acciones (PageFactory)
 		loginPage = new Login(driver);
 
-		// Link de pagina (Variables globales en archivo config.properties)
-		loginPage.irLogin(prop.getProperty("URLQA"));
+		// Obtener la URL del sistema (Variables globales en archivo config.properties)
+		String urlAmbiente = obtieneUrlAmbiente();
+		
+		// Link de ambiente 
+		loginPage.irLogin(urlAmbiente);
 	}
 
 	@AfterTest
