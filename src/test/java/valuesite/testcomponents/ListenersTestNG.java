@@ -18,7 +18,7 @@ public class ListenersTestNG extends BaseTest implements ITestListener {
 	ExtentTest test;
 	ExtentReports extent = ConfigReportes.reporteSetUp();
 	
-	ThreadLocal<ExtentTest> extentTest = new ThreadLocal(); // Manejo de hilos
+	ThreadLocal<ExtentTest> extentTest = new ThreadLocal<ExtentTest>(); // Manejo de hilos
 
 	@Override
 	public void onFinish(ITestContext result) {
