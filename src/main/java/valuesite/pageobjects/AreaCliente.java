@@ -225,22 +225,26 @@ public class AreaCliente extends ComponentesReusables {
 
 	// Comprueba que el sistema no permite crear area sin seleccionar un cliente
 	// Controlado para que solo se ejecute en caso de que se muestre el select (grupo de clientes)
-	public void errorClienteObligatorio() {
+	public void errorClienteObligatorio() throws InterruptedException {
 		
 		// Comprueba si el select cliente esta presente, si no lo esta, sale del metodo
 		if(!elementoPresente(selectCliente)){
 			return;
 		}
 		
+		errorCampoObligatorio=null;
+		
 		// Manda un nombre al campo nombre y presiona boton crear
 		waitForWebElementToBeClickable(campoNombreArea);
+		campoNombreArea.clear();
 		campoNombreArea.sendKeys("Sin Informacion");
 		// waitForWebElementToBeClickable(btnCrear);
 		btnCrear.click();
 		
-		// // Declara el mensaje de error en la variable errorCampoObligatorio
+		Thread.sleep(500);
+		// Declara el mensaje de error en la variable errorCampoObligatorio
 		errorCampoObligatorio = driver
-				.findElement(By.xpath("//div[@class='alert alert-danger animated fadeInDown'][2]"));
+				.findElement(By.xpath("//div[@class='alert alert-danger'][2]"));
 		
 		// Espera a que aparezca el mensaje de error
 		try {
@@ -510,9 +514,8 @@ public class AreaCliente extends ComponentesReusables {
 		
 		// Espera a que desaparezca el mensaje por favor espere
 		waitForInvisibilityOfElement(waitingDialog);
-		// Incrementa el número del área para la siguiente iteración
 		
-		// Incrementa el numero de area adjunto al nombre para no repetirlo en la siguiente iteracion
+		// Incrementa el número del área para la siguiente iteración
 		incrementarNumeroArea();
 
 		// Guarda el resultado del metodo "buscarAreaEnTodasLasPaginas"
