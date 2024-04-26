@@ -17,6 +17,8 @@ public class ListenersTestNG extends BaseTest implements ITestListener {
 	
 	ExtentTest test;
 	ExtentReports extent = ConfigReportes.reporteSetUp();
+	
+	ThreadLocal<ExtentTest> extentTest = new ThreadLocal(); // Manejo de hilos
 
 	@Override
 	public void onFinish(ITestContext result) {
@@ -28,9 +30,6 @@ public class ListenersTestNG extends BaseTest implements ITestListener {
 	public void onStart(ITestContext result) {
 		System.out.println("\n----------------------------------------------------");
 		System.out.println("COMENZANDO EL TEST: \n" + result.getName().toUpperCase() + "\n");
-		
-		//Reporte
-		test = extent.createTest(result.getName());
 
 	}
 
@@ -61,8 +60,8 @@ public class ListenersTestNG extends BaseTest implements ITestListener {
 	    }
 	    
 	    //test.fail("Prueba " +result.getName()+ ": Fallida\n");
-	    test.fail(result.getName());
-	    test.fail(throwable);
+	    extentTest.get().fail(result.getName());
+	    extentTest.get().fail(throwable);
 	    
 	    // Toma screenshot del momento del error y adjuntarlo al reporte
 	    String filePath = null;
@@ -72,7 +71,7 @@ public class ListenersTestNG extends BaseTest implements ITestListener {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	    test.addScreenCaptureFromPath(filePath, result.getName());
+		 extentTest.get().addScreenCaptureFromPath(filePath, result.getName());
 	}
 
 	@Override
@@ -85,6 +84,10 @@ public class ListenersTestNG extends BaseTest implements ITestListener {
 	public void onTestStart(ITestResult result) {
 		// TODO Auto-generated method stub
 		 System.out.println("\n ------------- Pruebas de " +result.getName()+ " ------------- \n");
+		
+		 //Reporte
+		 test = extent.createTest(result.getName());
+		 extentTest.set(test); // id unico de hilo
 	}
 
 	@Override
@@ -93,7 +96,7 @@ public class ListenersTestNG extends BaseTest implements ITestListener {
 		//System.out.println("********************");
 		System.out.println("\nPrueba "+ result.getName() +": EXITOSA \n");
 		//test.log(Status.PASS, "Prueba " +result.getName()+ ": Exitosa");
-		test.log(Status.PASS, result.getName());
+		 extentTest.get().log(Status.PASS, result.getName());
 		//System.out.println("********************");
 	}
 }

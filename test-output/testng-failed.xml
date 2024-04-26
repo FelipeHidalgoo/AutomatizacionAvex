@@ -1,20 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Mantenedores Administrativos]" guice-stage="DEVELOPMENT">
+<suite parallel="tests" name="Failed suite [Mantenedores Administrativos]" guice-stage="DEVELOPMENT">
   <listeners>
     <listener class-name="valuesite.testcomponents.ListenersTestNG"/>
   </listeners>
-  <test thread-count="5" name="Modificacion PIN RT(failed)">
+  <test thread-count="5" parallel="tests" name="Area RT(failed)">
+    <classes>
+      <class name="valuesite.tests.MantenedorAreaTestRT">
+        <methods>
+          <include name="creaAreaActivaTest"/>
+          <include name="setUp"/>
+          <include name="Finalizar"/>
+          <include name="lanzarNavegador"/>
+          <include name="filtroNombreAreaTest"/>
+          <include name="modificaAreaTest"/>
+          <include name="nombreObligatorioTest"/>
+          <include name="ingresaMantenedor"/>
+          <include name="creaAreaInactivaTest"/>
+          <include name="filtroEstadoAreaTest"/>
+        </methods>
+      </class> <!-- valuesite.tests.MantenedorAreaTestRT -->
+    </classes>
+  </test> <!-- Area RT(failed) -->
+  <test thread-count="5" parallel="tests" name="Modificacion PIN RT(failed)">
     <classes>
       <class name="valuesite.tests.ModificacionPinTestRT">
         <methods>
           <include name="ingresaMantenedor"/>
+          <include name="actualizaConCaracteresEspeciales"/>
+          <include name="actualizaPin"/>
           <include name="Finalizar"/>
+          <include name="actualizaSinDatos"/>
+          <include name="vaciaCampo"/>
           <include name="lanzarNavegador"/>
           <include name="limpiaCampo"/>
+          <include name="ingresarPin"/>
           <include name="setUp"/>
         </methods>
       </class> <!-- valuesite.tests.ModificacionPinTestRT -->
     </classes>
   </test> <!-- Modificacion PIN RT(failed) -->
+  <test thread-count="5" parallel="tests" name="Modificacion PIN Cliente(failed)">
+    <classes>
+      <class name="valuesite.tests.ModificacionPinTestCliente">
+        <methods>
+          <include name="ingresaMantenedor"/>
+          <include name="Finalizar"/>
+          <include name="vaciaCampo"/>
+          <include name="lanzarNavegador"/>
+          <include name="actualizaSinDatos"/>
+          <include name="limpiaCampo"/>
+          <include name="setUp"/>
+          <include name="ingresaCaracteresEspeciales"/>
+          <include name="ingresarPin"/>
+          <include name="actualizaConCaracteresEspeciales"/>
+          <include name="actualizaPin"/>
+        </methods>
+      </class> <!-- valuesite.tests.ModificacionPinTestCliente -->
+    </classes>
+  </test> <!-- Modificacion PIN Cliente(failed) -->
+  <test thread-count="5" parallel="tests" name="Area Ciente(failed)">
+    <classes>
+      <class name="valuesite.tests.MantenedorAreaTestCliente">
+        <methods>
+          <include name="filtroNombreAreaTest"/>
+          <include name="setUp"/>
+          <include name="Finalizar"/>
+          <include name="lanzarNavegador"/>
+          <include name="creaAreaActivaTest"/>
+          <include name="selectClienteTest"/>
+          <include name="creaAreaInactivaTest"/>
+          <include name="modificaAreaTest"/>
+          <include name="nombreObligatorioTest"/>
+          <include name="ingresaMantenedor"/>
+          <include name="clienteObligatorioTest"/>
+          <include name="filtroEstadoAreaTest"/>
+        </methods>
+      </class> <!-- valuesite.tests.MantenedorAreaTestCliente -->
+    </classes>
+  </test> <!-- Area Ciente(failed) -->
 </suite> <!-- Failed suite [Mantenedores Administrativos] -->
