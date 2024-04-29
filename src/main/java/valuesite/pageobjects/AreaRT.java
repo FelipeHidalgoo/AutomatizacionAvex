@@ -417,7 +417,7 @@ public class AreaRT extends ComponentesReusables {
 	public void creaAreaActiva() throws InterruptedException {
 
 		int numeroArea = obtenerNumeroArea();
-		String nombreArea = "AREA ACTIVA " + String.format("%03d", numeroArea);
+		String nombreArea = "AREA ACTIVA " + String.format("%05d", numeroArea);
 		componentesReusables.waitForWebElementToBeClickable(campoNombreArea);
 		campoNombreArea.sendKeys(nombreArea);
 		btnCrear.click();
@@ -469,7 +469,7 @@ public class AreaRT extends ComponentesReusables {
 		// Crear area INACTIVA
 		int numeroArea2 = obtenerNumeroArea2();
 		// Thread.sleep(1500);
-		String nombreArea2 = "AREA INACTIVA " + String.format("%03d", numeroArea2);
+		String nombreArea2 = "AREA INACTIVA " + String.format("%05d", numeroArea2);
 		componentesReusables.waitForWebElementToBeClickable(campoNombreArea);
 		campoNombreArea.sendKeys(nombreArea2);
 		// Thread.sleep(1000);

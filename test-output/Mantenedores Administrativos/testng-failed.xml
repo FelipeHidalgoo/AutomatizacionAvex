@@ -4,17 +4,18 @@
   <listeners>
     <listener class-name="valuesite.testcomponents.ListenersTestNG"/>
   </listeners>
-  <test thread-count="5" name="Modificacion PIN RT(failed)">
+  <test thread-count="5" name="Area Ciente(failed)">
     <classes>
-      <class name="valuesite.tests.ModificacionPinTestRT">
+      <class name="valuesite.tests.MantenedorAreaTestCliente">
         <methods>
-          <include name="ingresaMantenedor"/>
+          <include name="setUp"/>
           <include name="Finalizar"/>
           <include name="lanzarNavegador"/>
-          <include name="limpiaCampo"/>
-          <include name="setUp"/>
+          <include name="creaAreaActivaTest"/>
+          <include name="ingresaMantenedor"/>
+          <include name="clienteObligatorioTest"/>
         </methods>
-      </class> <!-- valuesite.tests.ModificacionPinTestRT -->
+      </class> <!-- valuesite.tests.MantenedorAreaTestCliente -->
     </classes>
-  </test> <!-- Modificacion PIN RT(failed) -->
+  </test> <!-- Area Ciente(failed) -->
 </suite> <!-- Failed suite [Mantenedores Administrativos] -->

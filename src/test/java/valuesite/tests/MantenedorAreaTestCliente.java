@@ -7,6 +7,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import com.sun.net.httpserver.Authenticator.Retry;
+
 import valuesite.componentesreusables.ComponentesReusables;
 import valuesite.pageobjects.AreaCliente;
 import valuesite.pageobjects.AreaRT;
@@ -45,7 +47,7 @@ public class MantenedorAreaTestCliente extends BaseTest{
 			}
 			
 			//Comprobacion de campo cliente obligatorio
-			@Test(priority = 2)
+			@Test(priority = 2, retryAnalyzer=valuesite.testcomponents.Retry.class)
 			public void clienteObligatorioTest() throws IOException, InterruptedException {	
 				areacli.errorClienteObligatorio();
 			}

@@ -498,7 +498,7 @@ public class AreaCliente extends ComponentesReusables {
 
 		// Guarda el "nombreArea" a ocupar y se lo manda al campo Nombre del formulario
 		int numeroArea = obtenerNumeroArea();
-		String nombreArea = "AREA ACTIVA " + String.format("%03d", numeroArea);
+		String nombreArea = "AREA ACTIVA " + String.format("%05d", numeroArea);
 		waitForWebElementToBeClickable(campoNombreArea);
 		campoNombreArea.sendKeys(nombreArea);
 
@@ -577,7 +577,7 @@ public class AreaCliente extends ComponentesReusables {
 
 		// Crear area INACTIVA
 		int numeroArea2 = obtenerNumeroArea2();
-		String nombreArea2 = "AREA INACTIVA " + String.format("%03d", numeroArea2);
+		String nombreArea2 = "AREA INACTIVA " + String.format("%05d", numeroArea2);
 		waitForInvisibilityOfElement(waitingDialog);
 		campoNombreArea.sendKeys(nombreArea2);
 		marcarCheckEstado.click();
@@ -980,7 +980,7 @@ public class AreaCliente extends ComponentesReusables {
 
 		// Ingresa un nombre al area, selecciona un cliente, y la crea
 		int numeroArea = obtenerNumeroArea();
-		String nombreArea = "SELECT CLIENTE " + String.format("%03d", numeroArea);
+		String nombreArea = "SELECT CLIENTE " + String.format("%05d", numeroArea);
 		waitForInvisibilityOfElement(waitingDialog);
 		campoNombreArea.sendKeys(nombreArea);
 		selectCliente.click();

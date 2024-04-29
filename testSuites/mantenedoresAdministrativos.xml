@@ -7,25 +7,25 @@
         <listener class-name="valuesite.testcomponents.ListenersTestNG" />
     </listeners>
     
-    <test thread-count="4" name="Area RT">
+    <test thread-count="5" name="Area RT">
         <classes>
             <class name="valuesite.tests.MantenedorAreaTestRT"/>
         </classes>
     </test>
     
-    <test thread-count="6" name="Area Ciente">
+    <test thread-count="5" name="Area Ciente">
         <classes>
             <class name="valuesite.tests.MantenedorAreaTestCliente"/>
         </classes>
     </test>
     
-    <test thread-count="4" name="Modificacion PIN RT">
+    <test thread-count="5" name="Modificacion PIN RT">
         <classes>
             <class name="valuesite.tests.ModificacionPinTestRT"/>
         </classes>
     </test>
     
-    <test thread-count="4" name="Modificacion PIN Cliente">
+    <test thread-count="5" name="Modificacion PIN Cliente">
         <classes>
             <class name="valuesite.tests.ModificacionPinTestCliente"/>
         </classes>
