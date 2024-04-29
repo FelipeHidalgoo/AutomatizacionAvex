@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-<suite parallel="tests" name="Mantenedores Administrativos">
-<!--<suite name="Mantenedores Administrativos">-->
+<!--<suite parallel="tests" name="Mantenedores Administrativos">-->
+<suite name="Mantenedores Administrativos">
 	
 	<listeners>
         <listener class-name="valuesite.testcomponents.ListenersTestNG" />
     </listeners>
     
-    <test thread-count="2" name="Area RT">
+    <test thread-count="4" name="Area RT">
         <classes>
             <class name="valuesite.tests.MantenedorAreaTestRT"/>
         </classes>
     </test>
     
-    <test thread-count="2" name="Area Ciente">
+    <test thread-count="6" name="Area Ciente">
         <classes>
             <class name="valuesite.tests.MantenedorAreaTestCliente"/>
         </classes>
     </test>
     
-    <test thread-count="2" name="Modificacion PIN RT">
+    <test thread-count="4" name="Modificacion PIN RT">
         <classes>
             <class name="valuesite.tests.ModificacionPinTestRT"/>
         </classes>
     </test>
     
-    <test thread-count="2" name="Modificacion PIN Cliente">
+    <test thread-count="4" name="Modificacion PIN Cliente">
         <classes>
             <class name="valuesite.tests.ModificacionPinTestCliente"/>
         </classes>
