@@ -27,12 +27,12 @@ public class MantenedorAreaTestRT extends BaseTest {
 	
 	@BeforeTest
 	public void setUp() {
-		areart = new AreaRT(driver);
+		areart = new AreaRT(getDriver());
 	}
 
 	@BeforeClass
 	public void ingresaMantenedor() {
-		Login login = new Login(driver);
+		Login login = new Login(getDriver());
 
 		// Pasa como parametro correo y contraseña para ingresar a la web
 		login.iniciarSesion("userauto@aquivoy.cl", "123456");

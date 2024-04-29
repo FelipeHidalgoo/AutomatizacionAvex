@@ -21,79 +21,65 @@ import valuesite.pageobjects.Login;
 
 import valuesite.resources.ConfigReportes;
 
-public class BaseTest extends ConfigReportes{
+public class BaseTest extends ConfigReportes {
 
-	private static final Duration IMPLICIT_WAIT_TIMEOUT = Duration.ofSeconds(3);
+    private static final Duration IMPLICIT_WAIT_TIMEOUT = Duration.ofSeconds(3);
+    
+    private static ThreadLocal<WebDriver> driverThreadLocal = new ThreadLocal<>();
+    public Login loginPage;
 
-	public static WebDriver driver;
-	public Login loginPage;
+    public WebDriver inicializarDriver() throws IOException {
+        // Clase de propiedades
+        Properties prop = new Properties();
+        FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "\\src\\main\\java\\valuesite\\Resources\\GlobalData.properties");
+        prop.load(fis);
+        String browserName = prop.getProperty("browser");
 
-	public WebDriver inicializarDriver() throws IOException {
+        WebDriver driver = null;
+        if (browserName.equalsIgnoreCase("chrome")) {
+            WebDriverManager.chromedriver().setup();
+            driver = new ChromeDriver();
+        } else if (browserName.equalsIgnoreCase("firefox")) {
+            WebDriverManager.firefoxdriver().setup();
+            driver = new FirefoxDriver();
+        } else if (browserName.equalsIgnoreCase("edge")) {
+            WebDriverManager.edgedriver().setup();
+            driver = new EdgeDriver();
+        }
 
-		// Clase de propiedades
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(IMPLICIT_WAIT_TIMEOUT);
+        return driver;
+    }
 
-		Properties prop = new Properties();
-		FileInputStream fis = new FileInputStream(
-				System.getProperty("user.dir") + "\\src\\main\\java\\valuesite\\Resources\\GlobalData.properties");
-		prop.load(fis);
-		String browserName = prop.getProperty("browser");
+    public String tomarCaptura(String nombreDePrueba, WebDriver driver) throws IOException {
+        TakesScreenshot ts = (TakesScreenshot) driver;
+        File source = ts.getScreenshotAs(OutputType.FILE);
+        File file = new File(System.getProperty("user.dir") + "\\reportes\\screenshots\\\\" + nombreDePrueba + ".png");
+        FileUtils.copyFile(source, file);
+        return System.getProperty("user.dir") + "\\reportes\\screenshots\\" + nombreDePrueba + ".png";
+    }
 
-		if (browserName.equalsIgnoreCase("chrome")) {
+    @BeforeTest
+    public void lanzarNavegador() throws IOException {
+        driverThreadLocal.set(inicializarDriver());
+        // Constructor de elementos y acciones (PageFactory)
+        loginPage = new Login(getDriver());
 
-			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
-			driver.manage().window().maximize();
+        // Obtener la URL del sistema (Variables globales en archivo config.properties)
+        String urlAmbiente = obtieneUrlAmbiente();
 
-		} else if (browserName.equalsIgnoreCase("firefox")) {
+        // Link de ambiente
+        loginPage.irLogin(urlAmbiente);
+    }
 
-			WebDriverManager.firefoxdriver().setup();
-			driver = new FirefoxDriver();
-			driver.manage().window().maximize();
+    @AfterTest
+    public void Finalizar() throws InterruptedException {
+        getDriver().quit();
+        driverThreadLocal.remove();
+    }
 
-		} else if (browserName.equalsIgnoreCase("edge")) {
-
-			WebDriverManager.edgedriver().setup();
-			driver = new EdgeDriver();
-			driver.manage().window().maximize();
-		}
-
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(IMPLICIT_WAIT_TIMEOUT);
-		return driver;
-	}
-	
-	public String tomarCaptura(String nombreDePrueba, WebDriver driver) throws IOException {
-		TakesScreenshot ts = (TakesScreenshot)driver;
-		File source = ts.getScreenshotAs(OutputType.FILE);
-		File file = new File(System.getProperty("user.dir") + "\\reportes\\screenshots\\\\" + nombreDePrueba + ".png");
-		FileUtils.copyFile(source,  file);
-		return System.getProperty("user.dir") + "\\reportes\\screenshots\\" + nombreDePrueba + ".png";
-	}
-	
-
-
-	@BeforeTest
-	public void lanzarNavegador() throws IOException {
-		// Clase de propiedades
-		Properties prop = new Properties();
-		FileInputStream fis = new FileInputStream(
-				System.getProperty("user.dir") + "\\src\\main\\java\\valuesite\\Resources\\GlobalData.properties");
-		prop.load(fis);
-
-		driver = inicializarDriver();
-		// Constructor de elementos y acciones (PageFactory)
-		loginPage = new Login(driver);
-
-		// Obtener la URL del sistema (Variables globales en archivo config.properties)
-		String urlAmbiente = obtieneUrlAmbiente();
-		
-		// Link de ambiente 
-		loginPage.irLogin(urlAmbiente);
-	}
-
-	@AfterTest
-	public void Finalizar() throws InterruptedException {
-		//Thread.sleep(500);
-		driver.quit();
-	}
+    public static WebDriver getDriver() {
+        return driverThreadLocal.get();
+    }
 }

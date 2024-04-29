@@ -19,6 +19,8 @@ public class ListenersTestNG extends BaseTest implements ITestListener {
 	ExtentReports extent = ConfigReportes.reporteSetUp();
 	
 	ThreadLocal<ExtentTest> extentTest = new ThreadLocal<ExtentTest>(); // Manejo de hilos
+	
+	WebDriver driver = getDriver();
 
 	@Override
 	public void onFinish(ITestContext result) {
@@ -44,7 +46,7 @@ public class ListenersTestNG extends BaseTest implements ITestListener {
 	    Throwable throwable = result.getThrowable();
 	    
 	    try {
-			driver = (WebDriver) result.getTestClass().getRealClass().getField("driver").get(result.getInstance());
+	    	driver = (WebDriver) result.getTestClass().getRealClass().getField("driver").get(result.getInstance());
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -66,7 +68,7 @@ public class ListenersTestNG extends BaseTest implements ITestListener {
 	    // Toma screenshot del momento del error y adjuntarlo al reporte
 	    String filePath = null;
 		try {
-			filePath = tomarCaptura(result.getName(), driver);
+			filePath = tomarCaptura(result.getName(), getDriver());
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

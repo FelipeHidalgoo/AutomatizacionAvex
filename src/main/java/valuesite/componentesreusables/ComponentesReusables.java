@@ -13,8 +13,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ComponentesReusables {
 
-	public static final Duration EXPLICIT_WAIT_TIMEOUT = Duration.ofSeconds(10);
-	public static final Duration FLUENT_WAIT_TIMEOUT = Duration.ofSeconds(10);
+	public static final Duration EXPLICIT_WAIT_TIMEOUT = Duration.ofSeconds(7);
+	public static final Duration FLUENT_WAIT_TIMEOUT = Duration.ofSeconds(7);
 
 	WebDriver driver;
 

@@ -184,32 +184,33 @@ public class AreaCliente extends ComponentesReusables {
 	// Comprueba que el sistema no permite crear area sin ingresar un nombre a esta
 	public void errorNombreObligatorio() throws InterruptedException {
 		// waitForWebElementToBeClickable(btnCrear);
-		
-		// Comprueba si el select cliente esta presente, si lo esta, selecciona un cliente
-		if(elementoPresente(selectCliente)){
+
+		// Comprueba si el select cliente esta presente, si lo esta, selecciona un
+		// cliente
+		if (elementoPresente(selectCliente)) {
 			selectCliente.click();
 			waitForWebElementToBeClickable(selectClientePrimero);
 			selectClientePrimero.click();
 		}
-		
+
 		btnCrear.click();
 
 		// Declara el mensaje de error en la variable errorCampoObligatorio
 //		errorCampoObligatorio = driver
 //				.findElement(By.xpath("//div[@class='alert alert-danger animated fadeInDown']"));
-		
+
 		// Espera a que aparezca el mensaje de error
 		try {
-			//waitForWebElementToAppear(errorCampoObligatorio);
+			// waitForWebElementToAppear(errorCampoObligatorio);
 			Thread.sleep(500);
 		} catch (TimeoutException e) {
 			// Si no aparece en el tiempo de espera explicito establecido,
 			// entonces manda mensaje para indicar el problema
 			System.out.println("El mensaje de error de campo obligatorio no aparecio en el tiempo limite");
 		}
-		
 
-		// Obtiene el texto del mensaje de error y valida si es el mensaje correspondiente
+		// Obtiene el texto del mensaje de error y valida si es el mensaje
+		// correspondiente
 		String msjError = errorCampoObligatorio.getText();
 		if (msjError.equals("Error\n· Campo Nombre Área Obligatorio.")) {
 			System.out.println("El campo es obligatorio :)");
@@ -224,28 +225,28 @@ public class AreaCliente extends ComponentesReusables {
 	}
 
 	// Comprueba que el sistema no permite crear area sin seleccionar un cliente
-	// Controlado para que solo se ejecute en caso de que se muestre el select (grupo de clientes)
-public void errorClienteObligatorio() throws InterruptedException {
-		
+	// Controlado para que solo se ejecute en caso de que se muestre el select
+	// (grupo de clientes)
+	public void errorClienteObligatorio() throws InterruptedException {
+
 		// Comprueba si el select cliente esta presente, si no lo esta, sale del metodo
-		if(!elementoPresente(selectCliente)){
+		if (!elementoPresente(selectCliente)) {
 			return;
 		}
-		
-		errorCampoObligatorio=null;
-		
+
+		errorCampoObligatorio = null;
+
 		// Manda un nombre al campo nombre y presiona boton crear
 		waitForWebElementToBeClickable(campoNombreArea);
 		campoNombreArea.clear();
 		campoNombreArea.sendKeys("Sin Informacion");
 		// waitForWebElementToBeClickable(btnCrear);
 		btnCrear.click();
-		
-		//Thread.sleep(500);
+
+		Thread.sleep(500);
 		// Declara el mensaje de error en la variable errorCampoObligatorio
-		errorCampoObligatorio = driver
-				.findElement(By.cssSelector(".alert-danger + .alert-danger"));
-		
+		errorCampoObligatorio = driver.findElement(By.cssSelector(".alert-danger + .alert-danger"));
+
 		// Espera a que aparezca el mensaje de error
 		try {
 			waitForWebElementToAppear(errorCampoObligatorio);
@@ -255,7 +256,8 @@ public void errorClienteObligatorio() throws InterruptedException {
 			System.out.println("El mensaje de error de campo obligatorio no aparecio en el tiempo limite");
 		}
 
-		// Obtiene el texto del mensaje de error y valida si es el mensaje correspondiente
+		// Obtiene el texto del mensaje de error y valida si es el mensaje
+		// correspondiente
 		String msjError = errorCampoObligatorio.getText();
 		if (msjError.equals("Error\n· Campo Cliente Área Obligatorio.")) {
 
@@ -401,7 +403,7 @@ public void errorClienteObligatorio() throws InterruptedException {
 		boolean hayMasPaginas = true;
 
 		while (hayMasPaginas) {
-			
+
 			// Buscar el área en la página actual
 			try {
 				WebElement areaCreada = driver.findElement(By.xpath("//td[normalize-space()='" + nombreArea + "']"));
@@ -433,7 +435,7 @@ public void errorClienteObligatorio() throws InterruptedException {
 					siguientePagina.click();
 				}
 			} catch (NoSuchElementException e) {
-				
+
 				// Si no hay mas paginas, devuelve false
 				System.out.println("No hay más páginas en las que buscar");
 				hayMasPaginas = false;
@@ -449,7 +451,7 @@ public void errorClienteObligatorio() throws InterruptedException {
 		boolean hayMasPaginas = true;
 
 		while (hayMasPaginas) {
-			
+
 			// Buscar el área en la página actual
 			try {
 				WebElement areaCreada = driver.findElement(By.xpath("//td[normalize-space()='" + nombreArea2 + "']"));
@@ -511,18 +513,20 @@ public void errorClienteObligatorio() throws InterruptedException {
 		}
 
 		// Thread.sleep(500);
-		
+
 		// Espera a que desaparezca el mensaje por favor espere
 		waitForInvisibilityOfElement(waitingDialog);
 		// Incrementa el número del área para la siguiente iteración
-		
-		// Incrementa el numero de area adjunto al nombre para no repetirlo en la siguiente iteracion
+
+		// Incrementa el numero de area adjunto al nombre para no repetirlo en la
+		// siguiente iteracion
 		incrementarNumeroArea();
 
 		// Guarda el resultado del metodo "buscarAreaEnTodasLasPaginas"
 		boolean areaEncontrada = buscarAreaEnTodasLasPaginas(driver, nombreArea);
 
-		// Si la encuentra en la pagina actual, devuelve un Assert(true) y se devuelve a la primera pagina en caso de no estar en ella
+		// Si la encuentra en la pagina actual, devuelve un Assert(true) y se devuelve a
+		// la primera pagina en caso de no estar en ella
 		// Si no encuentra el area, devuelve un Assert(false)
 		if (areaEncontrada) {
 			// System.out.println("Éxito!! El área activa se creó correctamente \n");
@@ -545,13 +549,30 @@ public void errorClienteObligatorio() throws InterruptedException {
 				// Continua con el proceso si no encuentra "Primera" ni "Anterior"
 			}
 		} else {
+			Assert.assertTrue(false);
+			// Volver a primera pagina o anterior si no hay "Primera"
+			try {
+				if (primeraPagina.isDisplayed()) {
+					Thread.sleep(700);
+					// waitForWebElementToBeClickable(primeraPagina);
+					primeraPagina.click();
+				} else if (anteriorPagina.isDisplayed()) {
+					Thread.sleep(700);
+					// waitForWebElementToBeClickable(anteriorPagina);
+					anteriorPagina.click();
+				} else {
+					// Continua con el proceso
+				}
+			} catch (NoSuchElementException e) {
+				// Continua con el proceso si no encuentra "Primera" ni "Anterior"
+			}
 			// System.out.println("Incorrecto!! El área activa no se encontro en ninguna
 			// pagina, por lo que no fue creada \n");
-			Assert.assertTrue(false);
 		}
 	}
 
-	// Crea un area inactiva en el mantenedor y la busca para comprobar si fue creada
+	// Crea un area inactiva en el mantenedor y la busca para comprobar si fue
+	// creada
 	public void creaAreaInactiva() throws InterruptedException {
 
 		// Crear area INACTIVA
@@ -560,7 +581,7 @@ public void errorClienteObligatorio() throws InterruptedException {
 		waitForInvisibilityOfElement(waitingDialog);
 		campoNombreArea.sendKeys(nombreArea2);
 		marcarCheckEstado.click();
-		
+
 		if (elementoPresente(selectCliente)) {
 			selectCliente.click();
 			waitForWebElementToBeClickable(selectClientePrimero);
@@ -569,7 +590,7 @@ public void errorClienteObligatorio() throws InterruptedException {
 		} else {
 			btnCrear.click();
 		}
-		
+
 		waitForInvisibilityOfElement(waitingDialog);
 
 		// Incrementa el número del área para la siguiente iteración
@@ -604,9 +625,25 @@ public void errorClienteObligatorio() throws InterruptedException {
 				// Continua con el proceso si no encuentra "Primera" ni "Anterior"
 			}
 		} else {
+			Assert.assertTrue(false);
+			// Volver a primera pagina o anterior si no hay "Primera"
+			try {
+				if (primeraPagina.isDisplayed()) {
+					Thread.sleep(700);
+					// waitForWebElementToBeClickable(primeraPagina);
+					primeraPagina.click();
+				} else if (anteriorPagina.isDisplayed()) {
+					Thread.sleep(700);
+					// waitForWebElementToBeClickable(anteriorPagina);
+					anteriorPagina.click();
+				} else {
+					// Continua con el proceso
+				}
+			} catch (NoSuchElementException e) {
+				// Continua con el proceso si no encuentra "Primera" ni "Anterior"
+			}
 			// System.out.println("Incorrecto!! El área inactiva no se encontro en ninguna
 			// pagina, por lo que no fue creada \n");
-			Assert.assertTrue(false);
 		}
 	}
 
@@ -616,17 +653,17 @@ public void errorClienteObligatorio() throws InterruptedException {
 
 		Thread.sleep(700);
 		// waitForWebElementToBeClickable(primerArea);
-		
+
 		// Declara el nombre con el que se va a modificar al area
 		String nuevoNombre = "MODIFICACION AUTOMATICA " + obtenerNumeroModificacion();
 
 		try {
-			
+
 			// Espera a que la primer area de la lista sea clickeable y la clickea
 			waitForWebElementToBeClickable(primerArea);
 			primerArea.click();
 		} catch (StaleElementReferenceException e) {
-			
+
 			// Elemento obsoleto, intentar ubicarlo nuevamente
 			primerArea = driver.findElement(By.xpath("//tbody[@class='tb-bss-pointer']/tr[1]/td[1]"));
 			waitForWebElementToBeClickable(primerArea);
@@ -768,8 +805,9 @@ public void errorClienteObligatorio() throws InterruptedException {
 		// Crea el area con el nombre definido
 		campoNombreArea.clear();
 		campoNombreArea.sendKeys(nombreAreaFiltro);
-		
-		// Verifica si el select cliente esta presente, para considerarlo o no en la creacion del area
+
+		// Verifica si el select cliente esta presente, para considerarlo o no en la
+		// creacion del area
 		if (elementoPresente(selectCliente)) {
 			selectCliente.click();
 			waitForWebElementToBeClickable(selectClientePrimero);
@@ -778,7 +816,7 @@ public void errorClienteObligatorio() throws InterruptedException {
 		} else {
 			btnCrear.click();
 		}
-		
+
 		waitForInvisibilityOfElement(waitingDialog);
 
 		incrementarNumeroModificacion();
@@ -824,25 +862,26 @@ public void errorClienteObligatorio() throws InterruptedException {
 
 		// waitForWebElementToAppear(btnLimpiar);
 		// waitForWebElementToBeClickable(btnLimpiar);
-		
+
 		Thread.sleep(1000);
-		
+
 		// Limpia los filtros y filtra por el estado activo
 		btnLimpiar.click();
 		selectEstados.click();
 		estadoActivo.click();
 		btnBuscar.click();
-		
+
 		// waitForInvisibilityOfElement(waitingDialog);
 		Thread.sleep(1000);
 
 		int encontroArea = 0;
 		List<WebElement> listaAreas;
-		
-		// Guarda la lista de areas en la variable 
+
+		// Guarda la lista de areas en la variable
 		listaAreas = obtenerListaAreas();
 
-		// Por cada iteracion, clickea un area y verifica si su estado es activo, lo hace con las 5 primeras
+		// Por cada iteracion, clickea un area y verifica si su estado es activo, lo
+		// hace con las 5 primeras
 		for (int i = 1; i < Math.min(listaAreas.size(), 6); i++) {
 
 			WebElement areaLista = driver.findElement(By.xpath("//tbody[@class='tb-bss-pointer']/tr[" + i + "]/td[1]"));
@@ -881,14 +920,15 @@ public void errorClienteObligatorio() throws InterruptedException {
 		selectEstados.click();
 		estadoInactivo.click();
 		btnBuscar.click();
-		
+
 		// waitForInvisibilityOfElement(waitingDialog);
 		Thread.sleep(1000);
 
 		encontroArea = 0;
 		listaAreas = obtenerListaAreas();
-		
-		// Por cada iteracion, clickea un area y verifica si su estado es inactivo, lo hace con las 5 primeras
+
+		// Por cada iteracion, clickea un area y verifica si su estado es inactivo, lo
+		// hace con las 5 primeras
 		for (int i = 1; i < Math.min(listaAreas.size(), 6); i++) {
 
 			WebElement areaLista = driver.findElement(By.xpath("//tbody[@class='tb-bss-pointer']/tr[" + i + "]/td[1]"));
@@ -926,67 +966,69 @@ public void errorClienteObligatorio() throws InterruptedException {
 
 	// Prueba del select cliente (Solo se ejecuta en caso de que este el select)
 	public void selectCliente() throws InterruptedException {
-		
-		// Comprueba si el select cliente esta presente, si no lo esta, no ejecuta la prueba
+
+		// Comprueba si el select cliente esta presente, si no lo esta, no ejecuta la
+		// prueba
 		if (!elementoPresente(selectCliente)) {
-	        return;
-	    }
-		
+			return;
+		}
+
 		// Refresca la pagina
 		driver.navigate().refresh();
 
 		waitForWebElementToBeClickable(campoNombreArea);
-		
-	// Ingresa un nombre al area, selecciona un cliente, y la crea
+
+		// Ingresa un nombre al area, selecciona un cliente, y la crea
 		int numeroArea = obtenerNumeroArea();
 		String nombreArea = "SELECT CLIENTE " + String.format("%03d", numeroArea);
 		waitForInvisibilityOfElement(waitingDialog);
 		campoNombreArea.sendKeys(nombreArea);
 		selectCliente.click();
 		waitForWebElementToBeClickable(selectClientePrimero);
-		
+
 		// Extrae el texto del primer area que arroja el select cliente
 		String areaSeleccionada = selectClientePrimero.getText();
 		selectClientePrimero.click();
 		btnCrear.click();
 
 		waitForInvisibilityOfElement(waitingDialog);
-		
-	// Incrementa el número del área para la siguiente iteración
+
+		// Incrementa el número del área para la siguiente iteración
 		incrementarNumeroArea();
 
-		// Limpia el filtro nombre, le pasa el nombre del area creada anteriormente, y busca
+		// Limpia el filtro nombre, le pasa el nombre del area creada anteriormente, y
+		// busca
 		filtroNombre.clear();
 		filtroNombre.sendKeys(nombreArea);
 		btnBuscar.click();
-		
+
 		// Encuentra el primer resultado de la grilla
 		WebElement clienteArea = driver.findElement(By.xpath("//tbody[@class='tb-bss-pointer']/tr[1]/td[2]"));
-		
-		// Comprueba que la columna cliente sea el mismo cliente que se selecciono en la creacion del area
+
+		// Comprueba que la columna cliente sea el mismo cliente que se selecciono en la
+		// creacion del area
 		if (areaSeleccionada.equals(clienteArea.getText())) {
 			System.out.println("Cliente se asigno correctamente");
 			Assert.assertTrue(true);
-		}else {
+		} else {
 			System.out.println("Cliente no fue correctamente asignado");
 			Assert.assertTrue(false);
 		}
 	}
-	
-	
+
 	// Comprueba si un elemento esta presente en el DOM
 	private boolean elementoPresente(WebElement element) {
-		
-	    // Comprueba si el elemento esta presente, si no lo esta devuelve false
+
+		// Comprueba si el elemento esta presente, si no lo esta devuelve false
 		try {
-	        if (element.isDisplayed()) {
-		    	return true;
-	        }else {
-	        	return false;
-	        	}
-	    } catch (NoSuchElementException e) {
-	        return false;
-	    }
+			if (element.isDisplayed()) {
+				return true;
+			} else {
+				return false;
+			}
+		} catch (NoSuchElementException e) {
+			return false;
+		}
 	}
 
 }

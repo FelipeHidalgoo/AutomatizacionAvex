@@ -21,13 +21,13 @@ public class MantenedorAreaTestCliente extends BaseTest{
 
 	@BeforeTest
 	public void setUp() {
-		areacli = new AreaCliente(driver);
-		componentesReusables = new ComponentesReusables(driver);
+		areacli = new AreaCliente(getDriver());
+		componentesReusables = new ComponentesReusables(getDriver());
     }
 	
 	@BeforeClass
 	public void ingresaMantenedor() {
-		Login login = new Login(driver);
+		Login login = new Login(getDriver());
 		
 		// Pasa como parametro correo y contraseña para ingresar a la web
 		login.iniciarSesion("userautocliente@aquivoy.cl", "123456"); //(Grupo cliente)

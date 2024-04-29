@@ -21,13 +21,13 @@ public class ModificacionPinTestRT extends BaseTest{
 	
 	@BeforeTest
 	public void setUp() {
-		modifpinrt = new ModificacionPinRT(driver);
-		componentesReusables = new ComponentesReusables(driver);
+		modifpinrt = new ModificacionPinRT(getDriver());
+		componentesReusables = new ComponentesReusables(getDriver());
     }
     
     @BeforeClass
     public void ingresaMantenedor() {
-		Login login = new Login(driver);
+		Login login = new Login(getDriver());
 		
 		// Pasa como parametro correo y contraseña para ingresar a la web
 		login.iniciarSesion("userauto@aquivoy.cl", "123456");
@@ -134,7 +134,7 @@ public class ModificacionPinTestRT extends BaseTest{
 //		}
 		
 		Thread.sleep(500);
-		driver.navigate().refresh();
+		getDriver().navigate().refresh();
 		
 		String pin = modifpinrt.obtienePIN();
 		

@@ -25,10 +25,11 @@ public class ModificacionPinTestCliente extends BaseTest{
 	ComponentesReusables componentesReusables;
 	ExtentReports extent;
 	
+	
 	@BeforeTest
 	public void setUp() {
-		modifpincli = new ModificacionPinCliente(driver);
-		componentesReusables = new ComponentesReusables(driver);
+		modifpincli = new ModificacionPinCliente(getDriver());
+		componentesReusables = new ComponentesReusables(getDriver());
 		
 //		String path = System.getProperty("user.dir")+"\\reportes\\reporte.html";
 //		ExtentSparkReporter reporte = new ExtentSparkReporter(path);
@@ -43,7 +44,7 @@ public class ModificacionPinTestCliente extends BaseTest{
     
     @BeforeClass
     public void ingresaMantenedor() {
-		Login login = new Login(driver);
+		Login login = new Login(getDriver());
 		
 		// Pasa como parametro correo y contraseña para ingresar a la web
 		login.iniciarSesion("userautocliente@aquivoy.cl", "123456");
@@ -156,7 +157,7 @@ public class ModificacionPinTestCliente extends BaseTest{
 //		}
 		
 		Thread.sleep(500);
-		driver.navigate().refresh();
+		getDriver().navigate().refresh();
 		
 		String pin = modifpincli.obtienePIN();
 		
