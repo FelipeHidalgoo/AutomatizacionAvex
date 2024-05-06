@@ -3,16 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="valuesite.tests.MantenedorAreaTestCliente">
+      <class name="valuesite.tests.SucursalTestRT">
         <methods>
-          <include name="setUp"/>
           <include name="Finalizar"/>
           <include name="lanzarNavegador"/>
-          <include name="creaAreaActivaTest"/>
+          <include name="setUp"/>
           <include name="ingresaMantenedor"/>
-          <include name="clienteObligatorioTest"/>
+          <include name="nombreObligatorio"/>
         </methods>
-      </class> <!-- valuesite.tests.MantenedorAreaTestCliente -->
+      </class> <!-- valuesite.tests.SucursalTestRT -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

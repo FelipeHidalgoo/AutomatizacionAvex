@@ -29,12 +29,8 @@ public class ModificacionPinTestRT extends BaseTest{
     public void ingresaMantenedor() {
 		Login login = new Login(getDriver());
 		
-		// Pasa como parametro correo y contraseña para ingresar a la web
 		login.iniciarSesion("userauto@aquivoy.cl", "123456");
 		
-		//AreaRT areart = new AreaRT(driver);
-		
-		//ModificacionPinRT modifpinrt = new ModificacionPinRT(driver);
 		modifpinrt.ingresoMantenedorPin();
 	}
 	

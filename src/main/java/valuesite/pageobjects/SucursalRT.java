@@ -23,11 +23,10 @@ public class SucursalRT extends ComponentesReusables {
 		this.driver = driver;
 
 		PageFactory.initElements(driver, this);
+		
+		a = new ActionsHelper(driver);
 	}
 	
-	public void setUp() {
-	a = new ActionsHelper(driver);
-	}
 
 	// PAGE FACTORY
 
@@ -153,8 +152,9 @@ public class SucursalRT extends ComponentesReusables {
 		ciudad.click();
 	}
 	
-	public void seleccionaDireccion(String direccion, String posicion) {
+	public void seleccionaDireccion(String direccion, int posicion) {
 		campoDireccion.sendKeys(direccion);
+		a.clickIzquierdo(campoNombre);
 		
 		if (opcionesDireccion.isDisplayed()) {
 			waitForWebElementToBeClickable(seleccionDireccion);

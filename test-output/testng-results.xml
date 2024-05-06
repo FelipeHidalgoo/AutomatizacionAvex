@@ -1,54 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results retried="2" ignored="0" total="10" passed="6" failed="2" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="0" skipped="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-04-29T12:40:53 CLT" name="Mantenedores Administrativos" finished-at="2024-04-29T12:42:28 CLT" duration-ms="95651">
+  <suite started-at="2024-05-06T09:35:47 CLT" name="Default suite" finished-at="2024-05-06T09:35:54 CLT" duration-ms="7474">
     <groups>
     </groups>
-    <test started-at="2024-04-29T12:40:53 CLT" name="Area Ciente" finished-at="2024-04-29T12:42:28 CLT" duration-ms="95651">
-      <class name="valuesite.tests.MantenedorAreaTestCliente">
-        <test-method is-config="true" signature="lanzarNavegador()[pri:0, instance:valuesite.tests.MantenedorAreaTestCliente@4d14b6c2]" started-at="2024-04-29T12:40:53 CLT" name="lanzarNavegador" finished-at="2024-04-29T12:40:58 CLT" duration-ms="5887" status="PASS">
+    <test started-at="2024-05-06T09:35:47 CLT" name="Default test" finished-at="2024-05-06T09:35:54 CLT" duration-ms="7474">
+      <class name="valuesite.tests.SucursalTestRT">
+        <test-method is-config="true" signature="lanzarNavegador()[pri:0, instance:valuesite.tests.SucursalTestRT@55183b20]" started-at="2024-05-06T09:35:47 CLT" name="lanzarNavegador" finished-at="2024-05-06T09:35:54 CLT" duration-ms="7335" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- lanzarNavegador -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:valuesite.tests.MantenedorAreaTestCliente@4d14b6c2]" started-at="2024-04-29T12:40:58 CLT" name="setUp" finished-at="2024-04-29T12:40:58 CLT" depends-on-methods="valuesite.testcomponents.BaseTest.lanzarNavegador" duration-ms="14" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:valuesite.tests.SucursalTestRT@55183b20]" started-at="2024-05-06T09:35:54 CLT" name="setUp" finished-at="2024-05-06T09:35:54 CLT" depends-on-methods="valuesite.testcomponents.BaseTest.lanzarNavegador" duration-ms="34" status="FAIL">
+          <exception class="java.lang.IllegalArgumentException">
+            <message>
+              <![CDATA[Driver must be set]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.IllegalArgumentException: Driver must be set
+at org.openqa.selenium.internal.Require.nonNull(Require.java:60)
+at org.openqa.selenium.interactions.Actions.<init>(Actions.java:59)
+at valuesite.componentesreusables.ActionsHelper.<init>(ActionsHelper.java:17)
+at valuesite.pageobjects.SucursalRT.<init>(SucursalRT.java:27)
+at valuesite.tests.SucursalTestRT.setUp(SucursalTestRT.java:20)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
+at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
+at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
+at org.testng.TestRunner.invokeTestConfigurations(TestRunner.java:637)
+at org.testng.TestRunner.beforeRun(TestRunner.java:627)
+at org.testng.TestRunner.run(TestRunner.java:589)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.IllegalArgumentException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="ingresaMantenedor()[pri:0, instance:valuesite.tests.MantenedorAreaTestCliente@4d14b6c2]" started-at="2024-04-29T12:40:58 CLT" name="ingresaMantenedor" finished-at="2024-04-29T12:41:06 CLT" duration-ms="7421" status="PASS">
+        <test-method is-config="true" signature="ingresaMantenedor()[pri:0, instance:valuesite.tests.SucursalTestRT@55183b20]" started-at="2024-05-06T09:35:54 CLT" name="ingresaMantenedor" finished-at="1969-12-31T21:00:00 CLST" duration-ms="-1715002554571" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ingresaMantenedor -->
-        <test-method signature="nombreObligatorioTest()[pri:1, instance:valuesite.tests.MantenedorAreaTestCliente@4d14b6c2]" started-at="2024-04-29T12:41:06 CLT" name="nombreObligatorioTest" finished-at="2024-04-29T12:41:08 CLT" duration-ms="1682" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- nombreObligatorioTest -->
-        <test-method retried="true" signature="clienteObligatorioTest()[pri:2, instance:valuesite.tests.MantenedorAreaTestCliente@4d14b6c2]" started-at="2024-04-29T12:41:08 CLT" name="clienteObligatorioTest" finished-at="2024-04-29T12:41:08 CLT" duration-ms="718" status="SKIP">
-          <exception class="java.lang.AssertionError">
+        <test-method signature="nombreObligatorio()[pri:0, instance:valuesite.tests.SucursalTestRT@55183b20]" started-at="2024-05-06T09:35:54 CLT" name="nombreObligatorio" finished-at="2024-05-06T09:35:54 CLT" duration-ms="0" status="SKIP">
+          <exception class="java.lang.IllegalArgumentException">
             <message>
-              <![CDATA[expected [true] but found [false]]]>
+              <![CDATA[Driver must be set]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
-at org.testng.Assert.fail(Assert.java:99)
-at org.testng.Assert.failNotEquals(Assert.java:1037)
-at org.testng.Assert.assertTrue(Assert.java:45)
-at org.testng.Assert.assertTrue(Assert.java:55)
-at valuesite.pageobjects.AreaCliente.errorClienteObligatorio(AreaCliente.java:264)
-at valuesite.tests.MantenedorAreaTestCliente.clienteObligatorioTest(MantenedorAreaTestCliente.java:52)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+              <![CDATA[java.lang.IllegalArgumentException: Driver must be set
+at org.openqa.selenium.internal.Require.nonNull(Require.java:60)
+at org.openqa.selenium.interactions.Actions.<init>(Actions.java:59)
+at valuesite.componentesreusables.ActionsHelper.<init>(ActionsHelper.java:17)
+at valuesite.pageobjects.SucursalRT.<init>(SucursalRT.java:27)
+at valuesite.tests.SucursalTestRT.setUp(SucursalTestRT.java:20)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
+at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
+at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
+at org.testng.TestRunner.invokeTestConfigurations(TestRunner.java:637)
+at org.testng.TestRunner.beforeRun(TestRunner.java:627)
+at org.testng.TestRunner.run(TestRunner.java:589)
 at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
 at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
 at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
@@ -64,203 +95,15 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+          </exception> <!-- java.lang.IllegalArgumentException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- clienteObligatorioTest -->
-        <test-method retried="true" signature="clienteObligatorioTest()[pri:2, instance:valuesite.tests.MantenedorAreaTestCliente@4d14b6c2]" started-at="2024-04-29T12:41:08 CLT" name="clienteObligatorioTest" finished-at="2024-04-29T12:41:09 CLT" duration-ms="681" status="SKIP">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[expected [true] but found [false]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
-at org.testng.Assert.fail(Assert.java:99)
-at org.testng.Assert.failNotEquals(Assert.java:1037)
-at org.testng.Assert.assertTrue(Assert.java:45)
-at org.testng.Assert.assertTrue(Assert.java:55)
-at valuesite.pageobjects.AreaCliente.errorClienteObligatorio(AreaCliente.java:264)
-at valuesite.tests.MantenedorAreaTestCliente.clienteObligatorioTest(MantenedorAreaTestCliente.java:52)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.retryFailed(TestInvoker.java:213)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:58)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- clienteObligatorioTest -->
-        <test-method signature="clienteObligatorioTest()[pri:2, instance:valuesite.tests.MantenedorAreaTestCliente@4d14b6c2]" started-at="2024-04-29T12:41:09 CLT" name="clienteObligatorioTest" finished-at="2024-04-29T12:41:10 CLT" duration-ms="688" status="FAIL">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[expected [true] but found [false]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
-at org.testng.Assert.fail(Assert.java:99)
-at org.testng.Assert.failNotEquals(Assert.java:1037)
-at org.testng.Assert.assertTrue(Assert.java:45)
-at org.testng.Assert.assertTrue(Assert.java:55)
-at valuesite.pageobjects.AreaCliente.errorClienteObligatorio(AreaCliente.java:264)
-at valuesite.tests.MantenedorAreaTestCliente.clienteObligatorioTest(MantenedorAreaTestCliente.java:52)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.retryFailed(TestInvoker.java:213)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:58)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- clienteObligatorioTest -->
-        <test-method signature="creaAreaActivaTest()[pri:3, instance:valuesite.tests.MantenedorAreaTestCliente@4d14b6c2]" started-at="2024-04-29T12:41:10 CLT" name="creaAreaActivaTest" finished-at="2024-04-29T12:41:36 CLT" duration-ms="25999" status="FAIL">
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //a[normalize-space()='Siguiente']' (tried for 7 second(s) with 500 milliseconds interval)]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //a[normalize-space()='Siguiente']' (tried for 7 second(s) with 500 milliseconds interval)
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-at valuesite.componentesreusables.ComponentesReusables.waitForWebElementToBeClickable(ComponentesReusables.java:63)
-at valuesite.pageobjects.AreaCliente.buscarAreaEnTodasLasPaginas(AreaCliente.java:434)
-at valuesite.pageobjects.AreaCliente.creaAreaActiva(AreaCliente.java:526)
-at valuesite.tests.MantenedorAreaTestCliente.creaAreaActivaTest(MantenedorAreaTestCliente.java:58)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//a[normalize-space()='Siguiente']"}
-  (Session info: chrome=124.0.6367.91)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.19.1', revision: 'abe0ee07dc'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [40bf4a2561ec659ae3f16e36f13ca9ed, findElement {using=xpath, value=//a[normalize-space()='Siguiente']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 124.0.6367.91, chrome: {chromedriverVersion: 124.0.6367.91 (51df0e5e17a8..., userDataDir: C:\Users\Felip\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52715}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52715/devtoo..., se:cdpVersion: 124.0.6367.91, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 40bf4a2561ec659ae3f16e36f13ca9ed
-at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at jdk.proxy2/jdk.proxy2.$Proxy15.isDisplayed(Unknown Source)
-at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
-at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
-at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
-at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:656)
-at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:652)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
-... 30 more
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- creaAreaActivaTest -->
-        <test-method signature="creaAreaInactivaTest()[pri:4, instance:valuesite.tests.MantenedorAreaTestCliente@4d14b6c2]" started-at="2024-04-29T12:41:36 CLT" name="creaAreaInactivaTest" finished-at="2024-04-29T12:41:48 CLT" duration-ms="11770" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- creaAreaInactivaTest -->
-        <test-method signature="modificaAreaTest()[pri:5, instance:valuesite.tests.MantenedorAreaTestCliente@4d14b6c2]" started-at="2024-04-29T12:41:48 CLT" name="modificaAreaTest" finished-at="2024-04-29T12:42:07 CLT" duration-ms="19233" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- modificaAreaTest -->
-        <test-method signature="filtroNombreAreaTest()[pri:6, instance:valuesite.tests.MantenedorAreaTestCliente@4d14b6c2]" started-at="2024-04-29T12:42:07 CLT" name="filtroNombreAreaTest" finished-at="2024-04-29T12:42:12 CLT" duration-ms="5191" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- filtroNombreAreaTest -->
-        <test-method signature="filtroEstadoAreaTest()[pri:7, instance:valuesite.tests.MantenedorAreaTestCliente@4d14b6c2]" started-at="2024-04-29T12:42:12 CLT" name="filtroEstadoAreaTest" finished-at="2024-04-29T12:42:20 CLT" duration-ms="7645" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- filtroEstadoAreaTest -->
-        <test-method signature="selectClienteTest()[pri:8, instance:valuesite.tests.MantenedorAreaTestCliente@4d14b6c2]" started-at="2024-04-29T12:42:20 CLT" name="selectClienteTest" finished-at="2024-04-29T12:42:28 CLT" duration-ms="8228" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- selectClienteTest -->
-        <test-method is-config="true" signature="Finalizar()[pri:0, instance:valuesite.tests.MantenedorAreaTestCliente@4d14b6c2]" started-at="2024-04-29T12:42:28 CLT" name="Finalizar" finished-at="2024-04-29T12:42:28 CLT" duration-ms="175" status="PASS">
+        </test-method> <!-- nombreObligatorio -->
+        <test-method is-config="true" signature="Finalizar()[pri:0, instance:valuesite.tests.SucursalTestRT@55183b20]" started-at="2024-05-06T09:35:54 CLT" name="Finalizar" finished-at="1969-12-31T21:00:00 CLST" duration-ms="-1715002554606" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Finalizar -->
-      </class> <!-- valuesite.tests.MantenedorAreaTestCliente -->
-    </test> <!-- Area Ciente -->
-  </suite> <!-- Mantenedores Administrativos -->
+      </class> <!-- valuesite.tests.SucursalTestRT -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
