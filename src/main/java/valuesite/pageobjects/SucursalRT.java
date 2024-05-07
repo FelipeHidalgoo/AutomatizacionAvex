@@ -8,14 +8,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import valuesite.componentesreusables.ActionsHelper;
+import valuesite.componentesreusables.Acciones;
 import valuesite.componentesreusables.ComponentesReusables;
 
 public class SucursalRT extends ComponentesReusables {
 
 	WebDriver driver;
 	
-	ActionsHelper a;
+	Acciones a;
 
 	public SucursalRT(WebDriver driver) {
 		super(driver);
@@ -24,8 +24,13 @@ public class SucursalRT extends ComponentesReusables {
 
 		PageFactory.initElements(driver, this);
 		
-		a = new ActionsHelper(driver);
+		a = new Acciones(driver);
+		
 	}
+	
+//	public void setUp() {
+//		Acciones a = new Acciones();
+//	}
 	
 
 	// PAGE FACTORY

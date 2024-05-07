@@ -5,16 +5,21 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
-public class ActionsHelper {
+public class Acciones {
 
 	WebDriver driver;
+	Actions action;
 
-	public ActionsHelper(WebDriver driver) {
+	public Acciones(WebDriver driver) {
 		this.driver = driver;
+	}
+	
+	public void setUp() {
+		action = new Actions(driver);
 	}
 
 	// Declara la clase de Actions
-	public Actions action = new Actions(driver);
+	//public Actions action = new Actions(driver);
 
 	// Método para hacer clic derecho en un elemento
 	public void clickDerecho(WebElement element) {

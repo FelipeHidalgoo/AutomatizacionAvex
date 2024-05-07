@@ -1,85 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="0" skipped="1">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-05-06T09:35:47 CLT" name="Default suite" finished-at="2024-05-06T09:35:54 CLT" duration-ms="7474">
+  <suite started-at="2024-05-07T09:43:29 CLT" name="Default suite" finished-at="2024-05-07T09:44:26 CLT" duration-ms="56586">
     <groups>
     </groups>
-    <test started-at="2024-05-06T09:35:47 CLT" name="Default test" finished-at="2024-05-06T09:35:54 CLT" duration-ms="7474">
+    <test started-at="2024-05-07T09:43:29 CLT" name="Default test" finished-at="2024-05-07T09:44:26 CLT" duration-ms="56586">
       <class name="valuesite.tests.SucursalTestRT">
-        <test-method is-config="true" signature="lanzarNavegador()[pri:0, instance:valuesite.tests.SucursalTestRT@55183b20]" started-at="2024-05-06T09:35:47 CLT" name="lanzarNavegador" finished-at="2024-05-06T09:35:54 CLT" duration-ms="7335" status="PASS">
+        <test-method is-config="true" signature="lanzarNavegador()[pri:0, instance:valuesite.tests.SucursalTestRT@55183b20]" started-at="2024-05-07T09:43:29 CLT" name="lanzarNavegador" finished-at="2024-05-07T09:44:02 CLT" duration-ms="32686" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- lanzarNavegador -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:valuesite.tests.SucursalTestRT@55183b20]" started-at="2024-05-06T09:35:54 CLT" name="setUp" finished-at="2024-05-06T09:35:54 CLT" depends-on-methods="valuesite.testcomponents.BaseTest.lanzarNavegador" duration-ms="34" status="FAIL">
-          <exception class="java.lang.IllegalArgumentException">
-            <message>
-              <![CDATA[Driver must be set]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.IllegalArgumentException: Driver must be set
-at org.openqa.selenium.internal.Require.nonNull(Require.java:60)
-at org.openqa.selenium.interactions.Actions.<init>(Actions.java:59)
-at valuesite.componentesreusables.ActionsHelper.<init>(ActionsHelper.java:17)
-at valuesite.pageobjects.SucursalRT.<init>(SucursalRT.java:27)
-at valuesite.tests.SucursalTestRT.setUp(SucursalTestRT.java:20)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
-at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
-at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
-at org.testng.TestRunner.invokeTestConfigurations(TestRunner.java:637)
-at org.testng.TestRunner.beforeRun(TestRunner.java:627)
-at org.testng.TestRunner.run(TestRunner.java:589)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.IllegalArgumentException -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:valuesite.tests.SucursalTestRT@55183b20]" started-at="2024-05-07T09:44:02 CLT" name="setUp" finished-at="2024-05-07T09:44:02 CLT" depends-on-methods="valuesite.testcomponents.BaseTest.lanzarNavegador" duration-ms="23" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="ingresaMantenedor()[pri:0, instance:valuesite.tests.SucursalTestRT@55183b20]" started-at="2024-05-06T09:35:54 CLT" name="ingresaMantenedor" finished-at="1969-12-31T21:00:00 CLST" duration-ms="-1715002554571" status="SKIP">
+        <test-method is-config="true" signature="ingresaMantenedor()[pri:0, instance:valuesite.tests.SucursalTestRT@55183b20]" started-at="2024-05-07T09:44:02 CLT" name="ingresaMantenedor" finished-at="2024-05-07T09:44:25 CLT" duration-ms="22488" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ingresaMantenedor -->
-        <test-method signature="nombreObligatorio()[pri:0, instance:valuesite.tests.SucursalTestRT@55183b20]" started-at="2024-05-06T09:35:54 CLT" name="nombreObligatorio" finished-at="2024-05-06T09:35:54 CLT" duration-ms="0" status="SKIP">
-          <exception class="java.lang.IllegalArgumentException">
+        <test-method signature="nombreObligatorio()[pri:0, instance:valuesite.tests.SucursalTestRT@55183b20]" started-at="2024-05-07T09:44:25 CLT" name="nombreObligatorio" finished-at="2024-05-07T09:44:26 CLT" duration-ms="932" status="FAIL">
+          <exception class="java.lang.NullPointerException">
             <message>
-              <![CDATA[Driver must be set]]>
+              <![CDATA[Cannot invoke "org.openqa.selenium.interactions.Actions.click(org.openqa.selenium.WebElement)" because "this.action" is null]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.IllegalArgumentException: Driver must be set
-at org.openqa.selenium.internal.Require.nonNull(Require.java:60)
-at org.openqa.selenium.interactions.Actions.<init>(Actions.java:59)
-at valuesite.componentesreusables.ActionsHelper.<init>(ActionsHelper.java:17)
-at valuesite.pageobjects.SucursalRT.<init>(SucursalRT.java:27)
-at valuesite.tests.SucursalTestRT.setUp(SucursalTestRT.java:20)
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.interactions.Actions.click(org.openqa.selenium.WebElement)" because "this.action" is null
+at valuesite.componentesreusables.Acciones.clickIzquierdo(Acciones.java:61)
+at valuesite.pageobjects.SucursalRT.seleccionaDireccion(SucursalRT.java:162)
+at valuesite.tests.SucursalTestRT.nombreObligatorio(SucursalTestRT.java:39)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
-at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
-at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
-at org.testng.TestRunner.invokeTestConfigurations(TestRunner.java:637)
-at org.testng.TestRunner.beforeRun(TestRunner.java:627)
-at org.testng.TestRunner.run(TestRunner.java:589)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
 at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
 at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
 at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
@@ -95,11 +59,11 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.IllegalArgumentException -->
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- nombreObligatorio -->
-        <test-method is-config="true" signature="Finalizar()[pri:0, instance:valuesite.tests.SucursalTestRT@55183b20]" started-at="2024-05-06T09:35:54 CLT" name="Finalizar" finished-at="1969-12-31T21:00:00 CLST" duration-ms="-1715002554606" status="SKIP">
+        <test-method is-config="true" signature="Finalizar()[pri:0, instance:valuesite.tests.SucursalTestRT@55183b20]" started-at="2024-05-07T09:44:26 CLT" name="Finalizar" finished-at="2024-05-07T09:44:26 CLT" duration-ms="391" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Finalizar -->

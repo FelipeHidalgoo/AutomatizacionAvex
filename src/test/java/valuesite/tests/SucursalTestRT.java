@@ -1,12 +1,12 @@
 package valuesite.tests;
 
+import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import valuesite.componentesreusables.ComponentesReusables;
 import valuesite.pageobjects.Login;
-import valuesite.pageobjects.ModificacionPinRT;
 import valuesite.pageobjects.SucursalRT;
 import valuesite.testcomponents.BaseTest;
 
@@ -17,6 +17,7 @@ public class SucursalTestRT extends BaseTest{
 	
 	@BeforeTest
 	public void setUp() {
+		WebDriver drivers = getDriver();
 		sucursal = new SucursalRT(getDriver());
 		componentesReusables = new ComponentesReusables(getDriver());
     }

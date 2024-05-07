@@ -27,6 +27,7 @@ public class BaseTest extends ConfigReportes {
     
     private static ThreadLocal<WebDriver> driverThreadLocal = new ThreadLocal<>();
     public Login loginPage;
+    //public ActionsHelper action;
 
     public WebDriver inicializarDriver() throws IOException {
         // Clase de propiedades
@@ -71,6 +72,9 @@ public class BaseTest extends ConfigReportes {
 
         // Link de ambiente
         loginPage.irLogin(urlAmbiente);
+        
+        //
+        //action = new ActionsHelper(getDriver());
     }
 
     @AfterTest
