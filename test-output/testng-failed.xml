@@ -6,6 +6,7 @@
       <class name="valuesite.tests.SucursalTestRT">
         <methods>
           <include name="Finalizar"/>
+          <include name="ciudadObligatorio"/>
           <include name="lanzarNavegador"/>
           <include name="setUp"/>
           <include name="ingresaMantenedor"/>

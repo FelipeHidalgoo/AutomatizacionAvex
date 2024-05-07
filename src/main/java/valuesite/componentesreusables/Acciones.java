@@ -12,6 +12,7 @@ public class Acciones {
 
 	public Acciones(WebDriver driver) {
 		this.driver = driver;
+		this.action = new Actions(driver);
 	}
 	
 	public void setUp() {

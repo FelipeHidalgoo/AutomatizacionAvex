@@ -1,6 +1,6 @@
 package valuesite.tests;
 
-import org.openqa.selenium.WebDriver;
+import org.junit.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -12,30 +12,108 @@ import valuesite.testcomponents.BaseTest;
 
 public class SucursalTestRT extends BaseTest{
 	
-	SucursalRT sucursal;
-	ComponentesReusables componentesReusables;
+	SucursalRT suc;
+	ComponentesReusables cp;
 	
 	@BeforeTest
 	public void setUp() {
-		WebDriver drivers = getDriver();
-		sucursal = new SucursalRT(getDriver());
-		componentesReusables = new ComponentesReusables(getDriver());
+		suc = new SucursalRT(getDriver());
+		cp = new ComponentesReusables(getDriver());
     }
     
     @BeforeClass
-    public void ingresaMantenedor() {
+    public void ingresaMantenedor() throws InterruptedException {
 		Login login = new Login(getDriver());
 		
 		// Pasa como parametro correo y contraseña para ingresar a la web
 		login.iniciarSesion("userauto@aquivoy.cl", "123456");
 
-		sucursal.ingresoMantenedorSucursales();
+		suc.ingresoMantenedorSucursales();
 	}
     
-    @Test
-    public void nombreObligatorio() {
-    	sucursal.seleccionaCiudad(1);
-    	sucursal.seleccionaDireccion("cerro aguja", 1);
+    @Test (priority=1)
+    public void limpiaCampoNombre() throws InterruptedException {
+    	suc.ingresarNombreFormulario("Test");
+    	suc.btnCancelar.click();
+    	String nombre = suc.campoNombre.getText();
+    	if (nombre.isEmpty()) {
+    		Assert.assertTrue(true);
+    	}else {
+    		Assert.assertTrue(false);
+    	}
+    }
+    
+    @Test (priority=2)
+    public void limpiaSelectCiudad() throws InterruptedException {
+    	suc.ingresarNombreFormulario("Test");
+    	suc.btnCancelar.click();
+    	String nombre = suc.campoNombre.getText();
+    	if (nombre.isEmpty()) {
+    		Assert.assertTrue(true);
+    	}else {
+    		Assert.assertTrue(false);
+    	}
+    }
+    
+    @Test (priority=3)
+    public void limpiaCampoDireccion() throws InterruptedException {
+    	suc.seleccionaDireccion("Cerro aguja 0376", 1);
+    	cp.waitForWebElementToBeClickable(suc.btnCancelar);
+    	suc.btnCancelar.click();
+    	String direccion = suc.campoDireccion.getText();
+    	if (direccion.isEmpty()) {
+    		Assert.assertTrue(true);
+    	}else {
+    		Assert.assertTrue(false);
+    	}
+    }
+    
+    @Test (priority=4)
+    public void nombreObligatorio() throws InterruptedException {
+    	suc.seleccionaCiudad(1);
+    	suc.seleccionaDireccion("cerro aguja 0376 quilicura", 1);
+    	suc.btnCrear.click();
+    	cp.waitForWebElementToAppear(suc.msjError);
+    	String mensaje = suc.msjError.getText();
+    	if (mensaje.contains("Campo Sucursal: Nombre")) {
+    		Assert.assertTrue(true);
+    	}else {
+    		Assert.assertTrue(false);
+    	}
+    }
+    
+    @Test(priority=5)
+    public void ciudadObligatorio() throws InterruptedException{
+    	// Refresca la pagina (Para evitar colapso de mensajes de error)
+    	getDriver().navigate().refresh();
+    	suc.ingresarNombreFormulario("Test");
+    	suc.seleccionaDireccion("cerro aguja 0376 quilicura", 1);
+    	cp.waitForWebElementToBeClickable(suc.btnCrear);
+    	suc.btnCrear.click();
+    	cp.waitForWebElementToAppear(suc.msjError);
+    	String mensaje = suc.msjError.getText();
+    	if (mensaje.contains("Campo Ciudad obligatorio")) {
+    		Assert.assertTrue(true);
+    	}else {
+    		Assert.assertTrue(false);
+    	}
+    }
+    
+    @Test(priority=6)
+    public void direccionObligatorio() throws InterruptedException{
+    	// Refresca la pagina (Para evitar colapso de mensajes de error)
+    	getDriver().navigate().refresh();
+    	suc.seleccionaCiudad(1);
+    	suc.ingresarNombreFormulario("Test");
+    	cp.waitForWebElementToBeClickable(suc.btnCrear);
+    	suc.btnCrear.click();
+    	cp.waitForWebElementToAppear(suc.msjError);
+    	String mensaje = suc.msjError.getText();
+    	if (mensaje.contains("Campo Sucursal: Dirección obligatorio")) {
+    		Assert.assertTrue(true);
+    	}else {
+    		Assert.assertTrue(false);
+    	}
     }
 
 }

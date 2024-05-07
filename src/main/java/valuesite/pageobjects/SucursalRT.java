@@ -67,6 +67,7 @@ public class SucursalRT extends ComponentesReusables {
 
 	// Campo nombre (formulario)
 	@FindBy(id = "txtNombreSucursal")
+	public
 	WebElement campoNombre;
 
 	// Select ciudad (formulario)
@@ -106,29 +107,42 @@ public class SucursalRT extends ComponentesReusables {
 
 	// Campo direccion (Formulario)
 	@FindBy(id = "txtDireccion")
+	public
 	WebElement campoDireccion;
 
 	// Direccion a seleccionar
-	@FindBy(xpath="//div[@id='dropDownListResultados-txtDireccion']/div[2]")
+	@FindBy(id="//div[@id='dropDownListResultados-txtDireccion']/div[2]")
 	WebElement seleccionDireccion;
 	
 	// Grilla de opciones direcciones
-	@FindBy(id="dvListResultados-txtDireccion")
+	@FindBy(id="dropDownListResultados-txtDireccion")
 	WebElement opcionesDireccion;
 	
 	// Boton crear (Formulario)
 	@FindBy(id = "btnCrear")
+	public
 	WebElement btnCrear;
 
 	// Boton cancelar (Formulario)
 	@FindBy(css = "input[onclick='av.sucursal.nuevo();']")
+	public
 	WebElement btnCancelar;
+	
+	// Mensaje de error
+	@FindBy(css = "div[role='alert']")
+	public
+	WebElement msjError;
+	
+	// Modal Por favor Espere
+	@FindBy(css = ".modal-dialog.modal-m")
+	WebElement waitingDialog;
 
 	// PAGE FACTORY
 
-	public void ingresoMantenedorSucursales() {
+	public void ingresoMantenedorSucursales() throws InterruptedException {
 		tabAdministracion.click();
 		tabSucusales.click();
+		waitForWebElementToDisappear(waitingDialog);
 	}
 	
 	public void ingresarNombreFormulario(String nombreSucursal) {
@@ -157,17 +171,16 @@ public class SucursalRT extends ComponentesReusables {
 		ciudad.click();
 	}
 	
-	public void seleccionaDireccion(String direccion, int posicion) {
+	public void seleccionaDireccion(String direccion, int posicion) throws InterruptedException {
 		campoDireccion.sendKeys(direccion);
-		a.clickIzquierdo(campoNombre);
+		a.presionarEnter(campoDireccion);
 		
+		//Thread.sleep(1500);
 		if (opcionesDireccion.isDisplayed()) {
 			waitForWebElementToBeClickable(seleccionDireccion);
 			posicion = posicion + 1;
 			seleccionDireccion = driver.findElement(By.xpath("//div[@id='dropDownListResultados-txtDireccion']/div["+posicion+"]"));
 			seleccionDireccion.click();
-		}else {
-			a.presionarEnter(campoDireccion);
 		}
 	}
 	
