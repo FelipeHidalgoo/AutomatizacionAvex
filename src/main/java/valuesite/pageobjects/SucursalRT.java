@@ -1,8 +1,11 @@
 package valuesite.pageobjects;
 
 import java.util.List;
+import java.util.Properties;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -11,7 +14,16 @@ import org.openqa.selenium.support.PageFactory;
 import valuesite.componentesreusables.Acciones;
 import valuesite.componentesreusables.ComponentesReusables;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+
 public class SucursalRT extends ComponentesReusables {
+	
+	private static final String CONFIG_FILE = "config.properties";
+    private static final String NRO_SUCURSAL_KEY = "nroSucursal";
 
 	WebDriver driver;
 	
@@ -114,9 +126,20 @@ public class SucursalRT extends ComponentesReusables {
 	@FindBy(id="//div[@id='dropDownListResultados-txtDireccion']/div[2]")
 	WebElement seleccionDireccion;
 	
+//	// Grilla de opciones direcciones
+//	@FindBy(id="dropDownListResultados-txtDireccion")
+//	public
+//	WebElement opcionesDireccion;
+	
 	// Grilla de opciones direcciones
-	@FindBy(id="dropDownListResultados-txtDireccion")
+	@FindBy(css="#dropDownListResultados-txtDireccion")
+	public
 	WebElement opcionesDireccion;
+	
+	// Cuadro de carga campo direccion
+	@FindBy(css=".col-12.text-center.w-100")
+	public
+	WebElement direccionWaiting;
 	
 	// Boton crear (Formulario)
 	@FindBy(id = "btnCrear")
@@ -135,17 +158,36 @@ public class SucursalRT extends ComponentesReusables {
 	
 	// Modal Por favor Espere
 	@FindBy(css = ".modal-dialog.modal-m")
+	public
 	WebElement waitingDialog;
+	
+	// Paginacion
+	
+		// Boton primera pagina (Paginacion)
+		@FindBy(xpath = "//a[normalize-space()='Primera']")
+		WebElement primeraPagina;
+
+		// Boton anterior pagina (Paginacion)
+		@FindBy(xpath = "//a[normalize-space()='Anterior']")
+		WebElement anteriorPagina;
+		// Boton anterior pagina (Paginacion)
+		@FindBy(xpath = "//a[normalize-space()='Siguiente']")
+		static WebElement siguientePagina;
+
+		// Boton anterior pagina (Paginacion)
+		@FindBy(xpath = "//a[normalize-space()='Ultima']")
+		WebElement ultimaPagina;
 
 	// PAGE FACTORY
 
 	public void ingresoMantenedorSucursales() throws InterruptedException {
 		tabAdministracion.click();
 		tabSucusales.click();
-		waitForWebElementToDisappear(waitingDialog);
+		waitForInvisibilityOfElement(waitingDialog);
 	}
 	
 	public void ingresarNombreFormulario(String nombreSucursal) {
+		waitForWebElementToBeClickable(campoNombre);
 		campoNombre.sendKeys(nombreSucursal);
 	}
 	
@@ -166,6 +208,7 @@ public class SucursalRT extends ComponentesReusables {
 	}
 	
 	public void seleccionaCiudad(int posicion) {
+		waitForWebElementToBeClickable(selectCiudad);
 		selectCiudad.click();
 		ciudad = driver.findElement(By.xpath("//div[@class='btn-group bootstrap-select show-tick all-width open']//div[@role='combobox']/ul/li["+posicion+"]"));
 		ciudad.click();
@@ -182,9 +225,12 @@ public class SucursalRT extends ComponentesReusables {
 			seleccionDireccion = driver.findElement(By.xpath("//div[@id='dropDownListResultados-txtDireccion']/div["+posicion+"]"));
 			seleccionDireccion.click();
 		}
+		
+		waitForInvisibilityOfElement(direccionWaiting);
 	}
 	
 	public void seleccionaConvenio(String convenio) {
+		waitForWebElementToBeClickable(selectConvenio);
 		selectConvenio.click();
 		buscaConvenio.sendKeys(convenio);
 		opcionConvenio.click();
@@ -209,6 +255,113 @@ public class SucursalRT extends ComponentesReusables {
 		waitForElementToAppear(direccionesBy);
 		return columnaDireccion;
 	}
+	
+	public boolean verificaDireccionSucursal(String nombreSucursalCrear, String direccionEsperada) {
+	    WebElement filaSucursal = buscarElementoEnPaginas(nombreSucursalCrear);
+
+	    if (filaSucursal != null) {
+	        // Se busca la celda de direccion de la sucursal que queremos
+	        WebElement celdaDireccion = filaSucursal.findElement(By.xpath("../td[2]"));
+
+	        String direccionActual = celdaDireccion.getText().trim();
+
+	        System.out.println("\nDireccion esperada: " + direccionEsperada);
+	        System.out.println("Direccion actual: " + direccionActual + "\n");
+
+	        return direccionEsperada.equalsIgnoreCase(direccionActual);
+	    } else {
+	        System.out.println("Sucursal no encontrada, no se pudo verificar la direccion.");
+	        return false;
+	    }
+	}
+
+	
+	public WebElement buscarElementoEnPaginas(String nombreSucursalCrear) {
+	    // Verifica si el elemento está en la página actual usando streams
+	    WebElement nombreSucursal = obtenerListaNombres().stream()
+	        .filter(elemento -> elemento.getText().trim().equalsIgnoreCase(nombreSucursalCrear.trim()))
+	        .findFirst()
+	        .orElse(null);
+
+	    // Si encuentra el elemento en la página actual, retorna
+	    if (nombreSucursal != null) {
+	        System.out.println("Elemento encontrado en la página actual: " + nombreSucursal.getText());
+	        return nombreSucursal;
+	    }
+
+	    // Si no se encontró, continúa con la paginación
+	    boolean encontrado = false;
+
+	    while (existeElemento(siguientePagina)) {
+	        siguientePagina.click();
+
+	        // Esperar un tiempo breve para que la página cargue
+	        try {
+	            Thread.sleep(500); 
+	        } catch (InterruptedException e) {
+	            e.printStackTrace();
+	        }
+
+	        nombreSucursal = obtenerListaNombres().stream()
+	            .filter(elemento -> elemento.getText().trim().equalsIgnoreCase(nombreSucursalCrear.trim()))
+	            .findFirst()
+	            .orElse(null);
+
+	        if (nombreSucursal != null) {
+	            encontrado = true;
+	            System.out.println("Elemento encontrado en una página siguiente: " + nombreSucursal.getText());
+	            break;
+	        }
+	    }
+
+	    // Al finalizar la búsqueda, regresa a la primera página o a la anterior si no existe la primera página
+	    if (existeElemento(primeraPagina)) {
+	        primeraPagina.click();
+	    } else if (existeElemento(anteriorPagina)) {
+	        anteriorPagina.click();
+	    }
+
+	    if (encontrado) {
+	        return nombreSucursal;
+	    } else {
+	        System.out.println("Elemento no encontrado en ninguna página.");
+	        return null;
+	    }
+	}
+
+
+	private boolean existeElemento(WebElement elemento)  {
+	    try {
+	        // Verificar si el elemento está presente y visible en la página
+	        return elemento.isDisplayed();
+	    } catch (NoSuchElementException | StaleElementReferenceException e) {
+	        // Si hay una excepción, el elemento no existe o no es visible
+	    	e.printStackTrace();
+	        return false;
+	    }
+	}
+
+	
+	public String obtieneNroSucursal() {
+        Properties prop = new Properties();
+        try (InputStream input = new FileInputStream(CONFIG_FILE)) {
+            prop.load(input);
+            return prop.getProperty(NRO_SUCURSAL_KEY, "1");
+        } catch (IOException e) {
+            e.printStackTrace();
+            return "1"; // Valor predeterminado
+        }
+    }
+
+    public void guardaNroSucursal(String nroSucursal) {
+        Properties prop = new Properties();
+        try (OutputStream output = new FileOutputStream(CONFIG_FILE)) {
+            prop.setProperty(NRO_SUCURSAL_KEY, nroSucursal);
+            prop.store(output, null);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 	
 	
 	
