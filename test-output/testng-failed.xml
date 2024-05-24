@@ -6,9 +6,9 @@
       <class name="valuesite.tests.SucursalTestRT">
         <methods>
           <include name="Finalizar"/>
-          <include name="creaSucursal"/>
           <include name="lanzarNavegador"/>
           <include name="setUp"/>
+          <include name="filtroNombre"/>
           <include name="ingresaMantenedor"/>
         </methods>
       </class> <!-- valuesite.tests.SucursalTestRT -->

@@ -2,28 +2,28 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-05-22T10:57:56 EDT" name="Default suite" finished-at="2024-05-22T10:58:30 EDT" duration-ms="34019">
+  <suite started-at="2024-05-24T18:12:54 EDT" name="Default suite" finished-at="2024-05-24T18:13:12 EDT" duration-ms="18731">
     <groups>
     </groups>
-    <test started-at="2024-05-22T10:57:56 EDT" name="Default test" finished-at="2024-05-22T10:58:30 EDT" duration-ms="34019">
+    <test started-at="2024-05-24T18:12:54 EDT" name="Default test" finished-at="2024-05-24T18:13:12 EDT" duration-ms="18731">
       <class name="valuesite.tests.SucursalTestRT">
-        <test-method is-config="true" signature="lanzarNavegador()[pri:0, instance:valuesite.tests.SucursalTestRT@1bd4fdd]" started-at="2024-05-22T10:57:56 EDT" name="lanzarNavegador" finished-at="2024-05-22T10:58:06 EDT" duration-ms="10451" status="PASS">
+        <test-method is-config="true" signature="lanzarNavegador()[pri:0, instance:valuesite.tests.SucursalTestRT@7d8995e]" started-at="2024-05-24T18:12:54 EDT" name="lanzarNavegador" finished-at="2024-05-24T18:13:02 EDT" duration-ms="8007" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- lanzarNavegador -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:valuesite.tests.SucursalTestRT@1bd4fdd]" started-at="2024-05-22T10:58:06 EDT" name="setUp" finished-at="2024-05-22T10:58:06 EDT" depends-on-methods="valuesite.testcomponents.BaseTest.lanzarNavegador" duration-ms="12" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:valuesite.tests.SucursalTestRT@7d8995e]" started-at="2024-05-24T18:13:02 EDT" name="setUp" finished-at="2024-05-24T18:13:02 EDT" depends-on-methods="valuesite.testcomponents.BaseTest.lanzarNavegador" duration-ms="14" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="ingresaMantenedor()[pri:0, instance:valuesite.tests.SucursalTestRT@1bd4fdd]" started-at="2024-05-22T10:58:06 EDT" name="ingresaMantenedor" finished-at="2024-05-22T10:58:21 EDT" duration-ms="14523" status="PASS">
+        <test-method is-config="true" signature="ingresaMantenedor()[pri:0, instance:valuesite.tests.SucursalTestRT@7d8995e]" started-at="2024-05-24T18:13:02 EDT" name="ingresaMantenedor" finished-at="2024-05-24T18:13:11 EDT" duration-ms="9062" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ingresaMantenedor -->
-        <test-method signature="creaSucursal()[pri:7, instance:valuesite.tests.SucursalTestRT@1bd4fdd]" started-at="2024-05-22T10:58:21 EDT" name="creaSucursal" finished-at="2024-05-22T10:58:28 EDT" duration-ms="7730" status="PASS">
+        <test-method signature="filtroNombre()[pri:10, instance:valuesite.tests.SucursalTestRT@7d8995e]" started-at="2024-05-24T18:13:11 EDT" name="filtroNombre" finished-at="2024-05-24T18:13:11 EDT" duration-ms="344" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- creaSucursal -->
-        <test-method is-config="true" signature="Finalizar()[pri:0, instance:valuesite.tests.SucursalTestRT@1bd4fdd]" started-at="2024-05-22T10:58:28 EDT" name="Finalizar" finished-at="2024-05-22T10:58:30 EDT" duration-ms="1279" status="PASS">
+        </test-method> <!-- filtroNombre -->
+        <test-method is-config="true" signature="Finalizar()[pri:0, instance:valuesite.tests.SucursalTestRT@7d8995e]" started-at="2024-05-24T18:13:11 EDT" name="Finalizar" finished-at="2024-05-24T18:13:12 EDT" duration-ms="1277" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Finalizar -->

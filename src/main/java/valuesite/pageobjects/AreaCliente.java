@@ -336,66 +336,74 @@ public class AreaCliente extends ComponentesReusables {
 	// Hace un guardado de los numeros utilizados para la creacion de areas (Se
 	// utiliza para el area ACTIVA)
 	public static void guardarNumeroArea(int numeroArea) {
-		Properties properties = new Properties();
-		try (FileInputStream fis = new FileInputStream(PROPERTIES_FILE)) {
-			properties.load(fis);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+	    Properties properties = new Properties();
+	    try (FileInputStream fis = new FileInputStream(PROPERTIES_FILE)) {
+	        // Cargar todas las propiedades existentes
+	        properties.load(fis);
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	    }
 
-		properties.setProperty(NUMERO_AREA_KEY, String.valueOf(numeroArea));
-		properties.setProperty(NUMERO_AREA2_KEY, obtenerNumeroArea2() + ""); // Mantener el valor de numeroArea2
-		properties.setProperty(NUMERO_MODIFICACION_KEY, obtenerNumeroModificacion() + ""); // Mantener el valor de
-																							// numeroModificacion
+	    // Actualizar las propiedades específicas
+	    properties.setProperty(NUMERO_AREA_KEY, String.valueOf(numeroArea));
+	    properties.setProperty(NUMERO_AREA2_KEY, obtenerNumeroArea2() + ""); // Mantener el valor de numeroArea2
+	    properties.setProperty(NUMERO_MODIFICACION_KEY, obtenerNumeroModificacion() + ""); // Mantener el valor de numeroModificacion
 
-		try (FileOutputStream fos = new FileOutputStream(PROPERTIES_FILE)) {
-			properties.store(fos, "Configuración de números de área");
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+	    try (FileOutputStream fos = new FileOutputStream(PROPERTIES_FILE)) {
+	        // Guardar todas las propiedades nuevamente
+	        properties.store(fos, "Configuración de números de área");
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	    }
 	}
 
 	// Hace un guardado de los numeros utilizados para la creacion de areas (Se
 	// utiliza para el area INACTIVA)
 	public static void guardarNumeroArea2(int numeroArea2) {
-		Properties properties = new Properties();
-		try (FileInputStream fis = new FileInputStream(PROPERTIES_FILE)) {
-			properties.load(fis);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+	    Properties properties = new Properties();
+	    try (FileInputStream fis = new FileInputStream(PROPERTIES_FILE)) {
+	        // Cargar todas las propiedades existentes
+	        properties.load(fis);
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	    }
 
-		properties.setProperty(NUMERO_AREA2_KEY, String.valueOf(numeroArea2));
-		properties.setProperty(NUMERO_AREA_KEY, obtenerNumeroArea() + ""); // Mantener el valor de numeroArea
-		properties.setProperty(NUMERO_MODIFICACION_KEY, obtenerNumeroModificacion() + ""); // Mantener el valor de
-																							// numeroModificacion
+	    // Actualizar las propiedades específicas
+	    properties.setProperty(NUMERO_AREA2_KEY, String.valueOf(numeroArea2));
+	    properties.setProperty(NUMERO_AREA_KEY, obtenerNumeroArea() + ""); // Mantener el valor de numeroArea
+	    properties.setProperty(NUMERO_MODIFICACION_KEY, obtenerNumeroModificacion() + ""); // Mantener el valor de numeroModificacion
 
-		try (FileOutputStream fos = new FileOutputStream(PROPERTIES_FILE)) {
-			properties.store(fos, "Configuración de números de área");
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+	    try (FileOutputStream fos = new FileOutputStream(PROPERTIES_FILE)) {
+	        // Guardar todas las propiedades nuevamente
+	        properties.store(fos, "Configuración de números de área");
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	    }
 	}
 
 	// Hace un guardado de los numeros utilizados para la modificacion de areas
-	public static void guardarNumeroModificacion(int numeroModificacion) {
-		Properties properties = new Properties();
-		try (FileInputStream fis = new FileInputStream(PROPERTIES_FILE)) {
-			properties.load(fis);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+	public static void guardarNumeroModificacion(int numeroModificacionAreaCli) {
+	    Properties properties = new Properties();
+	    try (FileInputStream fis = new FileInputStream(PROPERTIES_FILE)) {
+	        // Cargar todas las propiedades existentes
+	        properties.load(fis);
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	    }
 
-		properties.setProperty(NUMERO_MODIFICACION_KEY, String.valueOf(numeroModificacion));
-		properties.setProperty(NUMERO_AREA_KEY, obtenerNumeroArea() + ""); // Mantener el valor de numeroArea
-		properties.setProperty(NUMERO_AREA2_KEY, obtenerNumeroArea2() + ""); // Mantener el valor de numeroArea2
+	    // Actualizar las propiedades específicas
+	    properties.setProperty(NUMERO_MODIFICACION_KEY, String.valueOf(numeroModificacionAreaCli));
+	    properties.setProperty(NUMERO_AREA_KEY, obtenerNumeroArea() + ""); // Mantener el valor de numeroArea
+	    properties.setProperty(NUMERO_AREA2_KEY, obtenerNumeroArea2() + ""); // Mantener el valor de numeroArea2
 
-		try (FileOutputStream fos = new FileOutputStream(PROPERTIES_FILE)) {
-			properties.store(fos, "Configuración de números de modificación");
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+	    try (FileOutputStream fos = new FileOutputStream(PROPERTIES_FILE)) {
+	        // Guardar todas las propiedades nuevamente
+	        properties.store(fos, "Configuración de números de modificación");
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	    }
 	}
+
 
 	// Busca el area ACTIVA creada en todas las paginas de la paginacion
 	public boolean buscarAreaEnTodasLasPaginas(WebDriver driver, String nombreArea) {

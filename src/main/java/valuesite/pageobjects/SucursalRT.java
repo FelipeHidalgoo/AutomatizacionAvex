@@ -10,9 +10,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 import valuesite.componentesreusables.Acciones;
 import valuesite.componentesreusables.ComponentesReusables;
+
+import static org.testng.Assert.assertTrue;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -24,6 +27,7 @@ public class SucursalRT extends ComponentesReusables {
 	
 	private static final String CONFIG_FILE = "config.properties";
     private static final String NRO_SUCURSAL_KEY = "nroSucursal";
+    private static final String NRO_MODIF_KEY = "nroModif";
 
 	WebDriver driver;
 	
@@ -84,33 +88,45 @@ public class SucursalRT extends ComponentesReusables {
 
 	// Select ciudad (formulario)
 	@FindBy(xpath = "//button[@data-id='slcCiudad']")
+	public
 	WebElement selectCiudad;
 	
 	// Ciudad a seleccionar
 	WebElement ciudad;
 
-	// Check Activo (formulario)
+	// Estado de Check Activo (formulario)
 	@FindBy(id = "rdoActivo1")
-	WebElement checkActivo;
+	WebElement estadoCheckActivo;
+	
+	// Marcar Check Activo
+	@FindBy(css = "label[for='rdoActivo1']")
+	public
+	WebElement marcaCheckActivo;
 
-	// Check Inactivo (formulario)
+	// Estao de Check Inactivo (formulario)
 	@FindBy(id = "rdoActivo2")
-	WebElement checkInactivo;
+	WebElement estadoCheckInactivo;
+	
+	// Marcar Check Inactivo
+	@FindBy(css = "label[for='rdoActivo2']")
+	public
+	WebElement marcaCheckInactivo;
 
 	// Check Todos (Formulario / Visibilidad de convenios)
 	@FindBy(id = "rdoConvenio1")
 	WebElement checkTodos;
 
 	// Check Definir (Formulario / Visibilidad de convenios)
-	@FindBy(id = "rdoConvenio2")
+	@FindBy(css = "label[for='rdoConvenio2']")
 	WebElement checkDefinir;
 	
 	// Select convenio (Formulario)
 	@FindBy (xpath="//div[@id='dvConvenio']/div/div/button")
+	public
 	WebElement selectConvenio;
 	
 	// Searchbox convenio
-	@FindBy(xpath="//div[@class='bs-searchbox']/input")
+	@FindBy(xpath="(//div[@class='bs-searchbox'])[2]/input")
 	WebElement buscaConvenio;
 	
 	// Opcion lista convenios
@@ -161,6 +177,11 @@ public class SucursalRT extends ComponentesReusables {
 	public
 	WebElement waitingDialog;
 	
+	// Primera sucursal de la lista
+	@FindBy (xpath="//tbody[@class='tb-bss-pointer']/tr[1]")
+	public
+	WebElement primeraSucursal;
+	
 	// Paginacion
 	
 		// Boton primera pagina (Paginacion)
@@ -188,20 +209,21 @@ public class SucursalRT extends ComponentesReusables {
 	
 	public void ingresarNombreFormulario(String nombreSucursal) {
 		waitForWebElementToBeClickable(campoNombre);
+		campoNombre.clear();
 		campoNombre.sendKeys(nombreSucursal);
 	}
 	
-	public boolean obtenerEstado() {
-		boolean activo = true;
-		boolean inactivo = false;
-		waitForWebElementToBeClickable(checkActivo);
+	public boolean obtenerEstado() throws InterruptedException {
+		boolean activo;
+		boolean inactivo;
+		Thread.sleep(250);
 		
-		if (checkActivo.isSelected()) {
+		if (estadoCheckActivo.isSelected()) {
+			activo = true;
 			return activo;
-			
-		}else if (checkInactivo.isSelected()) {
+		}else if (estadoCheckInactivo.isSelected()) {
+			inactivo = false;
 			return inactivo;
-			
 		}
 		
 		return false;
@@ -211,10 +233,20 @@ public class SucursalRT extends ComponentesReusables {
 		waitForWebElementToBeClickable(selectCiudad);
 		selectCiudad.click();
 		ciudad = driver.findElement(By.xpath("//div[@class='btn-group bootstrap-select show-tick all-width open']//div[@role='combobox']/ul/li["+posicion+"]"));
-		ciudad.click();
+		// Control de errores en caso de no haber nada que seleccionar
+				try {
+				    ciudad.click();
+				} catch (NoSuchElementException e) {
+					Assert.fail("Error: El elemento ciudad no fue encontrado. Puede deberse a que no existe la ciudad, o la clase del html sufrio cambios.");
+				} catch (StaleElementReferenceException e) {
+					Assert.fail("Error: La referencia al elemento ciudad es obsoleta.");
+				} catch (Exception e) {
+					Assert.fail("Error: Ocurrió un error inesperado al intentar hacer clic en ciudad.");
+				}
 	}
 	
 	public void seleccionaDireccion(String direccion, int posicion) throws InterruptedException {
+		campoDireccion.clear();
 		campoDireccion.sendKeys(direccion);
 		a.presionarEnter(campoDireccion);
 		
@@ -230,14 +262,27 @@ public class SucursalRT extends ComponentesReusables {
 	}
 	
 	public void seleccionaConvenio(String convenio) {
+		checkDefinir.click();
 		waitForWebElementToBeClickable(selectConvenio);
 		selectConvenio.click();
 		buscaConvenio.sendKeys(convenio);
-		opcionConvenio.click();
+		// Control de errores en caso de no haber nada que seleccionar
+		try {
+		    opcionConvenio.click();
+		} catch (NoSuchElementException e) {
+			Assert.fail("Error: El elemento opcionConvenio no fue encontrado. Puede deberse a que no existe el convenio buscado, o la clase del html sufrio cambios.");
+		} catch (StaleElementReferenceException e) {
+			Assert.fail("Error: La referencia al elemento opcionConvenio es obsoleta.");
+		} catch (Exception e) {
+			Assert.fail("Error: Ocurrió un error inesperado al intentar hacer clic en opcionConvenio.");
+		}
+		
+		selectConvenio.click();
 	}
 	
 	public void filtraPorNombre(String nombre) {
 		waitForWebElementToBeClickable(filtroNombre);
+		filtroNombre.clear();
 		filtroNombre.sendKeys(nombre);
 		btnBuscar.click();
 	}
@@ -353,17 +398,52 @@ public class SucursalRT extends ComponentesReusables {
         }
     }
 
-    public void guardaNroSucursal(String nroSucursal) {
+	public void guardaNroSucursal(String nroSucursal) {
+	    Properties prop = new Properties();
+	    try (InputStream input = new FileInputStream(CONFIG_FILE)) {
+	        // Cargar todas las propiedades existentes
+	        prop.load(input);
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	    }
+
+	    try (OutputStream output = new FileOutputStream(CONFIG_FILE)) {
+	        // Actualizar la propiedad específica
+	        prop.setProperty(NRO_SUCURSAL_KEY, nroSucursal);
+	        // Guardar todas las propiedades nuevamente
+	        prop.store(output, null);
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	    }
+	}
+    
+	public String obtieneNroModif() {
         Properties prop = new Properties();
-        try (OutputStream output = new FileOutputStream(CONFIG_FILE)) {
-            prop.setProperty(NRO_SUCURSAL_KEY, nroSucursal);
-            prop.store(output, null);
+        try (InputStream input = new FileInputStream(CONFIG_FILE)) {
+            prop.load(input);
+            return prop.getProperty(NRO_MODIF_KEY, "0");
         } catch (IOException e) {
             e.printStackTrace();
+            return "1"; // Valor predeterminado
         }
     }
-	
-	
-	
 
+	public void guardaNroModif(String nroModifSucursal) {
+	    Properties prop = new Properties();
+	    try (InputStream input = new FileInputStream(CONFIG_FILE)) {
+	        // Cargar todas las propiedades existentes
+	        prop.load(input);
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	    }
+
+	    try (OutputStream output = new FileOutputStream(CONFIG_FILE)) {
+	        // Actualizar la propiedad específica
+	        prop.setProperty(NRO_MODIF_KEY, nroModifSucursal);
+	        // Guardar todas las propiedades nuevamente
+	        prop.store(output, null);
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	    }
+	}
 }
