@@ -31,5 +31,11 @@
         </classes>
     </test>
     
+    <test thread-count="5" name="Sucursales RT">
+        <classes>
+            <class name="valuesite.tests.SucursalTestRT"/>
+        </classes>
+    </test>
+    
     
 </suite>

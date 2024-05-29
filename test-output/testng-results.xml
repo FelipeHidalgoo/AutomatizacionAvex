@@ -1,33 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="6" passed="5" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-05-24T18:12:54 EDT" name="Default suite" finished-at="2024-05-24T18:13:12 EDT" duration-ms="18731">
+  <suite started-at="2024-05-29T16:29:08 EDT" name="Default suite" finished-at="2024-05-29T16:29:32 EDT" duration-ms="24798">
     <groups>
     </groups>
-    <test started-at="2024-05-24T18:12:54 EDT" name="Default test" finished-at="2024-05-24T18:13:12 EDT" duration-ms="18731">
-      <class name="valuesite.tests.SucursalTestRT">
-        <test-method is-config="true" signature="lanzarNavegador()[pri:0, instance:valuesite.tests.SucursalTestRT@7d8995e]" started-at="2024-05-24T18:12:54 EDT" name="lanzarNavegador" finished-at="2024-05-24T18:13:02 EDT" duration-ms="8007" status="PASS">
+    <test started-at="2024-05-29T16:29:08 EDT" name="Default test" finished-at="2024-05-29T16:29:32 EDT" duration-ms="24798">
+      <class name="valuesite.tests.ModificacionPinTestRT">
+        <test-method is-config="true" signature="lanzarNavegador()[pri:0, instance:valuesite.tests.ModificacionPinTestRT@130d63be]" started-at="2024-05-29T16:29:08 EDT" name="lanzarNavegador" finished-at="2024-05-29T16:29:14 EDT" duration-ms="6704" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- lanzarNavegador -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:valuesite.tests.SucursalTestRT@7d8995e]" started-at="2024-05-24T18:13:02 EDT" name="setUp" finished-at="2024-05-24T18:13:02 EDT" depends-on-methods="valuesite.testcomponents.BaseTest.lanzarNavegador" duration-ms="14" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:valuesite.tests.ModificacionPinTestRT@130d63be]" started-at="2024-05-29T16:29:14 EDT" name="setUp" finished-at="2024-05-29T16:29:14 EDT" depends-on-methods="valuesite.testcomponents.BaseTest.lanzarNavegador" duration-ms="4" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="ingresaMantenedor()[pri:0, instance:valuesite.tests.SucursalTestRT@7d8995e]" started-at="2024-05-24T18:13:02 EDT" name="ingresaMantenedor" finished-at="2024-05-24T18:13:11 EDT" duration-ms="9062" status="PASS">
+        <test-method is-config="true" signature="ingresaMantenedor()[pri:0, instance:valuesite.tests.ModificacionPinTestRT@130d63be]" started-at="2024-05-29T16:29:14 EDT" name="ingresaMantenedor" finished-at="2024-05-29T16:29:27 EDT" duration-ms="13201" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ingresaMantenedor -->
-        <test-method signature="filtroNombre()[pri:10, instance:valuesite.tests.SucursalTestRT@7d8995e]" started-at="2024-05-24T18:13:11 EDT" name="filtroNombre" finished-at="2024-05-24T18:13:11 EDT" duration-ms="344" status="PASS">
+        <test-method signature="vaciaCampo()[pri:1, instance:valuesite.tests.ModificacionPinTestRT@130d63be]" started-at="2024-05-29T16:29:28 EDT" name="vaciaCampo" finished-at="2024-05-29T16:29:28 EDT" duration-ms="148" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- filtroNombre -->
-        <test-method is-config="true" signature="Finalizar()[pri:0, instance:valuesite.tests.SucursalTestRT@7d8995e]" started-at="2024-05-24T18:13:11 EDT" name="Finalizar" finished-at="2024-05-24T18:13:12 EDT" duration-ms="1277" status="PASS">
+        </test-method> <!-- vaciaCampo -->
+        <test-method signature="ingresarPin()[pri:2, instance:valuesite.tests.ModificacionPinTestRT@130d63be]" started-at="2024-05-29T16:29:28 EDT" name="ingresarPin" finished-at="2024-05-29T16:29:28 EDT" duration-ms="127" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ingresarPin -->
+        <test-method signature="actualizaPin()[pri:3, instance:valuesite.tests.ModificacionPinTestRT@130d63be]" started-at="2024-05-29T16:29:28 EDT" name="actualizaPin" finished-at="2024-05-29T16:29:28 EDT" duration-ms="381" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- actualizaPin -->
+        <test-method signature="actualizaSinDatos()[pri:4, instance:valuesite.tests.ModificacionPinTestRT@130d63be]" started-at="2024-05-29T16:29:28 EDT" name="actualizaSinDatos" finished-at="2024-05-29T16:29:28 EDT" duration-ms="121" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- actualizaSinDatos -->
+        <test-method signature="actualizaConCaracteresEspeciales()[pri:5, instance:valuesite.tests.ModificacionPinTestRT@130d63be]" started-at="2024-05-29T16:29:28 EDT" name="actualizaConCaracteresEspeciales" finished-at="2024-05-29T16:29:31 EDT" duration-ms="2637" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- actualizaConCaracteresEspeciales -->
+        <test-method signature="limpiaCampo()[pri:6, instance:valuesite.tests.ModificacionPinTestRT@130d63be]" started-at="2024-05-29T16:29:31 EDT" name="limpiaCampo" finished-at="2024-05-29T16:29:31 EDT" duration-ms="148" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[El campo PIN no se limpio correctamente al presionar cancelar]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: El campo PIN no se limpio correctamente al presionar cancelar
+at org.testng.Assert.fail(Assert.java:99)
+at valuesite.tests.ModificacionPinTestRT.limpiaCampo(ModificacionPinTestRT.java:186)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- limpiaCampo -->
+        <test-method is-config="true" signature="Finalizar()[pri:0, instance:valuesite.tests.ModificacionPinTestRT@130d63be]" started-at="2024-05-29T16:29:31 EDT" name="Finalizar" finished-at="2024-05-29T16:29:32 EDT" duration-ms="1298" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Finalizar -->
-      </class> <!-- valuesite.tests.SucursalTestRT -->
+      </class> <!-- valuesite.tests.ModificacionPinTestRT -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

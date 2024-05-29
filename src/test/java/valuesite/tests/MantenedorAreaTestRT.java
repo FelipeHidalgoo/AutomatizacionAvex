@@ -35,11 +35,11 @@ public class MantenedorAreaTestRT extends BaseTest {
 		Login login = new Login(getDriver());
 
 		// Pasa como parametro correo y contraseña para ingresar a la web
-		login.iniciarSesion("userauto@aquivoy.cl", "123456");
+		login.iniciarSesion("automrt@aquivoy.cl", "123456");
 
 		// Pasa como parametro el nombre o codigo del cliente a buscar en el select
 		// cliente
-		areart.ingresoMantenedorArea("8215");
+		areart.ingresoMantenedorArea("001");
 	}
 
 	// Comprobacion de nombre obligatorio

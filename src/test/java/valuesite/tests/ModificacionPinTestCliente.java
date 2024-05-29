@@ -27,18 +27,11 @@ public class ModificacionPinTestCliente extends BaseTest{
 	
 	@BeforeTest
 	public void setUp() {
+		// 	Inicializa Page Object de la vista, este contiene metodos y web elements tales como botones, campos, etc
 		modifpincli = new ModificacionPinCliente(getDriver());
-		componentesReusables = new ComponentesReusables(getDriver());
 		
-//		String path = System.getProperty("user.dir")+"\\reportes\\reporte.html";
-//		ExtentSparkReporter reporte = new ExtentSparkReporter(path);
-//		
-//		reporte.config().setReportName("Resultados de pruebas automatizadas");
-//		reporte.config().setDocumentTitle("Resultados de pruebas");
-//		
-//		extent = new ExtentReports();
-//		extent.attachReporter(reporte);
-//		extent.setSystemInfo("Tester", "ASUS (Valuesite19) OFICINA");
+		// Inicializa la clase que contiene los metodos de tiempos de espera explicito, entre otros metodos reusables
+		componentesReusables = new ComponentesReusables(getDriver());
     }
     
     @BeforeClass
@@ -46,44 +39,44 @@ public class ModificacionPinTestCliente extends BaseTest{
 		Login login = new Login(getDriver());
 		
 		// Pasa como parametro correo y contraseña para ingresar a la web
-		login.iniciarSesion("userautocliente@aquivoy.cl", "123456");
+		login.iniciarSesion("automcli@aquivoy.cl", "123456");
 		
-		//AreaRT areart = new AreaRT(driver);
-		
-		//ModificacionPinRT modifpinrt = new ModificacionPinRT(driver);
+		// Metodo que ingresa a mantenedor pin una vez la sesion este iniciada
 		modifpincli.ingresoMantenedorPin();
 	}
 	
 	
+    // Testea que se pueda vaciar manualmente el campo PIN //
     @Test(priority=1)
     public void vaciaCampo() {
-//        ExtentTest test = extent.createTest("Borra los datos ingresados en el campo");
-        
+    	// Espera a que aparezca el campo pin
         componentesReusables.waitForWebElementToAppear(modifpincli.campoPin);
         
+        // Ingresa un pin y luego lo borra manualmente
         modifpincli.ingresaPin("7546");
         modifpincli.campoPin.clear();
         
+        // Obtiene el valor del campo pin despues de borrarlo
         String pin = modifpincli.obtienePIN();
         //System.out.println(pin);
         
+        // Valida si el campo quedo vacio luego de borrar el valor
         if (pin.isEmpty()) {
             System.out.println("El campo se vacio correctamente\n");
             Assert.assertTrue(true);
         } else {
-            System.out.println("El campo NO se vacio correctamente\n");
-            Assert.assertTrue(false);
+            Assert.fail("El campo NO se vacio correctamente\n");
         }
-        
-//        test.fail("El resultado no es correcto");
-//        
-//        extent.flush();
+       
     }
 
 	
+    // Testea que se esten ingresando valores correctamente en el campo //
     @Test(priority=2)
 	public void ingresarPin() {
-		String pin = "7546";
+		
+    	//Define el pin a utilizar y espera a que aparezca el campo pin
+    	String pin = "7546";
 		componentesReusables.waitForWebElementToAppear(modifpincli.campoPin);
 		
 		// Vacia el campo, ingresa un dato y guarda el dato que hay actualmente en el campo en "nuevoPin" 
@@ -92,81 +85,85 @@ public class ModificacionPinTestCliente extends BaseTest{
 		modifpincli.ingresaPin(pin);
 		String nuevoPin = modifpincli.obtienePIN();
 		
-		// Compara "nuevoPin" con "pin" para comprobar que el dato efectivamente se ingreso en el campo
+		// Valida que "nuevoPin" con "pin" sean iguales para comprobar que el dato efectivamente se ingreso en el campo
 		if (nuevoPin.equals(pin)) {
 			System.out.println("El pin se ingreso correctamente");
 			Assert.assertTrue(true);
 		}else {
-			System.out.println("El pin no fue ingresado");
-			Assert.assertTrue(false);
+			Assert.fail("El pin no fue ingresado correctamente");
 		}
 	}
 	
-	@Test(priority=3)
+	// Comprueba que el pin se este actualizando correctamente //
+    @Test(priority=3)
 	public void actualizaPin() throws InterruptedException {
+    	
+    	// Define un pin y espera a que aparezca el campo pin
 		String pin = "9876";
 		componentesReusables.waitForWebElementToAppear(modifpincli.campoPin);
 		
+		// Limpia el campo en caso de que ya tenga un dato y actualiza con el pin definido
 		modifpincli.campoPin.clear();
 		modifpincli.actualizaPin(pin);
 		
+		// Espera a que aparezca el mensaje de exito
 		componentesReusables.waitForWebElementToAppear(modifpincli.msjExito);
+		
+		// Si se despliega el mensaje de exito pasa la prueba, si no, falla la prueba
 		if (modifpincli.msjExito.isDisplayed()) {
 			System.out.println("El pin fue actualizado correctamente");
 			Assert.assertTrue(true);
 		}else {
-			System.out.println("El pin no fue actualizado");
-			Assert.assertTrue(false);
+			Assert.fail("El pin no fue actualizado");
 		}
 	}
 	
+    
+    // Testea que no se pueda actualizar sin ingresar nada //
 	@Test(priority=4)
 	public void actualizaSinDatos() {
 		componentesReusables.waitForWebElementToAppear(modifpincli.campoPin);
 		
+		// Limpia el campo y presiona boton actualizar
 		modifpincli.campoPin.clear();
 		modifpincli.btnActualizar.click();
 		
+		// Verifica si se despliega el mensaje de error
 		if (modifpincli.msjError.isDisplayed()) {
 			System.out.println("No permite actualizar sin ingresar datos");
 			Assert.assertTrue(true);
 		}else {
-			System.out.println("Permite actualizar sin ingresar datos");
-			Assert.assertTrue(false);
+			Assert.fail("Permite actualizar sin ingresar datos");
 		}
 	}
 	
-	
+	// Testea que no se pueda actualizar ingresando caracteres especiales //
 	@Test (priority=5)
 	public void actualizaConCaracteresEspeciales() throws InterruptedException {
+		
+		// Define los caracteres especiales a utilizar, estan incluidos todos los posibles
 		String caracteresEspeciales = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
+		
+		// Espera a que el campo pin sea clickeable
 		componentesReusables.waitForWebElementToBeClickable(modifpincli.campoPin);
 		
+		// Limpia el campo y actualiza con los caracteres especiales definidos
 		modifpincli.campoPin.clear();
-		//componentesReusables.waitForElementToDisappear(driver, modifpinrt.msjErrorBy);
 		modifpincli.actualizaPin(caracteresEspeciales);
 		
-		//componentesReusables.waitForWebElementToAppear(modifpinrt.msjError);
-//		if (modifpinrt.msjError.isDisplayed()) {
-//			System.out.println("No permite actualizar con caracteres especiales");
-//			Assert.assertTrue(true);
-//		}else {
-//			System.out.println("Permite actualizar con caracteres especiales");
-//			Assert.assertTrue(false);
-//		}
-		
+		// Espera 500 milisegundos y refresca la pagina
 		Thread.sleep(500);
 		getDriver().navigate().refresh();
 		
+		// Obtiene el valor del campo despus de actualizar la pagina
 		String pin = modifpincli.obtienePIN();
 		
 		// Verificar si el campo contiene algún carácter especial
 	    boolean contieneCaracteresEspeciales = modifpincli.contieneCaracteresEspeciales(pin, caracteresEspeciales);
 	    
-	    // Imprimir el resultado y realizar la aserción
+	    // Comprueba si el campo tiene caracteres especiales
 	    if (contieneCaracteresEspeciales) {
-	        System.out.println("El campo se guardo con caracteres especiales");
-	        Assert.assertTrue(false);
+	        Assert.fail("El campo se guardo con caracteres especiales");
 	    } else {
 	        System.out.println("No se guardaron caracteres especiales en el campo");
 	        Assert.assertTrue(true);
@@ -175,20 +172,27 @@ public class ModificacionPinTestCliente extends BaseTest{
 		
 	}
 	
+	
+	// Comprueba si se limpia el campo con el boton cancelar
 	@Test(priority=6)
 	public void limpiaCampo() {
+		
+		// Limpia el campo e ingresa un pin
 		modifpincli.campoPin.clear();
 		modifpincli.ingresaPin("5465");
 		
+		// Presiona boton cancelar
 		modifpincli.btnCancelar.click();
 		
+		// Obtiene el valor actual del campo luego de presionar boton cancelar
 		String pinActual = modifpincli.obtienePIN();
+		
+		// Valida que el pin que devolvio este vacio
 		if (pinActual.isEmpty()) {
 			System.out.println("Se limpio correctamente el campo PIN");
 			Assert.assertTrue(true);
 		}else {
-			System.out.println("El campo PIN no se limpio correctamente");
-			Assert.assertTrue(false);
+			Assert.fail("El campo PIN no se limpio correctamente");
 		}
 	}	
 
@@ -196,14 +200,18 @@ public class ModificacionPinTestCliente extends BaseTest{
 	 // Valida que no se puedan ingresar carcateres especiales en el campo pin
 	  @Test(priority=7)
 		public void ingresaCaracteresEspeciales() {
+		  
+		  	// Espera a que aparezca el campo pin
 			componentesReusables.waitForWebElementToAppear(modifpincli.campoPin);
 			
+			// Define los caracteres especiales a utilizar, incluye todos
 			String caracteresEspeciales = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
 			
+			// Limpia el campo pin e ingresa los caracteres definidos
 			modifpincli.campoPin.clear();
 			modifpincli.ingresaPin(caracteresEspeciales);
 			
-			
+			// Obtiene el valor del campo luego de utilizar los caracteres
 			String valorPin = modifpincli.obtienePIN();
 			
 			
@@ -216,10 +224,9 @@ public class ModificacionPinTestCliente extends BaseTest{
 		        }
 		    }
 		    
-		    // Imprimir el resultado y realizar la aserción
+		    // Valida si se ingresaron caracteres especiales en el campo
 		    if (contieneCaracteresEspeciales) {
-		        System.out.println("Se ingresaron caracteres especiales en el campo \n");
-		        Assert.assertTrue(false);
+		        Assert.fail("Se ingresaron caracteres especiales en el campo \n");
 		    } else {
 		        System.out.println("No se ingresaron caracteres especiales en el campo \n");
 		        Assert.assertTrue(true);

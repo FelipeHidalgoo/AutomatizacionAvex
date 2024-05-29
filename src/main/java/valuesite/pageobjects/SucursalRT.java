@@ -61,10 +61,12 @@ public class SucursalRT extends ComponentesReusables {
 
 	// Filtro nombre sucursal
 	@FindBy(name = "txtNombreFind")
+	public
 	WebElement filtroNombre;
 
 	// Boton buscar filtros
 	@FindBy(css = ".btn.celeste")
+	public
 	WebElement btnBuscar;
 
 	// Columna sucursal
@@ -127,11 +129,20 @@ public class SucursalRT extends ComponentesReusables {
 	
 	// Searchbox convenio
 	@FindBy(xpath="(//div[@class='bs-searchbox'])[2]/input")
+	public
 	WebElement buscaConvenio;
 	
 	// Opcion lista convenios
 	@FindBy (xpath="//ul[@aria-expanded='true']/li")
+	public
 	WebElement opcionConvenio;
+	
+	// Opcion convenio LIST
+	@FindBy (xpath="//ul[@aria-expanded='true']/li")
+	List<WebElement> opcionConvenioList;
+	
+	// Opcion lista convenios By
+	By opcionConvenioBy = By.xpath("//ul[@aria-expanded='true']/li");
 
 	// Campo direccion (Formulario)
 	@FindBy(id = "txtDireccion")
@@ -261,13 +272,18 @@ public class SucursalRT extends ComponentesReusables {
 		waitForInvisibilityOfElement(direccionWaiting);
 	}
 	
-	public void seleccionaConvenio(String convenio) {
+	public void seleccionaConvenio(String convenio) throws InterruptedException{
+		Thread.sleep(250);
 		checkDefinir.click();
-		waitForWebElementToBeClickable(selectConvenio);
+		waitForWebElementToAppear(selectConvenio);
 		selectConvenio.click();
+		//waitForWebElementToAppear(buscaConvenio);
+		Thread.sleep(500);
 		buscaConvenio.sendKeys(convenio);
 		// Control de errores en caso de no haber nada que seleccionar
 		try {
+			waitForWebElementToBeClickable(opcionConvenio);
+			Thread.sleep(500);
 		    opcionConvenio.click();
 		} catch (NoSuchElementException e) {
 			Assert.fail("Error: El elemento opcionConvenio no fue encontrado. Puede deberse a que no existe el convenio buscado, o la clase del html sufrio cambios.");
@@ -301,6 +317,17 @@ public class SucursalRT extends ComponentesReusables {
 		return columnaDireccion;
 	}
 	
+	public List<WebElement> obtenerOpcionesConvenio() throws InterruptedException {
+
+		// Retorna la lista de areas presentes en la vista
+		Thread.sleep(300);
+		waitForWebElementToBeClickable(selectConvenio);
+		selectConvenio.click();
+		Thread.sleep(500);
+		waitForElementToAppear(opcionConvenioBy);
+		return opcionConvenioList;
+	}
+	
 	public boolean verificaDireccionSucursal(String nombreSucursalCrear, String direccionEsperada) {
 	    WebElement filaSucursal = buscarElementoEnPaginas(nombreSucursalCrear);
 
@@ -310,8 +337,8 @@ public class SucursalRT extends ComponentesReusables {
 
 	        String direccionActual = celdaDireccion.getText().trim();
 
-	        System.out.println("\nDireccion esperada: " + direccionEsperada);
-	        System.out.println("Direccion actual: " + direccionActual + "\n");
+	        //System.out.println("\nDireccion esperada: " + direccionEsperada);
+	        //System.out.println("Direccion actual: " + direccionActual + "\n");
 
 	        return direccionEsperada.equalsIgnoreCase(direccionActual);
 	    } else {
@@ -330,7 +357,7 @@ public class SucursalRT extends ComponentesReusables {
 
 	    // Si encuentra el elemento en la página actual, retorna
 	    if (nombreSucursal != null) {
-	        System.out.println("Elemento encontrado en la página actual: " + nombreSucursal.getText());
+	        //System.out.println("Elemento encontrado en la página actual: " + nombreSucursal.getText());
 	        return nombreSucursal;
 	    }
 
@@ -354,7 +381,7 @@ public class SucursalRT extends ComponentesReusables {
 
 	        if (nombreSucursal != null) {
 	            encontrado = true;
-	            System.out.println("Elemento encontrado en una página siguiente: " + nombreSucursal.getText());
+	            //System.out.println("Elemento encontrado en una página siguiente: " + nombreSucursal.getText());
 	            break;
 	        }
 	    }

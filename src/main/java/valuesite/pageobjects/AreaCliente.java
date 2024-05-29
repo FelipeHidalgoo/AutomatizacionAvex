@@ -170,13 +170,13 @@ public class AreaCliente extends ComponentesReusables {
 	By waitingDialogBy = By.cssSelector("sideModalTR3");
 
 	// PAGE FACTORY
-
-	// ComponentesReusables componentesReusables = new ComponentesReusables(driver);
+	
 
 	// Metodo para entrar al mantenedor de area y buscar un cliente
 	public void ingresoMantenedorArea() {
 		tabAdministracion.click();
 		tabAreaCliente.click();
+		
 		// Espera a que desaparezca el mensaje Por favor espere
 		waitForInvisibilityOfElement(waitingDialog);
 	}
@@ -185,19 +185,15 @@ public class AreaCliente extends ComponentesReusables {
 	public void errorNombreObligatorio() throws InterruptedException {
 		// waitForWebElementToBeClickable(btnCrear);
 
-		// Comprueba si el select cliente esta presente, si lo esta, selecciona un
-		// cliente
+		// Comprueba si el select cliente esta presente, si lo esta, selecciona un cliente
 		if (elementoPresente(selectCliente)) {
 			selectCliente.click();
 			waitForWebElementToBeClickable(selectClientePrimero);
 			selectClientePrimero.click();
 		}
 
+		// Presiona crear
 		btnCrear.click();
-
-		// Declara el mensaje de error en la variable errorCampoObligatorio
-//		errorCampoObligatorio = driver
-//				.findElement(By.xpath("//div[@class='alert alert-danger animated fadeInDown']"));
 
 		// Espera a que aparezca el mensaje de error
 		try {
