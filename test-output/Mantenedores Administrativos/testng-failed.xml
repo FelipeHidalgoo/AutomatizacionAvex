@@ -9,7 +9,6 @@
       <class name="valuesite.tests.ModificacionPinTestRT">
         <methods>
           <include name="ingresaMantenedor"/>
-          <include name="actualizaConCaracteresEspeciales"/>
           <include name="Finalizar"/>
           <include name="lanzarNavegador"/>
           <include name="limpiaCampo"/>

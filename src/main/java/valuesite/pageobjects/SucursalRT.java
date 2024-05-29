@@ -328,7 +328,7 @@ public class SucursalRT extends ComponentesReusables {
 		return opcionConvenioList;
 	}
 	
-	public boolean verificaDireccionSucursal(String nombreSucursalCrear, String direccionEsperada) {
+	public boolean verificaDireccionSucursal(String nombreSucursalCrear, String direccionEsperada) throws InterruptedException {
 	    WebElement filaSucursal = buscarElementoEnPaginas(nombreSucursalCrear);
 
 	    if (filaSucursal != null) {
@@ -348,7 +348,8 @@ public class SucursalRT extends ComponentesReusables {
 	}
 
 	
-	public WebElement buscarElementoEnPaginas(String nombreSucursalCrear) {
+	public WebElement buscarElementoEnPaginas(String nombreSucursalCrear) throws InterruptedException {
+		Thread.sleep(500);
 	    // Verifica si el elemento está en la página actual usando streams
 	    WebElement nombreSucursal = obtenerListaNombres().stream()
 	        .filter(elemento -> elemento.getText().trim().equalsIgnoreCase(nombreSucursalCrear.trim()))
