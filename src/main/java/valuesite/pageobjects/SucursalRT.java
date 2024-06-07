@@ -240,9 +240,10 @@ public class SucursalRT extends ComponentesReusables {
 		return false;
 	}
 	
-	public void seleccionaCiudad(int posicion) {
+	public void seleccionaCiudad(int posicion) throws InterruptedException {
 		waitForWebElementToBeClickable(selectCiudad);
 		selectCiudad.click();
+		Thread.sleep(350);
 		ciudad = driver.findElement(By.xpath("//div[@class='btn-group bootstrap-select show-tick all-width open']//div[@role='combobox']/ul/li["+posicion+"]"));
 		// Control de errores en caso de no haber nada que seleccionar
 				try {
