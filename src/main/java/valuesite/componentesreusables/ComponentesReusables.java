@@ -54,7 +54,7 @@ public class ComponentesReusables {
 	}
 
 	public void waitForInvisibilityOfElement(WebElement findBy) {
-		//WebDriverWait wait = new WebDriverWait(driver, EXPLICIT_WAIT_TIMEOUT);
+		WebDriverWait wait = new WebDriverWait(driver, EXPLICIT_WAIT_TIMEOUT);
 		wait.until(ExpectedConditions.invisibilityOf(findBy));
 	}
 

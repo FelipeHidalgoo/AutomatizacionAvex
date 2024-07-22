@@ -4,19 +4,6 @@
   <listeners>
     <listener class-name="valuesite.testcomponents.ListenersTestNG"/>
   </listeners>
-  <test thread-count="5" name="Modificacion PIN RT(failed)">
-    <classes>
-      <class name="valuesite.tests.ModificacionPinTestRT">
-        <methods>
-          <include name="ingresaMantenedor"/>
-          <include name="Finalizar"/>
-          <include name="lanzarNavegador"/>
-          <include name="limpiaCampo"/>
-          <include name="setUp"/>
-        </methods>
-      </class> <!-- valuesite.tests.ModificacionPinTestRT -->
-    </classes>
-  </test> <!-- Modificacion PIN RT(failed) -->
   <test thread-count="5" name="Sucursales RT(failed)">
     <classes>
       <class name="valuesite.tests.SucursalTestRT">
@@ -24,6 +11,7 @@
           <include name="Finalizar"/>
           <include name="lanzarNavegador"/>
           <include name="setUp"/>
+          <include name="modificarSucursal"/>
           <include name="ingresaMantenedor"/>
           <include name="nombreObligatorio"/>
         </methods>

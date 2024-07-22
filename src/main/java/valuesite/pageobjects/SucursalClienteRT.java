@@ -216,6 +216,7 @@ public class SucursalClienteRT extends ComponentesReusables{
 				public void ingresoMantenedorSucursalesCliente() throws InterruptedException {
 					tabAdministracion.click();
 					tabSucusales.click();
+					Thread.sleep(500);
 				}
 				
 				public void buscaCliente(String cliente) {

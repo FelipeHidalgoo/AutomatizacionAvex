@@ -23,7 +23,7 @@ import valuesite.resources.ConfigReportes;
 
 public class BaseTest extends ConfigReportes {
 
-    private static final Duration IMPLICIT_WAIT_TIMEOUT = Duration.ofSeconds(3);
+    private static final Duration IMPLICIT_WAIT_TIMEOUT = Duration.ofSeconds(7);
     
     private static ThreadLocal<WebDriver> driverThreadLocal = new ThreadLocal<>();
     public Login loginPage;

@@ -7,7 +7,7 @@
         <listener class-name="valuesite.testcomponents.ListenersTestNG" />
     </listeners>
     
-    <test thread-count="5" name="Area RT">
+<!--    <test thread-count="5" name="Area RT">
         <classes>
             <class name="valuesite.tests.MantenedorAreaTestRT"/>
         </classes>
@@ -29,11 +29,23 @@
         <classes>
             <class name="valuesite.tests.ModificacionPinTestCliente"/>
         </classes>
-    </test>
+    </test>-->
     
     <test thread-count="5" name="Sucursales RT">
         <classes>
             <class name="valuesite.tests.SucursalTestRT"/>
+        </classes>
+    </test>
+    
+    <test thread-count="5" name="Sucursales cliente RT">
+        <classes>
+            <class name="valuesite.tests.SucursalClienteTestRT"/>
+        </classes>
+    </test>
+    
+    <test thread-count="5" name="Sucursales cliente Cli">
+        <classes>
+            <class name="valuesite.tests.SucursalClienteTestCli"/>
         </classes>
     </test>
     

@@ -8,8 +8,8 @@
           <include name="Finalizar"/>
           <include name="setUp"/>
           <include name="lanzarNavegador"/>
+          <include name="creaSucursal"/>
           <include name="ingresaMantenedor"/>
-          <include name="estadoCheck"/>
         </methods>
       </class> <!-- valuesite.tests.SucursalClienteTestCli -->
     </classes>
