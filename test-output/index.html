@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -40,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Default_suite" class="navigator-link">
-              <span class="suite-name border-passed">Default suite</span>
+              <span class="suite-name border-failed">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\Felip\AppData\Local\Temp\testng-eclipse-1019837456\testng-customsuite.xml</span>
+                    <span>C:\Users\Felip\AppData\Local\Temp\testng-eclipse--1474347616\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -93,56 +93,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">8 methods,   8 passed</span>
+                    <span class="method-stats">1 method, 1 failed,   </span>
                   </li>
                   <li>
-                    <span class="method-list-title passed">Passed methods</span>
-                    <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-Default_suite" class="hide-methods passed suite-Default_suite"> (hide)</a> <!-- hide-methods passed suite-Default_suite -->
-                      <a href="#" panel-name="suite-Default_suite" class="show-methods passed suite-Default_suite"> (show)</a> <!-- show-methods passed suite-Default_suite -->
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods failed suite-Default_suite"> (hide)</a> <!-- hide-methods failed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
                     </span>
-                    <div class="method-list-content passed suite-Default_suite">
+                    <div class="method-list-content failed suite-Default_suite">
                       <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="valuesite.tests.SucursalClienteTestCli" class="method navigator-link" hash-for-method="creaSucursal">creaSucursal</a> <!-- method navigator-link -->
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="valuesite.tests.CentroCostoTestRT" class="method navigator-link" hash-for-method="campoResponsableCcObligatorio">campoResponsableCcObligatorio</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="valuesite.tests.SucursalClienteTestCli" class="method navigator-link" hash-for-method="direccionObligatorio">direccionObligatorio</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="valuesite.tests.SucursalClienteTestCli" class="method navigator-link" hash-for-method="filtroEstado">filtroEstado</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="valuesite.tests.SucursalClienteTestCli" class="method navigator-link" hash-for-method="filtroNombre">filtroNombre</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="valuesite.tests.SucursalClienteTestCli" class="method navigator-link" hash-for-method="limpiaCampoDireccion">limpiaCampoDireccion</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="valuesite.tests.SucursalClienteTestCli" class="method navigator-link" hash-for-method="limpiaCampoNombre">limpiaCampoNombre</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="valuesite.tests.SucursalClienteTestCli" class="method navigator-link" hash-for-method="modificarSucursal">modificarSucursal</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="valuesite.tests.SucursalClienteTestCli" class="method navigator-link" hash-for-method="nombreObligatorio">nombreObligatorio</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content passed suite-Default_suite -->
+                    </div> <!-- method-list-content failed suite-Default_suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -154,74 +119,58 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Default_suite" class="panel Default_suite">
-          <div class="suite-Default_suite-class-passed">
+          <div class="suite-Default_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">valuesite.tests.SucursalClienteTestCli</span>
+              <img src="failed.png"/>
+              <span class="class-name">valuesite.tests.CentroCostoTestRT</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="creaSucursal">
-                  </a> <!-- creaSucursal -->
-                  <span class="method-name">creaSucursal</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="direccionObligatorio">
-                  </a> <!-- direccionObligatorio -->
-                  <span class="method-name">direccionObligatorio</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="filtroEstado">
-                  </a> <!-- filtroEstado -->
-                  <span class="method-name">filtroEstado</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="filtroNombre">
-                  </a> <!-- filtroNombre -->
-                  <span class="method-name">filtroNombre</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="limpiaCampoDireccion">
-                  </a> <!-- limpiaCampoDireccion -->
-                  <span class="method-name">limpiaCampoDireccion</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="limpiaCampoNombre">
-                  </a> <!-- limpiaCampoNombre -->
-                  <span class="method-name">limpiaCampoNombre</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="modificarSucursal">
-                  </a> <!-- modificarSucursal -->
-                  <span class="method-name">modificarSucursal</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="nombreObligatorio">
-                  </a> <!-- nombreObligatorio -->
-                  <span class="method-name">nombreObligatorio</span>
+                  <a name="campoResponsableCcObligatorio">
+                  </a> <!-- campoResponsableCcObligatorio -->
+                  <span class="method-name">campoResponsableCcObligatorio</span>
+                  <div class="stack-trace">java.lang.AssertionError: El mensaje de error no se encontró en el tiempo esperado.
+	at org.junit.Assert.fail(Assert.java:88)
+	at valuesite.tests.CentroCostoTestRT.campoResponsableCcObligatorio(CentroCostoTestRT.java:122)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Default_suite-class-passed -->
+          </div> <!-- suite-Default_suite-class-failed -->
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Felip\AppData\Local\Temp\testng-eclipse-1019837456\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\Felip\AppData\Local\Temp\testng-eclipse--1474347616\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -230,7 +179,7 @@
 &lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;valuesite.tests.SucursalClienteTestCli&quot;/&gt;
+      &lt;class name=&quot;valuesite.tests.CentroCostoTestRT&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -270,44 +219,16 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(8);
+data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'modificarSucursal')
-data.setCell(0, 2, 'valuesite.tests.SucursalClienteTestCli')
-data.setCell(0, 3, 31970);
-data.setCell(1, 0, 1)
-data.setCell(1, 1, 'creaSucursal')
-data.setCell(1, 2, 'valuesite.tests.SucursalClienteTestCli')
-data.setCell(1, 3, 25075);
-data.setCell(2, 0, 2)
-data.setCell(2, 1, 'filtroNombre')
-data.setCell(2, 2, 'valuesite.tests.SucursalClienteTestCli')
-data.setCell(2, 3, 3422);
-data.setCell(3, 0, 3)
-data.setCell(3, 1, 'direccionObligatorio')
-data.setCell(3, 2, 'valuesite.tests.SucursalClienteTestCli')
-data.setCell(3, 3, 3039);
-data.setCell(4, 0, 4)
-data.setCell(4, 1, 'nombreObligatorio')
-data.setCell(4, 2, 'valuesite.tests.SucursalClienteTestCli')
-data.setCell(4, 3, 2344);
-data.setCell(5, 0, 5)
-data.setCell(5, 1, 'filtroEstado')
-data.setCell(5, 2, 'valuesite.tests.SucursalClienteTestCli')
-data.setCell(5, 3, 2072);
-data.setCell(6, 0, 6)
-data.setCell(6, 1, 'limpiaCampoNombre')
-data.setCell(6, 2, 'valuesite.tests.SucursalClienteTestCli')
-data.setCell(6, 3, 1133);
-data.setCell(7, 0, 7)
-data.setCell(7, 1, 'limpiaCampoDireccion')
-data.setCell(7, 2, 'valuesite.tests.SucursalClienteTestCli')
-data.setCell(7, 3, 858);
+data.setCell(0, 1, 'campoResponsableCcObligatorio')
+data.setCell(0, 2, 'valuesite.tests.CentroCostoTestRT')
+data.setCell(0, 3, 24649);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <span class="suite-total-time">Total running time: 24 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -333,54 +254,28 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">valuesite.tests.SucursalClienteTestCli</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">valuesite.tests.CentroCostoTestRT</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
                 <span class="method-name">lanzarNavegador</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
               <div class="configuration-test before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">5842 ms</span>
+                <span class="method-start">6320 ms</span>
               </div> <!-- configuration-test before -->
               <div class="configuration-class before">
                 <span class="method-name">ingresaMantenedor</span>
-                <span class="method-start">5865 ms</span>
+                <span class="method-start">6334 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
-                <span class="method-name">limpiaCampoNombre</span>
-                <span class="method-start">11003 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">limpiaCampoDireccion</span>
-                <span class="method-start">12139 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">nombreObligatorio</span>
-                <span class="method-start">12998 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">direccionObligatorio</span>
-                <span class="method-start">15343 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">creaSucursal</span>
-                <span class="method-start">18383 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">modificarSucursal</span>
-                <span class="method-start">43459 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">filtroNombre</span>
-                <span class="method-start">75430 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">filtroEstado</span>
-                <span class="method-start">78852 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">campoResponsableCcObligatorio</span>
+                <span class="method-start">16782 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
                 <span class="method-name">Finalizar</span>
-                <span class="method-start">80926 ms</span>
+                <span class="method-start">41433 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

@@ -34,8 +34,7 @@ public class SucursalClienteTestCli extends BaseTest {
 		// Pasa como parametro correo y contraseña para ingresar a la web
 		login.iniciarSesion("automcli@aquivoy.cl", "123456");
 
-		// Ingresa al mantenedor una vez la sesion este iniciada, pasa como parametro el
-		// cliente a buscar
+		// Ingresa al mantenedor una vez la sesion este iniciada
 		suc.ingresoMantenedorSucursalesCliente();
 	}
 

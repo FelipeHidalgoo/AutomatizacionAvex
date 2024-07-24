@@ -13,7 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ComponentesReusables {
 
-	public static final Duration EXPLICIT_WAIT_TIMEOUT = Duration.ofSeconds(10);
+	public static final Duration EXPLICIT_WAIT_TIMEOUT = Duration.ofSeconds(7);
 	public static final Duration FLUENT_WAIT_TIMEOUT = Duration.ofSeconds(10);
 
 	WebDriver driver;
@@ -56,6 +56,11 @@ public class ComponentesReusables {
 	public void waitForInvisibilityOfElement(WebElement findBy) {
 		WebDriverWait wait = new WebDriverWait(driver, EXPLICIT_WAIT_TIMEOUT);
 		wait.until(ExpectedConditions.invisibilityOf(findBy));
+	}
+	
+	public void waitForVisibilityOfElement(WebElement findBy) {
+		WebDriverWait wait = new WebDriverWait(driver, EXPLICIT_WAIT_TIMEOUT);
+		wait.until(ExpectedConditions.visibilityOf(findBy));
 	}
 
 	public void waitForWebElementToBeClickable(WebElement findBy) {

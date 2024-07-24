@@ -177,11 +177,12 @@ public class SucursalClienteCli extends ComponentesReusables{
 				// Boton anterior pagina (Paginacion)
 				@FindBy(xpath = "//a[normalize-space()='Anterior']")
 				WebElement anteriorPagina;
-				// Boton anterior pagina (Paginacion)
+				
+				// Boton Siguiente pagina (Paginacion)
 				@FindBy(xpath = "//a[normalize-space()='Siguiente']")
 				static WebElement siguientePagina;
 
-				// Boton anterior pagina (Paginacion)
+				// Boton Ultima pagina (Paginacion)
 				@FindBy(xpath = "//a[normalize-space()='Ultima']")
 				WebElement ultimaPagina;
 
