@@ -2,32 +2,32 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-07-24T15:30:13 EDT" name="Default suite" finished-at="2024-07-24T15:30:55 EDT" duration-ms="42638">
+  <suite started-at="2024-09-24T17:08:47 CLST" name="Default suite" finished-at="2024-09-24T17:12:01 CLST" duration-ms="194138">
     <groups>
     </groups>
-    <test started-at="2024-07-24T15:30:13 EDT" name="Default test" finished-at="2024-07-24T15:30:55 EDT" duration-ms="42638">
+    <test started-at="2024-09-24T17:08:47 CLST" name="Default test" finished-at="2024-09-24T17:12:01 CLST" duration-ms="194138">
       <class name="valuesite.tests.CentroCostoTestRT">
-        <test-method is-config="true" signature="lanzarNavegador()[pri:0, instance:valuesite.tests.CentroCostoTestRT@7d8995e]" started-at="2024-07-24T15:30:13 EDT" name="lanzarNavegador" finished-at="2024-07-24T15:30:19 EDT" duration-ms="6320" status="PASS">
+        <test-method is-config="true" signature="lanzarNavegador()[pri:0, instance:valuesite.tests.CentroCostoTestRT@1bd4fdd]" started-at="2024-09-24T17:08:47 CLST" name="lanzarNavegador" finished-at="2024-09-24T17:09:01 CLST" duration-ms="13902" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- lanzarNavegador -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:valuesite.tests.CentroCostoTestRT@7d8995e]" started-at="2024-07-24T15:30:19 EDT" name="setUp" finished-at="2024-07-24T15:30:19 EDT" depends-on-methods="valuesite.testcomponents.BaseTest.lanzarNavegador" duration-ms="6" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:valuesite.tests.CentroCostoTestRT@1bd4fdd]" started-at="2024-09-24T17:09:01 CLST" name="setUp" finished-at="2024-09-24T17:09:01 CLST" depends-on-methods="valuesite.testcomponents.BaseTest.lanzarNavegador" duration-ms="331" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="ingresaMantenedor()[pri:0, instance:valuesite.tests.CentroCostoTestRT@7d8995e]" started-at="2024-07-24T15:30:19 EDT" name="ingresaMantenedor" finished-at="2024-07-24T15:30:29 EDT" duration-ms="10442" status="PASS">
+        <test-method is-config="true" signature="ingresaMantenedor()[pri:0, instance:valuesite.tests.CentroCostoTestRT@1bd4fdd]" started-at="2024-09-24T17:09:01 CLST" name="ingresaMantenedor" finished-at="2024-09-24T17:09:14 CLST" duration-ms="12428" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ingresaMantenedor -->
-        <test-method signature="campoResponsableCcObligatorio()[pri:4, instance:valuesite.tests.CentroCostoTestRT@7d8995e]" started-at="2024-07-24T15:30:29 EDT" name="campoResponsableCcObligatorio" finished-at="2024-07-24T15:30:54 EDT" duration-ms="24649" status="FAIL">
+        <test-method signature="creacionDeCC()[pri:6, instance:valuesite.tests.CentroCostoTestRT@1bd4fdd]" started-at="2024-09-24T17:09:14 CLST" name="creacionDeCC" finished-at="2024-09-24T17:11:48 CLST" duration-ms="154440" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[El mensaje de error no se encontró en el tiempo esperado.]]>
+              <![CDATA[El cc creado: 'CC AutoTest - Nro 9b94b42' no se encontró en la grilla.]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: El mensaje de error no se encontró en el tiempo esperado.
+              <![CDATA[java.lang.AssertionError: El cc creado: 'CC AutoTest - Nro 9b94b42' no se encontró en la grilla.
 at org.junit.Assert.fail(Assert.java:88)
-at valuesite.tests.CentroCostoTestRT.campoResponsableCcObligatorio(CentroCostoTestRT.java:122)
+at valuesite.tests.CentroCostoTestRT.creacionDeCC(CentroCostoTestRT.java:273)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -61,8 +61,8 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- campoResponsableCcObligatorio -->
-        <test-method is-config="true" signature="Finalizar()[pri:0, instance:valuesite.tests.CentroCostoTestRT@7d8995e]" started-at="2024-07-24T15:30:54 EDT" name="Finalizar" finished-at="2024-07-24T15:30:55 EDT" duration-ms="1203" status="PASS">
+        </test-method> <!-- creacionDeCC -->
+        <test-method is-config="true" signature="Finalizar()[pri:0, instance:valuesite.tests.CentroCostoTestRT@1bd4fdd]" started-at="2024-09-24T17:12:00 CLST" name="Finalizar" finished-at="2024-09-24T17:12:01 CLST" duration-ms="1422" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Finalizar -->

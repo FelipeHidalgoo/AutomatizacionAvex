@@ -1,6 +1,17 @@
 package valuesite.pageobjects;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.util.List;
+import java.util.Properties;
+import java.util.UUID;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -13,6 +24,7 @@ public class CentroCostoRT extends ComponentesReusables {
 	private static final String CONFIG_FILE = "config.properties";
 	private static final String NRO_CC_KEY = "nroCentroCostoRT";
 	private static final String NRO_MODIF_KEY = "nroModifCentroCostoRT";
+	private static final String NRO_CODIGO_KEY = "nroModifCentroCostoRT";
 
 	WebDriver driver;
 
@@ -126,42 +138,42 @@ public class CentroCostoRT extends ComponentesReusables {
 				
 		// Columna Codigo
 		@FindBy(xpath="//tbody[@class='tb-bss-pointer']/tr/td[1]")
-		WebElement columnaCodigo;
+		List<WebElement> columnaCodigo;
 				
 		// Columna Codigo By
 		By columnaCodigoBy = By.xpath("//tbody[@class='tb-bss-pointer']/tr/td[1]");
 				
 		// Columna Nombre
 		@FindBy(xpath="//tbody[@class='tb-bss-pointer']/tr/td[2]")
-		WebElement columnaNombre;
+		List<WebElement> columnaNombre;
 						
 		// Columna Nombre By
 		By columnaNombreBy = By.xpath("//tbody[@class='tb-bss-pointer']/tr/td[2]");
 				
 		// Columna Responsable CC
 		@FindBy(xpath="//tbody[@class='tb-bss-pointer']/tr/td[3]")
-		WebElement columnaResponsableCC;
+		List<WebElement> columnaResponsableCC;
 						
 		// Columna ResponsableCC By
 		By columnaResponsableBy = By.xpath("//tbody[@class='tb-bss-pointer']/tr/td[3]");
 				
 		// Columna Correo ResponsableCC
 		@FindBy(xpath="//tbody[@class='tb-bss-pointer']/tr/td[4]")
-		WebElement columnaCorreoCC;
+		List<WebElement> columnaCorreoCC;
 						
 		// Columna Correo ResponsableCC By
 		By columnaCorreoCCBy = By.xpath("//tbody[@class='tb-bss-pointer']/tr/td[4]");
 				
 		// Columna Notificar Servicio
 		@FindBy(xpath="//tbody[@class='tb-bss-pointer']/tr/td[5]")
-		WebElement columnaNotificarServicio;
+		List<WebElement> columnaNotificarServicio;
 						
 		// Columna Notificar servicio By
 		By columnaNotificarServicioBy = By.xpath("//tbody[@class='tb-bss-pointer']/tr/td[5]");
 				
 		// Columna Estado
 		@FindBy(xpath="//tbody[@class='tb-bss-pointer']/tr/td[6]")
-		WebElement columnaEstado;
+		List<WebElement> columnaEstado;
 						
 		// Columna Estado By
 		By columnaEstadoBy = By.xpath("//tbody[@class='tb-bss-pointer']/tr/td[6]");
@@ -214,6 +226,7 @@ public class CentroCostoRT extends ComponentesReusables {
 		WebElement selectTipoCorreo;
 		
 		// Select Tipo correo / Opcion Todos (Formulario)
+		//@FindBy(css=".disabled")
 		@FindBy(xpath="//ul[@id='select-options-slcTipoCorreo']/li[2]")
 		WebElement selectTipoCorreoTodos;
 		
@@ -230,7 +243,7 @@ public class CentroCostoRT extends ComponentesReusables {
 		WebElement selectTipoCorreoCancelacion;
 		
 		// Check Notificar por correo (Formulario)
-		@FindBy(xpath="//div[contains(@class,'col-2 col-lg-1')]//span[contains(@class,'checkmark-ds ml-0')]")
+		@FindBy(css="div[class='col-2 col-lg-1'] span[class='checkmark-ds ml-0']")
 		WebElement checkNotificarPresupuesto;
 		
 		// Input Porcentaje 1 (Formulario)
@@ -249,6 +262,10 @@ public class CentroCostoRT extends ComponentesReusables {
 		@FindBy(xpath="//div[@class='col-2']//span[@class='checkmark-ds ml-0']")
 		WebElement checkEstado;
 		
+		// Check Estado (Obtener estado)
+		@FindBy(id="rdoActivo1")
+		WebElement checkEstadoObtener;
+		
 		// Modal Por favor Espere
 		@FindBy(css = ".modal-dialog.modal-m")
 		public
@@ -258,6 +275,11 @@ public class CentroCostoRT extends ComponentesReusables {
 		 @FindBy (xpath="//div[@class='alert alert-danger']")
 		 public
 		 WebElement msjError;
+		 
+		// Primer CC de la lista
+		@FindBy (xpath="//tbody[@class='tb-bss-pointer']/tr[1]")
+		public
+		WebElement primerCC;
 		
 	// Paginacion
 		
@@ -282,6 +304,11 @@ public class CentroCostoRT extends ComponentesReusables {
 		public void ingresoMantenedorCentroCostoCli() throws InterruptedException {
 			tabAdministracion.click();
 			tabCentroCosto.click();
+		}
+		
+		public void buscarCC(String nombreCC) {
+			filtroNombre.sendKeys(nombreCC);
+			btnBuscar.click();
 		}
 		
 		public void buscaCliente(String cliente) {
@@ -313,15 +340,41 @@ public class CentroCostoRT extends ComponentesReusables {
 			inputPresupuesto.sendKeys(montoPresupuesto);
 		}
 		
-		public void notificarServicio(String Responsable) {
-			waitForWebElementToBeClickable(inputNotificarSi);
+		public void notificarPresupuesto(boolean activo) {
+			 try {
+				 checkNotificarPresupuesto.isDisplayed();
+		     } catch (NoSuchElementException e) {
+		          // Si no se encuentra el elemento, se lanza una excepción
+		          System.out.println("Error: El check 'Notificar por correo presupuesto utilizado al' no está presente en la página.");
+		        } 
+			if (activo = true) {
+			waitForWebElementToBeClickable(checkNotificarPresupuesto);
+			checkNotificarPresupuesto.click();
+			}
+		}
+		
+		public void definePrimerPorcentajePresupuesto(String porcentaje) {
+			porcentaje1.sendKeys(porcentaje);
+		}
+		
+		public void defineSegundoPorcentajePresupuesto(String porcentaje) {
+			porcentaje2.sendKeys(porcentaje);
+		}
+		
+		public void defineTercerPorcentajePresupuesto(String porcentaje) {
+			porcentaje3.sendKeys(porcentaje);
+		}
+		
+		public void notificarServicio(String Responsable) throws InterruptedException {
+			waitForWebElementToBeClickable(inputNotificarSi);;
 			inputNotificarSi.click();
 			selectResponsableCC.click();
 			inputResponsableCC.sendKeys(Responsable);
+			Thread.sleep(600);
 			primerResponsableCC.click();
 		}
 		
-		public void tipoCorreo(String opcion) {
+		public void seleccionaTipoCorreo(String opcion) {
 			waitForWebElementToBeClickable(selectTipoCorreo);
 			inputNotificarSi.click();
 			selectTipoCorreo.click();
@@ -333,7 +386,268 @@ public class CentroCostoRT extends ComponentesReusables {
 				selectTipoCorreoTermino.click();
 			}else if (opcion.equalsIgnoreCase("cancelacion")) {
 				selectTipoCorreoCancelacion.click();
+			}else if (opcion.equalsIgnoreCase("")) {
+				selectTipoCorreo.click();
+			}else if (opcion.equalsIgnoreCase("Creacion, Termino") || opcion.equalsIgnoreCase("Termino, Creacion")) {
+				selectTipoCorreoCreacion.click();
+				selectTipoCorreoTermino.click();
+			}else if (opcion.equalsIgnoreCase("Termino, Cancelacion	") || opcion.equalsIgnoreCase("Cancelacion, Termino")) {
+				selectTipoCorreoCancelacion.click();
+				selectTipoCorreoTermino.click();
 			}
 			selectTipoCorreo.click();
 		}
+		
+		public List<WebElement> obtenerMensajesError() {
+		    return driver.findElements(By.xpath("//div[@class='alert alert-danger']"));
+		}
+		
+		public String identificadorUnico() {
+			String identificador = UUID.randomUUID().toString().substring(0, 7);
+			return identificador;
+		}
+		
+		public List<WebElement> obtenerListaNombres() {
+
+			// Retorna la lista de nombres presentes en la grilla
+			waitForElementToAppear(columnaNombreBy);
+			return columnaNombre;
+		}
+		
+		public String obtieneNombreFormulario(WebDriver driver) {
+			waitForWebElementToAppear(inputNombre);
+			
+			// Usamos JavascriptExecutor para obtener el value directamente del elemento
+		    JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+		    String nombre = (String) jsExecutor.executeScript("return arguments[0].value;", inputNombre);
+		    
+			return nombre;
+		}
+		
+		public String obtieneCodigoFormulario(WebDriver driver) {
+			waitForWebElementToAppear(inputCodigo);
+
+			// Usamos JavascriptExecutor para obtener el value directamente del elemento
+		    JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+		    String codigo = (String) jsExecutor.executeScript("return arguments[0].value;", inputCodigo);
+		    
+			return codigo;
+		}
+		
+		public boolean obtieneEstadoFormulario() {
+			waitForWebElementToAppear(checkEstado);
+			return checkEstadoObtener.isSelected();
+		}
+		
+		public boolean obtieneCheckNotificar() {
+			
+			waitForWebElementToAppear(checkNotificarSi); 
+			
+			if (checkNotificarSi.isSelected()) {
+				return true;
+			}else {
+				return false;
+			}
+		}
+		
+		public String obtieneResponsableCC() {
+			waitForWebElementToAppear(selectResponsableCC);
+			return selectResponsableCC.getAttribute("title");
+		}
+		
+		public String obtieneOpcionTipoCorreo() {
+			String opcionMarcada = null;
+			waitForWebElementToAppear(selectTipoCorreo);
+			selectTipoCorreo.click();
+			
+			//Verifica que opciones hay marcadas en el select (Unica opcion)
+			if (selectTipoCorreoCreacion.getAttribute("aria-selected") == "true" 
+				&& selectTipoCorreoTermino.getAttribute("aria-selected") == "false"
+				&& selectTipoCorreoCancelacion.getAttribute("aria-selected") == "false") {
+				opcionMarcada = "Creacion";
+			}else if (selectTipoCorreoCreacion.getAttribute("aria-selected") == "false" 
+					&& selectTipoCorreoTermino.getAttribute("aria-selected") == "true"
+					&& selectTipoCorreoCancelacion.getAttribute("aria-selected") == "false") {
+				opcionMarcada = "Termino";
+			}else if (selectTipoCorreoCreacion.getAttribute("aria-selected") == "false" 
+					&& selectTipoCorreoTermino.getAttribute("aria-selected") == "false"
+					&& selectTipoCorreoCancelacion.getAttribute("aria-selected") == "true") {
+				opcionMarcada = "Cancelacion";
+			}
+			
+			//Verifica que opciones hay marcadas en el select (Multiples opciones)
+			if (selectTipoCorreoCreacion.getAttribute("aria-selected") == "true" 
+				&& selectTipoCorreoTermino.getAttribute("aria-selected") == "true"
+				&& selectTipoCorreoCancelacion.getAttribute("aria-selected") == "false") {
+				opcionMarcada = "Creacion, Termino";
+			}else if (selectTipoCorreoCreacion.getAttribute("aria-selected") == "true" 
+					&& selectTipoCorreoTermino.getAttribute("aria-selected") == "false"
+					&& selectTipoCorreoCancelacion.getAttribute("aria-selected") == "true") {
+				opcionMarcada = "Creacion, Cancelacion";
+			}else if (selectTipoCorreoCreacion.getAttribute("aria-selected") == "false" 
+					&& selectTipoCorreoTermino.getAttribute("aria-selected") == "true"
+					&& selectTipoCorreoCancelacion.getAttribute("aria-selected") == "true") {
+				opcionMarcada = "Termino, Cancelacion";
+			}else if (selectTipoCorreoCreacion.getAttribute("aria-selected") == "true" 
+					&& selectTipoCorreoTermino.getAttribute("aria-selected") == "true"
+					&& selectTipoCorreoCancelacion.getAttribute("aria-selected") == "true") {
+				opcionMarcada = "Todos";
+			}
+			
+			selectTipoCorreo.click();
+			return opcionMarcada;
+		}
+		
+		public boolean obtieneCheckPresupuesto() {
+			//waitForWebElementToBeClickable(checkDefinir);
+			
+			if (checkDefinir.isSelected()) {
+				return true;
+			}else {
+				return false;
+			}
+		}
+		
+		public String obtieneMontoPresupuesto(WebDriver driver) {
+		    waitForWebElementToAppear(inputPresupuesto);
+		    
+		    // Usamos JavascriptExecutor para obtener el value directamente del elemento
+		    JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+		    String monto = (String) jsExecutor.executeScript("return arguments[0].value;", inputPresupuesto);
+		    
+		    return monto;
+		}
+		
+		public boolean obtieneCheckNotificarPresupuesto() {
+			waitForWebElementToAppear(checkNotificarPresupuesto);
+			
+			if (checkNotificarPresupuesto.isSelected()) {
+				return true;
+			}else {
+				return false;
+			}
+		}
+		
+		public String obtienePrimerPorcentajePresupuesto(WebDriver driver) {
+			waitForWebElementToAppear(porcentaje1);
+			
+			// Usamos JavascriptExecutor para obtener el value directamente del elemento
+		    JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+		    String p1 = (String) jsExecutor.executeScript("return arguments[0].value;", porcentaje1);
+		    
+		    return p1;
+			}
+		
+		public String obtieneSegundoPorcentajePresupuesto(WebDriver driver) {
+			waitForWebElementToAppear(porcentaje2);
+			
+			// Usamos JavascriptExecutor para obtener el value directamente del elemento
+		    JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+		    String p2 = (String) jsExecutor.executeScript("return arguments[0].value;", porcentaje2);
+		    
+		    return p2;
+			}
+		
+		public String obtieneTercerPorcentajePresupuesto(WebDriver driver) {
+			waitForWebElementToAppear(porcentaje3);
+			
+			// Usamos JavascriptExecutor para obtener el value directamente del elemento
+		    JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+		    String p3 = (String) jsExecutor.executeScript("return arguments[0].value;", porcentaje3);
+		    
+		    return p3;
+			}
+		
+		
+	// IDENTIFICADORES PARA LOS TEST DE CREACION Y MODIFICACION //
+		
+//		public String obtieneNroCC() {
+//	        Properties prop = new Properties();
+//	        try (InputStream input = new FileInputStream(CONFIG_FILE)) {
+//	            prop.load(input);
+//	            return prop.getProperty(NRO_CC_KEY, "1");
+//	        } catch (IOException e) {
+//	            e.printStackTrace();
+//	            return "1"; // Valor predeterminado
+//	        }
+//	    }
+//
+//		public void guardaNroCC(String nroCC) {
+//		    Properties prop = new Properties();
+//		    try (InputStream input = new FileInputStream(CONFIG_FILE)) {
+//		        // Cargar todas las propiedades existentes
+//		        prop.load(input);
+//		    } catch (IOException e) {
+//		        e.printStackTrace();
+//		    }
+//
+//		    try (OutputStream output = new FileOutputStream(CONFIG_FILE)) {
+//		        // Actualizar la propiedad específica
+//		        prop.setProperty(NRO_CC_KEY, nroCC);
+//		        // Guardar todas las propiedades nuevamente
+//		        prop.store(output, null);
+//		    } catch (IOException e) {
+//		        e.printStackTrace();
+//		    }
+//		}
+//		
+//		public String obtieneNroCodigo() {
+//	        Properties prop = new Properties();
+//	        try (InputStream input = new FileInputStream(CONFIG_FILE)) {
+//	            prop.load(input);
+//	            return prop.getProperty(NRO_CODIGO_KEY, "1");
+//	        } catch (IOException e) {
+//	            e.printStackTrace();
+//	            return "1"; // Valor predeterminado
+//	        }
+//	    }
+//
+//		public void guardaNroCodigo(String nroCodigo) {
+//		    Properties prop = new Properties();
+//		    try (InputStream input = new FileInputStream(CONFIG_FILE)) {
+//		        // Cargar todas las propiedades existentes
+//		        prop.load(input);
+//		    } catch (IOException e) {
+//		        e.printStackTrace();
+//		    }
+//
+//		    try (OutputStream output = new FileOutputStream(CONFIG_FILE)) {
+//		        // Actualizar la propiedad específica
+//		        prop.setProperty(NRO_CC_KEY, nroCodigo);
+//		        // Guardar todas las propiedades nuevamente
+//		        prop.store(output, null);
+//		    } catch (IOException e) {
+//		        e.printStackTrace();
+//		    }
+//		}
+//	    
+//		public String obtieneNroModif() {
+//	        Properties prop = new Properties();
+//	        try (InputStream input = new FileInputStream(CONFIG_FILE)) {
+//	            prop.load(input);
+//	            return prop.getProperty(NRO_MODIF_KEY, "0");
+//	        } catch (IOException e) {
+//	            e.printStackTrace();
+//	            return "1"; // Valor predeterminado
+//	        }
+//	    }
+//
+//		public void guardaNroModif(String nroModifCC) {
+//		    Properties prop = new Properties();
+//		    try (InputStream input = new FileInputStream(CONFIG_FILE)) {
+//		        // Cargar todas las propiedades existentes
+//		        prop.load(input);
+//		    } catch (IOException e) {
+//		        e.printStackTrace();
+//		    }
+//
+//		    try (OutputStream output = new FileOutputStream(CONFIG_FILE)) {
+//		        // Actualizar la propiedad específica
+//		        prop.setProperty(NRO_MODIF_KEY, nroModifCC);
+//		        // Guardar todas las propiedades nuevamente
+//		        prop.store(output, null);
+//		    } catch (IOException e) {
+//		        e.printStackTrace();
+//		    }
+//		}
 }

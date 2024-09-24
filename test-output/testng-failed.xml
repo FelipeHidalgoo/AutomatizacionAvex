@@ -8,8 +8,8 @@
           <include name="Finalizar"/>
           <include name="ingresaMantenedor"/>
           <include name="lanzarNavegador"/>
-          <include name="campoResponsableCcObligatorio"/>
           <include name="setUp"/>
+          <include name="creacionDeCC"/>
         </methods>
       </class> <!-- valuesite.tests.CentroCostoTestRT -->
     </classes>

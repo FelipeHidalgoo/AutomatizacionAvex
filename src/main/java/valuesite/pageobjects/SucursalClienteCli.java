@@ -365,6 +365,7 @@ public class SucursalClienteCli extends ComponentesReusables{
 	    }
 	}
 
+	// IDENTIFICADORES PARA LOS TEST DE CREACION Y MODIFICACION //
 	
 	public String obtieneNroSucursal() {
         Properties prop = new Properties();
